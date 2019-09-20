@@ -53,7 +53,6 @@ Plug 'Shougo/neoinclude.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'bling/vim-bufferline'
 
-
 " -= disabled =-
 Plug 'ryanoasis/vim-devicons'
 
