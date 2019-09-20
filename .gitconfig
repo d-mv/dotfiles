@@ -1,0 +1,63 @@
+[user]
+	name = d-mv
+	email = d.dash.mv@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[color]
+  branch = auto
+  diff = auto
+  stats = auto
+  interactive = auto
+  status = auto
+  ui = true
+
+[color "branch"]
+  current = green
+  remote = yellow
+
+[color "diff"]
+  old = red strike
+  new = green italic
+
+[core]
+  pager = less -FRSX
+	editor = nvim 
+
+[alias]
+  co = checkout
+  st = status -sb
+  br = branch
+  ci = commit
+  fo = fetch origin
+  d = !git --no-pager diff
+  dt  = difftool
+  stat = !git --no-pager diff --stat
+  dt = difftool
+  s = status
+  b = branch
+  a = add
+  log-fn = "!f() { git log -L :$1:$2; }; f"
+  # Clean merged branches
+  sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
+  # http://www.jukie.net/bart/blog/pimping-out-git-log
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+  # Serve local repo. http://coderwall.com/p/eybtga
+  # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
+  serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+  m = checkout master
+  dev = checkout develop
+  # Removes a file from the index
+  unstage = reset HEAD --
+[help]
+  autocorrect = 10
+
+[push]
+	default = simple
+
+[branch "master"]
+  mergeoptions = --no-edit
+[commit]
+	template = /Users/dmitry/.gitmessage.txt
