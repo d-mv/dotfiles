@@ -1,6 +1,7 @@
 
 call plug#begin('~/.vim/plugged')
 
+
 source ~/.dotfiles/vim/theme.vim " add style
 source ~/.dotfiles/vim/nerdtree.vim " add and setup NERDTree
 " languages
@@ -9,6 +10,7 @@ source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
 source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
 
 " React
+Plug 'mxw/vim-jsx'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'tellijo/vim-react-native-snippets'
 
@@ -29,7 +31,7 @@ Plug 'gorodinskiy/vim-coloresque'
 
 " features
 Plug '/usr/local/opt/fzf'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
@@ -207,7 +209,11 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 
 let g:prettier#autoformat = 1
 
-
+" React comments
+autocmd FileType jsx setlocal commentstring={/*\ %s\ */}
+autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+autocmd FileType tsx setlocal commentstring={/*\ %s\ */}
+autocmd FileType typescript.tsx setlocal commentstring={/*\ %s\ */}
 
 " When opening a file, always jump to the last cursor position
 autocmd BufReadPost *

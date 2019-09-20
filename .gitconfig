@@ -59,5 +59,12 @@
 
 [branch "master"]
   mergeoptions = --no-edit
+
 [commit]
-	template = /Users/dmitry/.gitmessage.txt
+	template = ~/.dotfiles/.gitmessage.txt
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+

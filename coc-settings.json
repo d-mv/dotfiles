@@ -1,0 +1,55 @@
+{
+  "prettier.eslintIntegration": true,
+  "eslint.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.autoFix": true,
+  "css.enable": true,
+  "json.enable": true,
+  "html.enable": true,
+  "tslint.run": "onSave",
+  "eslint.run": "onSave",
+  "css.validate": true,
+  "scss.validate": true,
+  "tslint.enable": true,
+  "html.filetypes": ["html", "handlebars", "erb", "ejs"],
+  "codeLens.enable": true,
+  "list.autoResize": true,
+  "css.lint.ieHack": "warning",
+  "tsserver.enable": true,
+  "scss.lint.ieHack": "warning",
+  "prettier.useTabs": true,
+  "tslint.jsEnable": true,
+  "css.lint.boxModel": "warning",
+  "tslint.configFile": "~/.dotfiles/tsconfig.json",
+  "prettier.tabWidth": 2,
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
+
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "typescript.suggest.enabled": true,
+  "typescript.referencesCodeLens.enable": true,
+  "javascript.referencesCodeLens.enable": true,
+  "typescript.suggestionActions.enabled": false,
+  "coc.preferences.extensionUpdateCheck": "weekly"
+}
