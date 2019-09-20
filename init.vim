@@ -1,22 +1,14 @@
+
 call plug#begin('~/.vim/plugged')
-"**** LANGUAGES ****
-" TS/TSX
-Plug 'neoclide/coc.nvim',  {'tag': '*', 'do': { -> coc#util#install()}}
-"{'do': 'yarn install --frozen-lockfile'}
-Plug 'ianks/vim-tsx'
-Plug 'HerringtonDarkholme/yats.vim'
 
-" JS
-Plug 'kern/vim-es7'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx','typescript','typescript.tsx'] }
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'nikvdp/ejs-syntax'
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx','typescript','typescript.tsx']  }
-Plug 'othree/es.next.syntax.vim'
-Plug 'othree/yajs.vim'
+source ~/.dotfiles/vim/theme.vim " add style
+source ~/.dotfiles/vim/nerdtree.vim " add and setup NERDTree
+" languages
+source ~/.dotfiles/vim/typescript.vim " add and setup TypeScript
+source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
+source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
 
+"Plug 'romainl/flattened'
 " React
 Plug 'mlaursen/vim-react-snippets'
 Plug 'tellijo/vim-react-native-snippets'
@@ -26,18 +18,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ap/vim-css-color'
 
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby' }
-Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
-Plug 'kchmck/vim-coffee-script', { 'for': ['coffee', 'haml', 'eruby'] }
-Plug 'stephpy/vim-yaml'
-Plug 'fishbullet/deoplete-ruby'
-
 " others
 Plug 'jparise/vim-graphql'
 Plug 'othree/html5.vim'
@@ -46,10 +26,6 @@ Plug 'tpope/vim-dotenv'
 " colors
 Plug 'gorodinskiy/vim-coloresque'
 
-" NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 
 " features
@@ -77,108 +53,28 @@ Plug 'Shougo/neoinclude.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'bling/vim-bufferline'
 
-" themes
-"Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'romainl/flattened'
-"Plug 'mhartington/oceanic-next'
 
 " -= disabled =-
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-" >>> Main setup
+source ~/.dotfiles/vim/style.vim " setup style
+source ~/.dotfiles/vim/syntax.vim " setup syntax
+source ~/.dotfiles/vim/mappings.vim " mapping buttons
+
+
+" >>> Other setup
 set nocompatible
 filetype plugin on
 set noshowmode " not to show --INSERT--
-" use max colors
-let color='true'
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-let base16colorspace=256  " Access colors present in 256 colorspace
-set t_Co=256
-set t_ut= " fixes transparent BG on tmux
-
-" >>> Style
-set background=light
-let g:lightline = {'colorscheme':'solarized'}
-colorscheme flattened_light
-"colorscheme OceanicNext
-"colorscheme nord
-
-
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
-
-" Syntax
-syntax enable
-
-hi htmlArg gui=italic
-hi htmlArg cterm=italic
-hi Comment gui=italic
-hi Comment cterm=italic
-hi tsxAttributeComment cterm=italic
-hi tsxAttributeComment gui=italic
-hi tsxBlockComment cterm=italic
-hi ttsxBlockCommen gui=italic
-hi tsxLineComment cterm=italic
-hi tsxLineComment gui=italic
-hi tsxComment cterm=italic
-hi tsxComment gui=italic
-hi jsComment cterm=italic
-hi jsComment gui=italic
-hi Type    gui=italic
-hi Type    cterm=italic
-hi Folded guifg=yellow guibg=NONE ctermfg=yellow ctermbg=NONE
-hi Search ctermfg=white ctermbg=red guifg=white  guibg=Red
-hi Folded guifg=orange            guibg=black
-hi SpellBad ctermbg=yellow
-
-
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
-endfunction
-
-" >>> Mapping buttons
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
-" use tab
-imap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
- let col = col('.') - 1
- return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}"
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
 endfunction
 
 " >>> Show linenumbers
@@ -213,15 +109,15 @@ let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet',
 
 
 " Misc
- set secure
- set lazyredraw
- set splitbelow
- set splitright
- set diffopt+=vertical
- set shell=/bin/zsh
- set clipboard=unnamed
- filetype plugin indent on " Do filetype detection and load custom file plugins and indent files
- set laststatus=2          " When you go into insert mode, the status line color changes. When you leave insert mode, the status line color changes back."
+set secure
+set lazyredraw
+set splitbelow
+set splitright
+set diffopt+=vertical
+set shell=/bin/zsh
+set clipboard=unnamed
+filetype plugin indent on " Do filetype detection and load custom file plugins and indent files
+set laststatus=2          " When you go into insert mode, the status line color changes. When you leave insert mode, the status line color changes back."
 
 
 " Always edit file, even when swap file is found
@@ -276,119 +172,6 @@ let html_use_css = 1
 let use_xhtml = 1
 let xml_use_xhtml = 1
 
-" >>> NERDTree setup
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeHighlightCursorline = 0
-let g:NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeIgnore = ['^\~$[[dir]]', '^\.git$[[dir]]','^\.o$[[file]]', '^\.pyc$[[file]]', '^\.DS_Store$[[file]]']
-" highlighting
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
-"let g:NERDTreeHighlightFoldersFullName = 1  highlights the folder name
-let g:NERDTreeHighlightFoldersFullName = base16colorspace
-" indicators
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹ ",
-    \ "Staged"    : "✚ ",
-    \ "Untracked" : "✭ ",
-    \ "Renamed"   : "➜ ",
-    \ "Unmerged"  : "═ ",
-    \ "Deleted"   : "✖ ",
-    \ "Dirty"     : "✗ ",
-    \ "Clean"     : "✔︎ ",
-    \ 'Ignored'   : '☒ ',
-    \ "Unknown"   : "? "
-    \ }
-" colors
-let s:brown = "905532"
-let s:aqua =  "3AFFDB"
-let s:blue = "689FB6"
-let s:darkBlue = "44788E"
-let s:purple = "834F79"
-let s:lightPurple = "834F79"
-let s:red = "AE403F"
-let s:beige = "F5C06F"
-let s:yellow = "F09F17"
-let s:orange = "D4843E"
-let s:darkOrange = "F16529"
-let s:pink = "CB6F6F"
-let s:salmon = "EE6E73"
-let s:green = "8FAA54"
-let s:lightGreen = "31B53E"
-let s:white = "FFFFFF"
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
-" what to highlight
-let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-let g:NERDTreeExactMatchHighlightColor['.ts'] = s:darkBlue " sets the color for TS files
-let g:NERDTreeExactMatchHighlightColor['.tsx'] = s:darkBlue " sets the color for TSX files
-let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb"
-
-"let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsConcealNerdtreeBrackets = 1
-let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
-
-" dir-icons
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' '
-let g:DevIconsDefaultFolderOpenSymbol = ' '
-
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jsx'] = 'ﰆ'
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ts'] = 'ﯤ'
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['log'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['erb'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['slim'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['scss'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['sass'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['coffee'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['rb'] = ''
-
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.test.ts'] = 'ﭧ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.test.js'] = 'ﭧ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*vimrc.*'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.gitignore'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.git'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['package.json'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['package.lock.json'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['yarn.lock'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['node_modules'] = ' '
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.prettierrc']='ﬥ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.eslint']='ﬥ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['tsconfig.json']='ﬥ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.editorconfig']='ﬥ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.vscode'] = ' '
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack\.'] = 'ﰩ'
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.route.*']=''
-let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.routes.*']=''
-
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['ormconfig.js'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.env'] = 'ﭩ'
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.editorconfig'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmrc'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['src'] = ' '
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Rakefile'] = ''
-
 " ignored files
 set wildignore+=tags
 set wildignore+=*/tmp/*
@@ -400,16 +183,6 @@ set wildignore+=*/build/*
 set wildignore+=*/dist/*
 set wildignore+=*.png,*.jpg,*.otf,*.woff,*.jpeg,*.orig
 
-" Turn on spellcheck
-autocmd Filetype gitcommit,markdown,note setlocal spell textwidth=72
-autocmd Filetype gitcommit,markdown,note setlocal complete+=kspell
-
-" When opening a file, always jump to the last cursor position
-autocmd BufReadPost *
-    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-    \     exe "normal g'\"" |
-    \ endif |
-
 function! NumberToggle()
  if(&relativenumber == 1)
    set norelativenumber
@@ -419,48 +192,10 @@ function! NumberToggle()
  endif
 endfunc
 
-" ruby
-autocmd FileType ruby,eruby,yaml,haml setlocal iskeyword+=?
-autocmd FileType ruby,eruby,yaml,haml setlocal iskeyword+=!
-autocmd FileType ruby compiler ruby
-
-"""""""""""""""""""""""""""""""""""""
-" Mappings configurationn
-"""""""""""""""""""""""""""""""""""""
-" some built in keybindings for included plugins
-" "
-" " matchit - <%> jums to other end of selected brackets
-" " surround - <cs'"> - change ' to " around current selection
-" " surround - <ds"> - remove " around current selection
-" " surround - <yss[> - surounds current selection with [
-" " textobj-rubyblock - var - selects outer ruby block
-" "       vir - selects inner ruby block
-" ]]"'"
-" "
-map <C-b> :NERDTreeToggle<CR>
-map <C-O> :files<CR>
-map <C-d> yyp
-map <C-D> :ALEDetail<CR>
-
-command! Q q " Bind :Q to :q
-command! Qall qall
-command! W w
-
 set termencoding=utf-8
 scriptencoding utf-8
 set encoding=UTF-8
 lang en_US.UTF-8
-
-" turn off keys
-" noremap <Up> <NOP>
-" noremap <Down> <NOP>
-" noremap <Left> <NOP>
-" noremap <Right> <NOP>
-" noremap h <NOP>
-" noremap j <NOP>
-" noremap k <NOP>
-" noremap l <NOP>
-
 
 let g:closetag_close_shortcut = '<leader>>'
 " Add > at current position without closing the current tag, default is '<leader>>'
@@ -475,37 +210,17 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:prettier#autoformat = 1
 
 
-" Ale Linting
-"let g:ale_linters = {
-"\   'javascript': ['eslint'],
-"\   'typescript': ['tsserver', 'tslint'],
-"\   'vue': ['eslint']
-"\}
-"let g:ale_fixers = {
-"\    'javascript': ['eslint'],
-"\    'typescript': ['prettier'],
-"\    'vue': ['eslint'],
-"\    'scss': ['prettier'],
-"\    'html': ['prettier']
-"\}
-"let g:ale_fix_on_save = 1
-"let g:ale_completion_tsserver_autoimport = 1
-" Enable completion where available.
- "This setting must be set before ALE is loaded.
 
- "You should not turn this setting on if you wish to use ALE as a completion
- "source for other completion plugins, like Deoplete.
-"let g:ale_completion_enabled = 1
-
-
-
-
-
-
-
-" == AUTOCMD ================================
-" by default .ts file are not identified as typescript and .tsx files are not
-" identified as typescript react file, so add following
+" When opening a file, always jump to the last cursor position
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \     exe "normal g'\"" |
+    \ endif |
+autocmd Filetype gitcommit,markdown,note setlocal spell textwidth=72
+autocmd Filetype gitcommit,markdown,note setlocal complete+=kspell
+autocmd FileType ruby,eruby,yaml,haml setlocal iskeyword+=?
+autocmd FileType ruby,eruby,yaml,haml setlocal iskeyword+=!
+autocmd FileType ruby compiler ruby
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd BufNewFile,BufRead .prettierrc set syntax=json
