@@ -8,7 +8,6 @@ source ~/.dotfiles/vim/typescript.vim " add and setup TypeScript
 source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
 source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
 
-"Plug 'romainl/flattened'
 " React
 Plug 'mlaursen/vim-react-snippets'
 Plug 'tellijo/vim-react-native-snippets'
@@ -62,7 +61,7 @@ source ~/.dotfiles/vim/style.vim " setup style
 source ~/.dotfiles/vim/syntax.vim " setup syntax
 source ~/.dotfiles/vim/mappings.vim " mapping buttons
 
-
+let g:indentLine_color_term = 239
 " >>> Other setup
 set nocompatible
 filetype plugin on
