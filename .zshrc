@@ -14,11 +14,18 @@ export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.cargo/env
+export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export EDITOR=vim
 
-# alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
+alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
 alias prj="cd ~/Projects"
 alias tedit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 alias lc='colorls -lA --sd'
@@ -35,9 +42,7 @@ alias news='curl getnews.tech'
 alias nri='npm run ios'
 alias nra='npm run android'
 
-source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 
@@ -48,7 +53,8 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-fpath=(~/.zsh/completions $fpath)
+fpath=(~/.zsh/zsh-completions/src $fpath)
+fpath+=~/.dotfiles/.zfunc
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -56,6 +62,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+
 zstyle :compinstall filename '/Users/dmitry/.zshrc'
 
 # binding keys
@@ -67,13 +74,11 @@ bindkey "\e\e[C" forward-word
 set -o vi
 bindkey -v
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+autoload -U colors && colors
 
-# eval "$(starship init zsh)"
 
-#source ~/.zsh/geometry/geometry.zsh
+source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #PURE_PROMPT_SYMBOL=''
 #PURE_PROMPT_SYMBOL=''
@@ -86,5 +91,3 @@ plugins=(git node npm github fast-syntax-highlighting zsh-autosuggestions zsh-co
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

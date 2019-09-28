@@ -1,6 +1,7 @@
-Subject line (try to keep under 50 characters)
+# Commit Title (50 chars)
 
-Multi-line description of commit,
-feel free to be detailed.
+# Why? Issue, enhancement, etc.
 
-[Ticket: X]
+# How does it address the why?
+
+# Tickets, Links, etc...

@@ -44,7 +44,9 @@
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
   # http://www.jukie.net/bart/blog/pimping-out-git-log
   lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
-  # Serve local repo. http://coderwall.com/p/eybtga
+  lgd = log --oneline --graph --pretty="[%ad] %C(bold blue)%cn%Creset: %s %C(yellow)%D%Creset" --date=format-local:"%d.%m.%y"
+  lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -15
+# Serve local repo. http://coderwall.com/p/eybtga
   # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
   serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
   m = checkout master

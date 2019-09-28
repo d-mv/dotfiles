@@ -23,6 +23,7 @@ Plug 'ap/vim-css-color'
 Plug 'jparise/vim-graphql'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-dotenv'
+Plug 'rust-lang/rust.vim'
 
 " colors
 Plug 'gorodinskiy/vim-coloresque'
@@ -49,6 +50,8 @@ Plug 'tpope/vim-commentary'
 Plug 'suy/vim-context-commentstring'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Shougo/neoinclude.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'albertomontesg/lightline-asyncrun'
 
 " view/layout
 Plug 'itchyny/lightline.vim'
@@ -62,6 +65,8 @@ call plug#end()
 source ~/.dotfiles/vim/style.vim " setup style
 source ~/.dotfiles/vim/syntax.vim " setup syntax
 source ~/.dotfiles/vim/mappings.vim " mapping buttons
+
+set spell
 
 let g:indentLine_color_term = 239
 " >>> Other setup
@@ -158,6 +163,8 @@ set incsearch
 " set viminfo=%100,'100,/100,h,\"500,:100,n~/.config/nvim/viminfo
 " "
 " "
+
+let g:rustfmt_autosave = 1
 
 let g:mta_filetypes= {
       \'javascript.jsx':1,
