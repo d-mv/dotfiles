@@ -8,16 +8,9 @@ source ~/.dotfiles/vim/nerdtree.vim " add and setup NERDTree
 source ~/.dotfiles/vim/typescript.vim " add and setup TypeScript
 source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
 source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
-
-" React
-Plug 'mxw/vim-jsx'
-Plug 'mlaursen/vim-react-snippets'
-Plug 'tellijo/vim-react-native-snippets'
-
-" Styled/CSS/SCSS
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'ap/vim-css-color'
+source ~/.dotfiles/vim/css.vim  " add and setup CSS/SCSS/Styled Components
+" frameworks
+source ~/.dotfiles/vim/react.vim " add and setup React
 
 " others
 Plug 'jparise/vim-graphql'
@@ -32,9 +25,8 @@ Plug 'gorodinskiy/vim-coloresque'
 
 " features
 Plug '/usr/local/opt/fzf'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sbdchd/neoformat'
@@ -51,9 +43,9 @@ Plug 'suy/vim-context-commentstring'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Shougo/neoinclude.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'albertomontesg/lightline-asyncrun'
 
 " view/layout
+Plug 'albertomontesg/lightline-asyncrun'
 Plug 'itchyny/lightline.vim'
 Plug 'bling/vim-bufferline'
 
@@ -165,7 +157,7 @@ set incsearch
 " "
 
 let g:rustfmt_autosave = 1
-
+let g:vim_markdown_folding_disabled = 1
 let g:mta_filetypes= {
       \'javascript.jsx':1,
       \'typescript.tsx':1,

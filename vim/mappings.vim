@@ -27,16 +27,17 @@ map <C-b> :NERDTreeToggle<CR>
 map <C-O> :files<CR>
 map <C-d> yyp
 map <C-D> :ALEDetail<CR>
+map <C-p> :FZF<CR>
 
 command! Q q " Bind :Q to :q
 command! Qall qall
 command! W w
 
 " turn off keys
-" noremap <Up> <NOP>
-" noremap <Down> <NOP>
-" noremap <Left> <NOP>
-" noremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 " noremap h <NOP>
 " noremap j <NOP>
 " noremap k <NOP>

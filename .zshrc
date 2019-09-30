@@ -42,11 +42,10 @@ alias news='curl getnews.tech'
 alias nri='npm run ios'
 alias nra='npm run android'
 
-# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+eval "$(rbenv init -)"
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-
-eval "$(rbenv init -)"
 
 # Homebrew completion
 if type brew &>/dev/null; then
@@ -55,6 +54,16 @@ fi
 
 fpath=(~/.zsh/zsh-completions/src $fpath)
 fpath+=~/.dotfiles/.zfunc
+
+# versions for iTerm
+# iterm2_print_user_vars() {
+#   iterm2_set_user_var rubyVersion $(ruby -v | awk '{ print $2 }')
+#   iterm2_set_user_var nodeVersion $(node -v)
+#   iterm2_set_user_var rustVersion $(cargo --version | awk '{print $2 }')
+#   # iterm2_set_user_var rustVersion $(rustup show | awk '/rustc / { print $2 }')
+#   iterm2_set_user_var rustChannel $(rustup default | awk '{ print $1 }')
+# }
+
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -79,15 +88,19 @@ autoload -U colors && colors
 
 source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/.iterm2_shell_integration.zsh
+# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
-#PURE_PROMPT_SYMBOL=''
-#PURE_PROMPT_SYMBOL=''
-PURE_PROMPT_SYMBOL=' '
+
+# Pure prompt settings
+PURE_PROMPT_SYMBOL=''
+# PURE_PROMPT_SYMBOL=''
+# PURE_PROMPT_SYMBOL=' '
 
 autoload -U promptinit; promptinit
-prompt pure
+prompt purer
 
-plugins=(git node npm github fast-syntax-highlighting zsh-autosuggestions zsh-completions git-open)
+plugins=(git github ruby node rust fast-syntax-highlighting zsh-autosuggestions zsh-completions git-open)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
