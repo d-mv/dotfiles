@@ -9,6 +9,7 @@ set t_ut= " fixes transparent BG on tmux
 " set background=light
 " colorscheme flattened_light
 " colorscheme corvine
+" colorscheme Iceberg
 colorscheme OceanicNext
 " colorscheme nord
 " colorscheme edge

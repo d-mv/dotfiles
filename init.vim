@@ -1,5 +1,5 @@
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 
 source ~/.dotfiles/vim/theme.vim " add style
@@ -65,6 +65,7 @@ let g:indentLine_color_term = 239
 set nocompatible
 filetype plugin on
 set noshowmode " not to show --INSERT--
+set confirm " show confirmation dialogue
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -73,6 +74,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
 endfunction
+
+let g:rufo_auto_formatting = 1
 
 " >>> Show linenumbers
 set number

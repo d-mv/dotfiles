@@ -32,6 +32,10 @@
   "typescript.referencesCodeLens.enable": true,
   "typescript.suggest.enabled": true,
   "typescript.suggestionActions.enabled": false,
+  "solargraph.completion": true,
+  "solargraph.useBundler": false,
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
