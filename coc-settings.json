@@ -1,5 +1,8 @@
 {
+  "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.hoverTarget": "float",
   "codeLens.enable": true,
   "css.enable": true,
   "css.lint.boxModel": "warning",
@@ -8,10 +11,6 @@
   "diagnostic.errorSign": "•",
   "diagnostic.infoSign": "•",
   "diagnostic.warningSign": "•",
-  "eslint.autoFix": true,
-  "eslint.enable": true,
-  "eslint.packageManager": "yarn",
-  "eslint.run": "onSave",
   "html.enable": true,
   "html.filetypes": ["html", "handlebars", "erb", "ejs"],
   "javascript.referencesCodeLens.enable": true,
@@ -20,22 +19,21 @@
   "prettier.eslintIntegration": true,
   "prettier.tabWidth": 2,
   "prettier.useTabs": true,
-  "scss.lint.ieHack": "warning",
   "scss.validate": true,
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
+  "solargraph.autoformat": true,
+  "solargraph.completion": true,
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.useBundler": false,
   "tslint.configFile": "~/.dotfiles/tsconfig.json",
-  "tslint.enable": true,
   "tslint.jsEnable": true,
-  "tslint.run": "onSave",
   "tsserver.enable": true,
+  "typescript.implementationsCodeLens.enable": true,
   "typescript.referencesCodeLens.enable": true,
+  "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
   "typescript.suggestionActions.enabled": false,
-  "solargraph.completion": true,
-  "solargraph.useBundler": false,
-  "solargraph.formatting": true,
-  "solargraph.diagnostics": true,
+  "typescript.updateImportsOnFileMove.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
@@ -43,16 +41,5 @@
     "json",
     "javascriptreact",
     "typescript.tsx"
-  ],
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "typescript.tsx"
-  ],
-  "snippets.extends": {
-    "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
-  }
+  ]
 }

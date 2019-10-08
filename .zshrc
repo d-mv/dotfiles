@@ -29,7 +29,6 @@ alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resourc
 alias prj="cd ~/Projects"
 alias tedit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 alias lc='colorls -lA --sd'
-# Get External IP / local IPs
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
@@ -41,38 +40,34 @@ alias news='curl getnews.tech'
 # react-native
 alias nri='npm run ios'
 alias nra='npm run android'
+alias gits='git switch $(git branch | fzf)'
 
 eval "$(rbenv init -)"
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 
 # Homebrew completion
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
 
-fpath=(~/.zsh/zsh-completions/src $fpath)
-fpath+=~/.dotfiles/.zfunc
+# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/.zsh/.iterm2_shell_integration.zsh
 
 # versions for iTerm
 # iterm2_print_user_vars() {
 #   iterm2_set_user_var rubyVersion $(ruby -v | awk '{ print $2 }')
 #   iterm2_set_user_var nodeVersion $(node -v)
 #   iterm2_set_user_var rustVersion $(cargo --version | awk '{print $2 }')
-#   # iterm2_set_user_var rustVersion $(rustup show | awk '/rustc / { print $2 }')
-#   iterm2_set_user_var rustChannel $(rustup default | awk '{ print $1 }')
+  # iterm2_set_user_var rustVersion $(rustup show | awk '/rustc / { print $2 }')
+  # iterm2_set_user_var rustChannel $(rustup default | awk '{ print $1 }')
 # }
 
-
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-
-zstyle :compinstall filename '/Users/dmitry/.zshrc'
 
 # binding keys
 bindkey -e
@@ -83,24 +78,18 @@ bindkey "\e\e[C" forward-word
 set -o vi
 bindkey -v
 
-autoload -U colors && colors
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/.iterm2_shell_integration.zsh
-# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
-
+# eval "$(starship init zsh)"
 
 # Pure prompt settings
-PURE_PROMPT_SYMBOL=''
+# PURE_PROMPT_SYMBOL=''
 # PURE_PROMPT_SYMBOL=''
 # PURE_PROMPT_SYMBOL=' '
 
+autoload -Uz compinit
+compinit
+
 autoload -U promptinit; promptinit
 prompt purer
-
-plugins=(git github ruby node rust fast-syntax-highlighting zsh-autosuggestions zsh-completions git-open)
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

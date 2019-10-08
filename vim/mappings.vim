@@ -24,10 +24,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " ]]"'"
 " "
 map <C-b> :NERDTreeToggle<CR>
-map <C-O> :files<CR>
+map <C-O> :Buffers<CR>
 map <C-d> yyp
 map <C-D> :ALEDetail<CR>
 map <C-p> :FZF<CR>
+map <C-F> :Ack 
 
 command! Q q " Bind :Q to :q
 command! Qall qall

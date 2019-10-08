@@ -1,7 +1,6 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-
 source ~/.dotfiles/vim/theme.vim " add style
 source ~/.dotfiles/vim/nerdtree.vim " add and setup NERDTree
 " languages
@@ -9,24 +8,19 @@ source ~/.dotfiles/vim/typescript.vim " add and setup TypeScript
 source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
 source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
 source ~/.dotfiles/vim/css.vim  " add and setup CSS/SCSS/Styled Components
+source ~/.dotfiles/vim/other.vim " support for other languages
+
 " frameworks
 source ~/.dotfiles/vim/react.vim " add and setup React
-
-" others
-Plug 'jparise/vim-graphql'
-Plug 'othree/html5.vim'
-Plug 'tpope/vim-dotenv'
-Plug 'rust-lang/rust.vim'
 
 " colors
 Plug 'gorodinskiy/vim-coloresque'
 
-
-
 " features
 Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-" Plug 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sbdchd/neoformat'
@@ -43,7 +37,10 @@ Plug 'suy/vim-context-commentstring'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Shougo/neoinclude.vim'
 Plug 'vimwiki/vimwiki'
-
+Plug 'kshenoy/vim-signature'
+" Plug 'ap/vim-buftabline'
+Plug 'mileszs/ack.vim'
+ 
 " view/layout
 Plug 'albertomontesg/lightline-asyncrun'
 Plug 'itchyny/lightline.vim'
@@ -66,6 +63,7 @@ set nocompatible
 filetype plugin on
 set noshowmode " not to show --INSERT--
 set confirm " show confirmation dialogue
+set selection=exclusive " when selecting with 'g_' don't include symbol from next line
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -132,6 +130,9 @@ set diffopt=filler,iwhite          " In diff mode, ignore whitespace changes and
 set nowrap
 set visualbell
 "set mouse=a
+
+let g:ackprg = 'ag --vimgrep'
+
 
 " Relative line numbers
 set norelativenumber
