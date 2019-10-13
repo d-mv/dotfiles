@@ -15,7 +15,7 @@ export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.cargo/env
@@ -23,9 +23,11 @@ export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export EDITOR=vim
+export EDITOR=nvim
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
+# alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias prj="cd ~/Projects"
 alias tedit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 alias lc='colorls -lA --sd'
@@ -41,6 +43,8 @@ alias news='curl getnews.tech'
 alias nri='npm run ios'
 alias nra='npm run android'
 alias gits='git switch $(git branch | fzf)'
+alias gitm='git merge $(git branch | fzf)'
+alias gitpo='git push origin $(git branch | fzf)'
 
 eval "$(rbenv init -)"
 

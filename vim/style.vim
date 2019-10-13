@@ -6,16 +6,16 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let base16colorspace=256  " Access colors present in 256 colorspace
 set t_Co=256
 set t_ut= " fixes transparent BG on tmux
-" colorscheme flattened_light
+colorscheme flattened_light
 " colorscheme corvine
 " colorscheme Iceberg
-colorscheme OceanicNext
+" colorscheme OceanicNext
 " colorscheme nord
 " colorscheme edge
 " colorscheme forest-night
 " colorscheme one
 " colorscheme two-firewatch
-set background=dark
+set background=light
 " let g:material_style='palenight'
 " let g:material_style='oceanic'
 " let g:one_allow_italics = 1
@@ -25,7 +25,7 @@ set background=dark
 " let g:lightline = {'colorscheme':'twofirewatch'}
 " let g:lightline = {'colorscheme':'one'}
 let g:lightline = {
-      \ 'colorscheme': 'oceanicnext',
+      \ 'colorscheme': 'flattened_light',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ],

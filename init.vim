@@ -18,28 +18,27 @@ Plug 'gorodinskiy/vim-coloresque'
 
 " features
 Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'sbdchd/neoformat'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-repeat'
-Plug 'junegunn/gv.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'rhysd/vim-grammarous'
-Plug 'jbgutierrez/vim-better-comments'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'suy/vim-context-commentstring'
-Plug 'Valloric/MatchTagAlways'
-Plug 'Shougo/neoinclude.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'alvan/vim-closetag'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jbgutierrez/vim-better-comments'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'
 Plug 'kshenoy/vim-signature'
-" Plug 'ap/vim-buftabline'
 Plug 'mileszs/ack.vim'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'rhysd/vim-grammarous'
+Plug 'sbdchd/neoformat'
+Plug 'shougo/neoinclude.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'valloric/MatchTagAlways'
+Plug 'vimwiki/vimwiki'
+Plug 'voldikss/vim-floaterm'
  
 " view/layout
 Plug 'albertomontesg/lightline-asyncrun'
@@ -213,10 +212,23 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:prettier#autoformat = 1
 
 " React comments
-autocmd FileType jsx setlocal commentstring={/*\ %s\ */}
-autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
-autocmd FileType tsx setlocal commentstring={/*\ %s\ */}
-autocmd FileType typescript.tsx setlocal commentstring={/*\ %s\ */}
+" autocmd FileType jsx setlocal commentstring={/*\ %s\ */}
+" autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+" autocmd FileType tsx setlocal commentstring={/*\ %s\ */}
+" autocmd FileType typescript.tsx setlocal commentstring={/*\ %s\ */}
+" let g:context#commentstring#table['javascript.jsx'] = {
+" 			\ 'jsComment' : '// %s',
+" 			\ 'jsImport' : '// %s',
+" 			\ 'jsxStatment' : '// %s',
+" 			\ 'jsxRegion' : '{/*%s*/}',
+" \}
+" let g:context#commentstring['typescript.tsx']={
+" 			\ 'jsComment' : '// %s',
+" 			\ 'jsImport' : '// %s',
+" 			\ 'jsxStatment' : '// %s',
+" 			\ 'jsxRegion' : '{/*%s*/}',
+" \}
+
 
 " When opening a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -230,6 +242,12 @@ autocmd FileType ruby,eruby,yaml,haml setlocal iskeyword+=!
 autocmd FileType ruby compiler ruby
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType css setlocal formatprg=prettier\ --parser\ css
 autocmd BufNewFile,BufRead .prettierrc set syntax=json
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
