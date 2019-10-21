@@ -2,6 +2,7 @@
 Plug 'scrooloose/nerdtree'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeShowHidden = 1

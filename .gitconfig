@@ -22,24 +22,28 @@
   old = red strike
   new = green italic
 
+[merge]
+	conflictstyle = diff3
+
 [core]
   pager = less -FRSX
 	editor = nvim 
 
 [alias]
-  co = checkout
-  st = status -sb
+  a = add -A
+  b = branch
   br = branch
   ci = commit
-  fo = fetch origin
+  co = checkout
   d = !git --no-pager diff
   dt  = difftool
-  stat = !git --no-pager diff --stat
-  dt = difftool
+  fo = fetch origin
   s = status
-  b = branch
-  a = add
+  st = status -sb
+  stat = !git --no-pager diff --stat
   log-fn = "!f() { git log -L :$1:$2; }; f"
+  last = log -1 --oneline
+  p = push -u origin HEAD
   # Clean merged branches
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
   # http://www.jukie.net/bart/blog/pimping-out-git-log

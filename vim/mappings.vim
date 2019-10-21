@@ -29,6 +29,7 @@ map <C-d> yyp
 map <C-D> :ALEDetail<CR>
 map <C-p> :FZF<CR>
 map <C-F> :Ack 
+map <C-I> :CocAction<CR>
 
 command! Q q " Bind :Q to :q
 command! Qall qall

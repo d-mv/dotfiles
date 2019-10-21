@@ -24,6 +24,7 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export EDITOR=nvim
+export REACT_EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
@@ -37,6 +38,7 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias adog='git log --all --decorate --oneline --graph'
 alias vim='vim -u ~/.config/.vimrc'
 alias weather='curl wttr.in/TelAviv-Yafo'
+alias weather2='curl http://v2.wttr.in'
 alias search='ddgr'
 alias news='curl getnews.tech'
 # react-native
@@ -90,6 +92,8 @@ bindkey -v
 # PURE_PROMPT_SYMBOL=''
 # PURE_PROMPT_SYMBOL=''
 # PURE_PROMPT_SYMBOL=' '
+
+autoload -U colors && colors
 
 autoload -Uz compinit
 compinit

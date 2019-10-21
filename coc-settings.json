@@ -1,4 +1,5 @@
 {
+  "coc.preferences.colorSupport": true,
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.formatOnType": true,
@@ -11,6 +12,12 @@
   "diagnostic.errorSign": "•",
   "diagnostic.infoSign": "•",
   "diagnostic.warningSign": "•",
+  "eslint.autoFix": false,
+  "eslint.autoFixOnSave": false,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact,typescript,typescript,typescript.tsx"
+  ],
   "html.enable": true,
   "html.filetypes": ["html", "handlebars", "erb", "ejs"],
   "javascript.referencesCodeLens.enable": true,
@@ -25,21 +32,23 @@
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "solargraph.useBundler": false,
-  "tslint.configFile": "~/.dotfiles/tsconfig.json",
-  "tslint.jsEnable": true,
-  "tsserver.enable": true,
+  "prettier.tslintIntegration": true,
+  "typescript.format.insertSpaceAfterConstructor": true,
   "typescript.implementationsCodeLens.enable": true,
   "typescript.referencesCodeLens.enable": true,
+  "typescript.showUnused": true,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.enabled": true,
-  "typescript.suggestionActions.enabled": false,
+  "typescript.suggestionActions.enabled": true,
   "typescript.updateImportsOnFileMove.enable": true,
+  "typescript.validate.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
     "typescriptreact",
     "json",
     "javascriptreact",
-    "typescript.tsx"
+    "typescript.tsx",
+    "ruby"
   ]
 }
