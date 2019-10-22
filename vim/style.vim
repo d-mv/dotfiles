@@ -33,7 +33,7 @@ let g:enable_italic_font = 1
 " let g:lightline = {'colorscheme':'twofirewatch'}
 " let g:lightline = {'colorscheme':'one'}
 let g:lightline = {
-			\ 'colorscheme': 'forest-night',
+			\ 'colorscheme': 'forest_night',
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],
 			\             [ 'readonly', 'filename', 'modified' ] ],

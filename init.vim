@@ -6,9 +6,9 @@ source ~/.dotfiles/vim/nerdtree.vim " add and setup NERDTree
 " languages
 source ~/.dotfiles/vim/typescript.vim " add and setup TypeScript
 source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
-" source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
-" source ~/.dotfiles/vim/css.vim  " add and setup CSS/SCSS/Styled Components
-" source ~/.dotfiles/vim/other.vim " support for other languages
+source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
+source ~/.dotfiles/vim/css.vim  " add and setup CSS/SCSS/Styled Components
+source ~/.dotfiles/vim/other.vim " support for other languages
 
 " frameworks
 source ~/.dotfiles/vim/react.vim " add and setup React
@@ -19,22 +19,18 @@ Plug 'gorodinskiy/vim-coloresque'
 " features
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'alvan/vim-closetag'
-" Plug 'editorconfig/editorconfig-vim'
+Plug 'alvan/vim-closetag' " Auto close (X)HTML tags 
+Plug 'editorconfig/editorconfig-vim'
 Plug 'jbgutierrez/vim-better-comments'
-" Plug 'jiangmiao/auto-pairs'
-" Plug 'junegunn/gv.vim'
-" Plug 'kshenoy/vim-signature'
+Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair.
+Plug 'kshenoy/vim-signature' "  Plugin to toggle, display and navigate marks 
 Plug 'mileszs/ack.vim'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-" Plug 'rhysd/vim-grammarous'
-" Plug 'sbdchd/neoformat'
-" Plug 'shougo/neoinclude.vim'
+Plug 'rhysd/vim-grammarous'
 Plug 'tomtom/tcomment_vim'
-" Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-repeat'
-" Plug 'tpope/vim-surround'
-" Plug 'valloric/MatchTagAlways'
+Plug 'tpope/vim-endwise' " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc 
+Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with '.'
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plug 'valloric/MatchTagAlways' " A Vim plugin that always highlights the enclosing html/xml tags
 Plug 'vim-scripts/BufOnly.vim' " Delete all the buffers except the current/named buffer
 " Plug 'Townk/vim-autoclose' " This plugin for Vim enable an auto-close chars feature for you. 
 " Plug 'janko/vim-test' " Run your tests at the speed of thought 
@@ -44,6 +40,7 @@ Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with t
 " Plug 'chrisbra/vim-diff-enhanced'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim' " A git commit browser in Vim 
 " Plug 'samoshkin/vim-mergetool'
 
 " view/layout
@@ -54,7 +51,7 @@ Plug 'bling/vim-bufferline'
 call plug#end()
 
 source ~/.dotfiles/vim/style.vim " setup style
-" source ~/.dotfiles/vim/syntax.vim " setup syntax
+source ~/.dotfiles/vim/syntax.vim " setup syntax
 source ~/.dotfiles/vim/mappings.vim " mapping buttons
 
 "set mouse=a
@@ -182,6 +179,8 @@ au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 au FileType html setlocal formatprg=js-beautify\ --type\ html
 au FileType scss setlocal formatprg=prettier\ --parser\ css
 au FileType css setlocal formatprg=prettier\ --parser\ css
+au BufNewFile,BufRead *.ejs     set filetype=ejs
+au BufNewFile,BufRead *.jst     set filetype=ejs
 autocmd BufNewFile,BufRead .prettierrc set syntax=json
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
