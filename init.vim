@@ -35,6 +35,8 @@ Plug 'vim-scripts/BufOnly.vim' " Delete all the buffers except the current/named
 " Plug 'Townk/vim-autoclose' " This plugin for Vim enable an auto-close chars feature for you. 
 " Plug 'janko/vim-test' " Run your tests at the speed of thought 
 Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines 
+Plug 'IMOKURI/line-number-interval.nvim' " Highlight line number/relativenumber by each XX lines. 
+
 
 " git
 " Plug 'chrisbra/vim-diff-enhanced'
@@ -131,6 +133,21 @@ let g:mta_filetypes= {
       \'javascript.jsx':1,
       \'typescript.tsx':1,
       \}
+let g:line_number_interval#enable_at_startup = 1 " Enable line number interval at startup. (default: 0(disable))
+let g:line_number_interval = 5 " Set interval to highlight line number. (default: 10)
+highlight HighlightedLineNr guifg=White ctermfg=7
+highlight DimLineNr guifg=Grey ctermfg=5
+let g:line_number_interval#use_custom = 1 " Enable to use custom interval. (default: 0(disable)). This option is only for relativenumber.
+" let g:line_number_interval#custom_interval = [2, 4, 8, 16, 32, 64]
+
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
+highlight VendorPrefix guifg=#00ffff gui=bold
+match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
+
 
 " to_html settings
 let html_number_lines = 1
@@ -154,7 +171,7 @@ function! NumberToggle()
 endfunc
 
 " Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 function! CocCurrentFunction()
     return get(b:, 'coc_current_function', '')
@@ -175,15 +192,17 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 au FileType javascript setlocal formatprg=prettier
 au FileType javascript.jsx setlocal formatprg=prettier
 au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType typescript.tsx setlocal formatprg=prettier\ --parser\ typescript
 au FileType html setlocal formatprg=js-beautify\ --type\ html
-au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType scss setlocal formatprg=prettier\ --parser\ scss
 au FileType css setlocal formatprg=prettier\ --parser\ css
 au BufNewFile,BufRead *.ejs     set filetype=ejs
 au BufNewFile,BufRead *.jst     set filetype=ejs
 autocmd BufNewFile,BufRead .prettierrc set syntax=json
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " autocmd VimEnter,WinEnter,BufNewFile,BufRead,BufEnter,TabEnter * IndentLinesEnable
 autocmd StdinReadPre * let s:std_in=1
 

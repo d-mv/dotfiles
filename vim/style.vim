@@ -9,10 +9,10 @@ set t_ut= " fixes transparent BG on tmux
 " colorscheme flattened_light
 " colorscheme corvine
 " colorscheme Iceberg
-" colorscheme OceanicNext
+colorscheme OceanicNext
 " colorscheme nord
 " colorscheme edge
-colorscheme forest-night
+" colorscheme forest-night
 " colorscheme one
 " colorscheme two-firewatch
 " colorscheme hybrid_material
@@ -32,8 +32,9 @@ let g:enable_italic_font = 1
 " let g:lightline = {'colorscheme':'oceanicnext'}
 " let g:lightline = {'colorscheme':'twofirewatch'}
 " let g:lightline = {'colorscheme':'one'}
+" let g:lightline = {'colorscheme':'forest_night'}
 let g:lightline = {
-			\ 'colorscheme': 'forest_night',
+			\ 'colorscheme': 'oceanicnext',
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],
 			\             [ 'readonly', 'filename', 'modified' ] ],

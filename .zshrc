@@ -86,6 +86,9 @@ bindkey -v
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# ignore case in autocompletion
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
+
 # eval "$(starship init zsh)"
 
 # Pure prompt settings
