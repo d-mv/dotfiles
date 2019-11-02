@@ -41,12 +41,23 @@ alias weather='curl wttr.in/TelAviv-Yafo'
 alias weather2='curl http://v2.wttr.in'
 alias search='ddgr'
 alias news='curl getnews.tech'
-# react-native
-alias nri='npm run ios'
-alias nra='npm run android'
+alias nri='npm run ios' # for React Native
+alias nra='npm run android' # for React Native
+alias yt='yarn test'
+alias yss='yarn storybook:start'
+alias ys='yarn start'
 alias gits='git switch $(git branch | fzf)'
 alias gitm='git merge $(git branch | fzf)'
 alias gitpo='git push origin $(git branch | fzf)'
+alias xf='exa --long --header --git'
+alias xl='exa -1'
+alias xla='exa -1a'
+alias xg='exa --grid'
+alias goc='cd ~/Projects/kirobo/ki-ui-kit' # go to current
+alias dwon='cd ~/Downloads' # go to downloads
+alias dots='cd ~/.dotfiles' # go to .dotfiles folder
+alias shat='cd ~/Projects/battata.io/shatapp/front' # go to ShatApp
+alias shatb='cd ~/Projects/battata.io/shatapp/back' # go to ShatApp backend
 
 eval "$(rbenv init -)"
 
@@ -59,7 +70,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
 
-# source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+# setup for iTerm
 # source ~/.zsh/.iterm2_shell_integration.zsh
 
 # versions for iTerm
