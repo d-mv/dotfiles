@@ -20,7 +20,6 @@ set incsearch
 set laststatus=2          " When you go into insert mode, the status line color changes. When you leave insert mode, the status line color changes back."
 set lazyredraw
 set nocompatible
-set norelativenumber
 set noshowmode " not to show --INSERT--
 set nowrap
 set number " Show line numbers
@@ -51,3 +50,13 @@ set wildignore+=*/spec/vcr/*
 set wildignore+=*/tmp/*
 set wildignore+=tags
 set wildmenu         " Enhanced completion hints in command line
+" Add additional information in popups (VIM 8.0+ only)
+" if !has('nvim')
+"   set completeopt+=popup
+"   set completepopup=height:10,width:60,highlight:Pmenu,border:off
+" endif
+
+source ~/.dotfiles/vim/fzf_floating.vim
+
+" autocmd FileType json syntax match Comment +\/\/.\+$+ " to get correct comment highlighting in json
+

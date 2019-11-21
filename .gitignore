@@ -14,6 +14,7 @@ yarn-error.log
 .byebug_history
 .env*
 yarn.lock
+zsh/*
 
 # Ignore application configuration
 /config/application.yml

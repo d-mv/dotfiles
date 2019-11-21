@@ -46,14 +46,14 @@ noremap <Right> <NOP>
 " noremap l <NOP>
 
 " use tab
-imap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
- let col = col('.') - 1
- return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}"
+" imap <silent><expr> <TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ <SID>check_back_space() ? "\<TAB>" :
+"   \ deoplete#mappings#manual_complete()
+" function! s:check_back_space() abort "{{{
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction"}}}"
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>

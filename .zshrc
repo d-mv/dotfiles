@@ -15,8 +15,7 @@ export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.cargo/env
 export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
@@ -27,16 +26,13 @@ export EDITOR=nvim
 export REACT_EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-# alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/Resources/app/bin/code"
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
-alias prj="cd ~/Projects"
-alias tedit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
-alias lc='colorls -lA --sd'
+alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+# alias lc='colorls -lA --sd'
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias adog='git log --all --decorate --oneline --graph'
-alias vim='vim -u ~/.config/.vimrc'
+alias vim='vim -u ~/.config/_spacevim/vimrc'
 alias weather='curl wttr.in/TelAviv-Yafo'
 alias weather2='curl http://v2.wttr.in'
 alias search='ddgr'
@@ -53,11 +49,10 @@ alias xf='exa --long --header --git'
 alias xl='exa -1'
 alias xla='exa -1a'
 alias xg='exa --grid'
-alias goc='cd ~/Projects/kirobo/ki-ui-kit' # go to current
-alias dwon='cd ~/Downloads' # go to downloads
-alias dots='cd ~/.dotfiles' # go to .dotfiles folder
-alias shat='cd ~/Projects/battata.io/shatapp/front' # go to ShatApp
-alias shatb='cd ~/Projects/battata.io/shatapp/back' # go to ShatApp backend
+
+if [ -r ~/.dotfiles/zsh/.zshrc ]; then
+    source ~/.dotfiles/zsh/.zshrc
+fi
 
 eval "$(rbenv init -)"
 
@@ -100,18 +95,29 @@ bindkey -v
 # ignore case in autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
-# eval "$(starship init zsh)"
+function zle-line-init zle-keymap-select {
+    case ${KEYMAP} in
+        (vicmd)      PROMPT='%(?.%F{green}.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
+        (main|viins) PROMPT='%(?.%F{green}>.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
+        (*)          PROMPT='%(?.%F{green}>.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
+    esac
+    zle reset-prompt
+}
 
-# Pure prompt settings
-# PURE_PROMPT_SYMBOL=''
-# PURE_PROMPT_SYMBOL=''
-# PURE_PROMPT_SYMBOL=' '
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{240}(%b)  %r%f'
+zstyle ':vcs_info:*' enable git
 
 autoload -U colors && colors
 
 autoload -Uz compinit
 compinit
-
-autoload -U promptinit; promptinit
-prompt purer
 

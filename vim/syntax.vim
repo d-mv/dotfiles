@@ -21,4 +21,10 @@ hi Folded guifg=yellow guibg=NONE ctermfg=yellow ctermbg=NONE
 hi Search ctermfg=white ctermbg=red guifg=white  guibg=Red
 hi Folded guifg=orange            guibg=black
 hi SpellBad ctermbg=yellow
-
+" hi Cursor       guifg=bg                guibg=#F4A83D           gui=NONE
+" hi CursorIM     guifg=bg                guibg=fg                gui=NONE
+" hi lCursor      guifg=bg                guibg=fg                gui=NONE
+hi CursorLine   guibg=#254d57 gui=underline
+hi Cursor  guifg=#444444  guibg=#fff 
+hi MatchParen	guifg=#444444 	guibg=#37c3e6
+" hi MatchParen	guifg=NONE	guibg=#c0e080

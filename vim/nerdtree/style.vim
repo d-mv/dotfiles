@@ -1,35 +1,35 @@
-
-Plug 'scrooloose/nerdtree'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeHighlightCursorline = 0
-let g:NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeIgnore = ['^\~$[[dir]]', '^\.git$[[dir]]','^\.o$[[file]]', '^\.pyc$[[file]]', '^\.DS_Store$[[file]]']
 " highlighting
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFullName = 1 " highlights the folder name
-"let g:NERDTreeHighlightFoldersFullName = base16colorspace
+
 " indicators
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹ ",
-    \ "Staged"    : "✚ ",
-    \ "Untracked" : "✭ ",
-    \ "Renamed"   : "➜ ",
-    \ "Unmerged"  : "═ ",
-    \ "Deleted"   : "✖ ",
-    \ "Dirty"     : "✗ ",
-    \ "Clean"     : "✔︎ ",
-    \ 'Ignored'   : '☒ ',
-    \ "Unknown"   : "? "
-    \ }
+"     \ "Modified"  : "✹ ",
+"     \ "Staged"    : "✚ ",
+"     \ "Untracked" : "✭ ",
+"     \ "Renamed"   : "➜ ",
+"     \ "Unmerged"  : "═ ",
+"     \ "Deleted"   : "✖ ",
+"     \ "Dirty"     : "✗ ",
+"     \ "Clean"     : "✔︎ ",
+"     \ 'Ignored'   : '☒ ',
+"     \ "Unknown"   : "? "
+
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : "☒",
+"     \ "Unknown"   : "?"
+"     \ }
+
 " colors
 let s:brown = "905532"
 let s:aqua =  "3AFFDB"
@@ -51,6 +51,7 @@ let s:rspec_red = 'FE405F'
 let s:git_orange = 'F54D27'
 let s:type_script = '398AD7'
 let s:react = '08B6CE'
+
 " what to highlight
 let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
@@ -61,18 +62,18 @@ let g:NERDTreeExtensionHighlightColor['ts'] = s:type_script " sets the color for
 let g:NERDTreeExtensionHighlightColor['tsx'] = s:react " sets the color for TSX files
 let g:NERDTreeExtensionHighlightColor['jsx'] = s:react " sets the color for TSX files
 
-let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsConcealNerdtreeBrackets = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign=1
 
-" dir-icons
+" folder icons
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' '
 let g:DevIconsDefaultFolderOpenSymbol = ' '
 
+" file icons
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
