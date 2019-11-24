@@ -1,6 +1,8 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Plug 'neovim/nvim-lsp'
+
 source ~/.dotfiles/vim/theme.vim " add style
 source ~/.dotfiles/vim/nerdtree/init.vim " add and setup NERDTree
 " languages
@@ -8,49 +10,16 @@ source ~/.dotfiles/vim/javascript.vim " add and setup JavaScript
 " source ~/.dotfiles/vim/ruby.vim " add and setup Ruby and Rails
 source ~/.dotfiles/vim/css.vim  " add and setup CSS/SCSS/Styled Components
 source ~/.dotfiles/vim/other.vim " support for other languages
- 
-" frameworks
-source ~/.dotfiles/vim/react.vim " add and setup React
-
-Plug 'neovim/nvim-lspPlug '
-
-
-" colors
-" Plug 'gorodinskiy/vim-coloresque'
-
 " features
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'alvan/vim-closetag' " Auto close (X)HTML tags
-Plug 'jbgutierrez/vim-better-comments'
-Plug 'tomtom/tcomment_vim'
-Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair.
-Plug 'kshenoy/vim-signature' "  Plugin to toggle, display and navigate marks
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-endwise' " wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
-Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with '.'
-Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
-Plug 'valloric/MatchTagAlways' " A Vim plugin that always highlights the enclosing html/xml tags
-Plug 'vim-scripts/BufOnly.vim' " Delete all the buffers except the current/named buffer
-Plug 'Townk/vim-autoclose' " This plugin for Vim enable an auto-close chars feature for you.
-Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
-
-" git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" view/layout
-" Plug 'albertomontesg/lightline-asyncrun'
-Plug 'itchyny/lightline.vim'
-" " Plug 'bling/vim-bufferline'
+source ~/.dotfiles/vim/features.vim " support for other languages
 
 call plug#end()
 
 source ~/.dotfiles/vim/style.vim " setup style
 source ~/.dotfiles/vim/syntax.vim " setup syntax
 source ~/.dotfiles/vim/mappings.vim " mapping buttons
-source ~/.dotfiles/vim/coc.vim " settings for coc-nvim
 source ~/.dotfiles/vim/settings.vim " add style
+
 
 filetype plugin indent on " Do filetype detection and load custom file plugins and indent files
 filetype plugin on
@@ -72,6 +41,7 @@ let g:vim_jsx_pretty_colorful_config = 1
 let g:vim_markdown_folding_disabled = 1
 let g:mergetool_layout = 'mr'
 let g:mergetool_prefer_revision = 'local'
+set tabline=%!tabber#TabLine()
 let g:mta_filetypes= {
       \'javascript.jsx':1,
       \'typescript.tsx':1,
