@@ -26,13 +26,17 @@ export EDITOR=nvim
 export REACT_EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+export GREP_OPTIONS='--color=always'
+
 alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 # alias lc='colorls -lA --sd'
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias adog='git log --all --decorate --oneline --graph'
-alias vim='vim -u ~/.config/_spacevim/vimrc'
+# alias vim='vim -u ~/.config/_spacevim/vimrc'
+alias vi='vim --clean'
+alias nv='nvim -u ~/.dotfiles/basic.vim'
 alias weather='curl wttr.in/TelAviv-Yafo'
 alias weather2='curl http://v2.wttr.in'
 alias search='ddgr'
@@ -48,6 +52,7 @@ alias gitpo='git push origin $(git branch | fzf)'
 alias gitupd='git add . && git commit -m "Update"'
 alias gitupdpush='git add . && git commit -m "Update" && git push -u origin HEAD'
 alias xf='exa --long --header --git'
+alias xfa='exa -a --long --header --git'
 alias xl='exa -1'
 alias xla='exa -1a'
 alias xg='exa --grid'
@@ -99,7 +104,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
 function zle-line-init zle-keymap-select {
     case ${KEYMAP} in
-        (vicmd)      PROMPT='%(?.%F{green}.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
+        (vicmd)      PROMPT='%(?.%F{green}v.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
         (main|viins) PROMPT='%(?.%F{green}>.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
         (*)          PROMPT='%(?.%F{green}>.%F{red}?%?)%f %B%F{240}%1~%f%b :: ' ;;
     esac
@@ -115,10 +120,14 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
 RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{240}(%b)  %r%f'
+zstyle ':vcs_info:git:*' formats '%F{240}(%b) @ %r%f'
+# zstyle ':vcs_info:git:*' formats '%F{240}(%b) ☋ %r%f'
+# zstyle ':vcs_info:git:*' formats '%F{240}(%b)  %r%f'
 zstyle ':vcs_info:*' enable git
 
 autoload -U colors && colors
+
+test -r "~/.dotfiles/.dir_colors" && eval $(dircolors ~/.dotfiles/.dir_colors)
 
 autoload -Uz compinit
 compinit

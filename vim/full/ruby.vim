@@ -8,6 +8,5 @@ Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby' }
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script', { 'for': ['coffee', 'haml', 'eruby'] }
 Plug 'stephpy/vim-yaml'
-" Plug 'fishbullet/deoplete-ruby'
 " Plug 'ruby-formatter/rufo-vim'
 Plug 'ngmy/vim-rubocop'

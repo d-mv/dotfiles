@@ -4,7 +4,8 @@
 """""""""""""""""""""""""""""
 " Using the custom window creation function
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-set winbl=7 " aesthetics
+" Set floating window to be slightly transparent
+set winbl=0 " aesthetics
 " Function to create the custom floating window
 function! FloatingFZF()
     " creates a scratch, unlisted, new, empty, unnamed buffer
