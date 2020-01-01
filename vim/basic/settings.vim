@@ -49,6 +49,7 @@ set tabstop=4
 set foldnestmax=3
 set foldmethod=indent
 set nofoldenable
+set colorcolumn=80
 " set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 " set visualbell

@@ -15,6 +15,10 @@ nmap <silent> gr <Plug>(coc-references)
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
+map <C-i> :NERDTreeFind<CR>
+nmap ,f :NERDTreeFind<CR>
+command! Gb Gblame
+command! Gd Gdiff
 " " matchit - <%> jums to other end of selected brackets
 " " surround - <cs'"> - change ' to " around current selection
 " " surround - <ds"> - remove " around current selection
@@ -27,7 +31,8 @@ map <C-b> :NERDTreeToggle<CR>
 map <C-O> :Buffers<CR>
 map <C-d> yyp
 map <C-D> :ALEDetail<CR>
-map <C-p> :FZF<CR>
+map <C-p> :GFiles<CR>
+map <C-a> :FZF<CR>
 map <C-F> :Ack 
 map <C-I> :CocAction<CR>
 

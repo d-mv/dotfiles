@@ -26,5 +26,5 @@ Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 
 if has ('nvim')
-source ~/.dotfiles/vim/fzf_floating.vim
+    source ~/.dotfiles/vim/fzf_floating.vim
 endif

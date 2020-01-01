@@ -12,8 +12,8 @@ endif
 " colorscheme flattened_light
 " colorscheme corvine
 " colorscheme Iceberg
-colorscheme OceanicNext
-" colorscheme nord
+" colorscheme OceanicNext
+colorscheme nord
 " colorscheme edge
 " colorscheme forest-night
 " colorscheme one
@@ -27,10 +27,10 @@ set background=dark
 " let g:material_style='oceanic'
 " let g:one_allow_italics = 1
 " let g:two_firewatch_italics=1
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-" let g:enable_bold_font = 1
-" let g:enable_italic_font = 1
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
 
 " let g:lightline = {'colorscheme':'flattened_light'}
 " let g:lightline = {'colorscheme':'oceanicnext'}
@@ -38,7 +38,7 @@ let g:oceanic_next_terminal_italic = 1
 " let g:lightline = {'colorscheme':'one'}
 " let g:lightline = {'colorscheme':'forest_night'}
 let g:lightline = {
-			\ 'colorscheme': 'oceanicnext',
+			\ 'colorscheme': 'nord',
 			\ 'active': {
 			\   'left': [ [ 'mode', 'paste' ],
 			\             [ 'readonly', 'filename', 'modified', 'method' ] ],

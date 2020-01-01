@@ -1,3 +1,3 @@
 " >>> Install themes
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'mhartington/oceanic-next'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'mhartington/oceanic-next'

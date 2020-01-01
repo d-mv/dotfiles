@@ -3,7 +3,8 @@ map <C-b> :NERDTreeToggle<CR>
 map <C-O> :Buffers<CR>
 map <C-d> yyp
 map <C-p> :FZF<CR>
-map <C-F> :Ack
+map <C-p> :GFiles<CR>
+map <C-a> :FZF<CR>
 map <C-i> :NERDTreeFind<CR>
 nmap ,f :NERDTreeFind<CR>
 command! Gb Gblame
