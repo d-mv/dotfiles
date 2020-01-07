@@ -1,5 +1,6 @@
 source $HOME/.dotfiles/vim/plain/settings.vim
 source $HOME/.dotfiles/vim/plain/plugins.vim
+
 source $HOME/.dotfiles/vim/plain/style.vim
 source $HOME/.dotfiles/vim/plain/syntax.vim
 source $HOME/.dotfiles/vim/plain/mappings.vim

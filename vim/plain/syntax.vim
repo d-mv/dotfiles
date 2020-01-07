@@ -51,14 +51,12 @@ hi SpellBad ctermbg=yellow
 hi MatchParen	guifg=#444444 	guibg=#37c3e6
 hi VendorPrefix guifg=#00ffff gui=bold
 
-if has ('nvim')
-    hi CursorLine  guifg=#ffffff guibg=#254d57 gui=underline ctermfg=22 ctermbg=10 cterm=underline
-    hi Cursor  guifg=#444444  guibg=#ffffff
-else
-    hi CursorLine gui=underline cterm=underline ctermbg=none
-    hi Cursor  guifg=#444444  guibg=#ffffff
+if has(!"gui_running") " for iTerm
+    hi VertSplit guifg=#F08080
 endif
 
+hi CursorLine  guibg=#254d57 gui=underline ctermbg=237 cterm=underline
+hi Cursor  guifg=#444444  guibg=#ffffff
 
 augroup myTodo
   autocmd!
@@ -91,9 +89,6 @@ set fillchars+=fold:· " for folds
 
 set cc=100 " Show column @ 100
 
-if has(!"gui_running") " for iTerm
-    hi VertSplit guifg=#F08080
-endif
 
 " Directory color
 hi Directory guifg=#F08080

@@ -1,7 +1,8 @@
 " colorscheme slate
 colorscheme nord
 " colorscheme dracula
-"  colorscheme onehalfdark
+" colorscheme onehalfdark
+" colorscheme oceanicnext
 " colorscheme flattened_light
 
 let color='true'
@@ -28,8 +29,16 @@ set noshowmode " not to show --INSERT--
  		\ 'colorscheme': 'nord',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
-  		\             [ 'readonly', 'filename', 'modified' ] ],
+  		\             [ 'readonly', 'filename', 'modified'],
+                \             ['at'],['gitbranch']],
   		\   'right': [ [ 'lineinfo' ],
   		\              [ 'percent' ],
-  		\              [ 'filetype' ] ]
-  		\ }}
+  		\              [ 'filetype' ]]
+  		\ },
+		\ 'component': {
+                \   'at': '@'
+                \ },
+                \ 'component_function': {
+                \   'gitbranch': 'gitbranch#name'
+                \ },
+		\ }

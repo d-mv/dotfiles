@@ -20,5 +20,5 @@ au FileType typescript.tsx setlocal formatprg=prettier\ --parser\ typescript
 au FileType html setlocal formatprg=prettier\ --type\ html
 au FileType scss setlocal formatprg=prettier\ --parser\ scss
 au FileType css setlocal formatprg=prettier\ --parser\ css
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 autocmd StdinReadPre * let s:std_in=1

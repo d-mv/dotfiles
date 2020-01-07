@@ -1,3 +1,6 @@
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
+
 nnoremap ,rf() :-1read $HOME/.dotfiles/vim/snippets/react_function.tsx<CR>2jf>la
 nnoremap ,rc() :-1read $HOME/.dotfiles/vim/snippets/react_class.tsx<CR>2jf>la
 nnoremap ,ri() :-1read $HOME/.dotfiles/vim/snippets/react_import.tsx<CR>1ja
@@ -50,3 +53,4 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+

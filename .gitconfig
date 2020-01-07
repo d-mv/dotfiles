@@ -22,12 +22,20 @@
   old = red strike
   new = green italic
 
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[alias]
+
 [merge]
 	conflictstyle = diff3
 
 [core]
   pager = less -FRSX
-	editor = nvim 
+  editor = vim
 
 [alias]
   a = add -A
@@ -36,6 +44,7 @@
   ci = commit
   co = checkout
   d = !git --no-pager diff
+    df = difftool
   dt  = difftool
   fo = fetch origin
   s = status
