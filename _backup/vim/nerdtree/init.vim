@@ -1,9 +1,3 @@
-" pluggins
-Plug 'scrooloose/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'ryanoasis/vim-devicons'
-
 " settings
 let g:NERDTreeWinPos = 'right'
 let g:NERDTreeWinSize=get(g:,'NERDTreeWinSize',40)

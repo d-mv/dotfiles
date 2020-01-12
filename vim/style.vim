@@ -1,7 +1,7 @@
 " colorscheme slate
-colorscheme nord
+" colorscheme nord
 " colorscheme dracula
-" colorscheme onehalfdark
+colorscheme onehalfdark
 " colorscheme oceanicnext
 " colorscheme flattened_light
 
@@ -26,7 +26,7 @@ set guifont=IBM\ Plex\ Mono
 set noshowmode " not to show --INSERT--
 
  let g:lightline = {
- 		\ 'colorscheme': 'nord',
+ 		\ 'colorscheme': 'onehalfdark',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],

@@ -14,6 +14,7 @@ set autoindent smartindent " Set Proper Tabs
 set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
 set clipboard=unnamed
 set smarttab
+set scrolloff=5
 
 " encoding
 lang en_US.UTF-8
