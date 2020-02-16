@@ -33,7 +33,25 @@ command! Qall qall
 command! W w
 command! Gb Gblame
 command! Gd Gdiff
+command! Ga !git add .
 
+" use alt+hjkl to move between split/vsplit panels
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" open terminal on ctrl+;
+" uses zsh instead of bash
+function! OpenTerminal()
+  split term://bash
+  resize 10
+endfunction
+nnoremap <c-n> :call OpenTerminal()<CR>
 
 " map <C-i> :NERDTreeFind<CR>
 " nmap ,f :NERDTreeFind<CR>

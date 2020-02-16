@@ -9,6 +9,9 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif " start terminal in insert mode
+
+
 autocmd Filetype gitcommit,markdown,note setlocal spell textwidth=72
 autocmd Filetype gitcommit,markdown,note setlocal complete+=kspell
 au BufNewFile,BufRead *.js.flow setlocal filetype=javascript

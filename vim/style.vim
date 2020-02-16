@@ -1,7 +1,7 @@
 " colorscheme slate
-" colorscheme nord
+colorscheme nord
 " colorscheme dracula
-colorscheme onehalfdark
+" colorscheme onehalfdark
 " colorscheme oceanicnext
 " colorscheme flattened_light
 
@@ -25,8 +25,8 @@ let g:enable_italic_font = 1
 set guifont=IBM\ Plex\ Mono
 set noshowmode " not to show --INSERT--
 
- let g:lightline = {
- 		\ 'colorscheme': 'onehalfdark',
+let g:lightline = {
+ 		\ 'colorscheme': 'nord',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],
@@ -36,7 +36,7 @@ set noshowmode " not to show --INSERT--
   		\              [ 'filetype' ]]
   		\ },
 		\ 'component': {
-                \   'at': '@'
+                \   'at': ''
                 \ },
                 \ 'component_function': {
                 \   'gitbranch': 'gitbranch#name'

@@ -23,7 +23,7 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export EDITOR=vim
-export REACT_EDITOR=nvim
+export REACT_EDITOR=vim
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
@@ -33,13 +33,13 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-    source ~/.dotfiles/zsh/aliases
-    source ~/.dotfiles/zsh/private
-    source ~/.dotfiles/zsh/functions
-    source ~/.dotfiles/zsh/path
+source ~/.dotfiles/zsh/aliases
+source ~/.dotfiles/zsh/private
+source ~/.dotfiles/zsh/functions
+source ~/.dotfiles/zsh/path
     # source ~/.dotfiles/zsh/iterm
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # Homebrew completion
 if type brew &>/dev/null; then
@@ -50,7 +50,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
-
 
 # binding keys
 bindkey -e
@@ -67,9 +66,9 @@ bindkey -v
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
 
-autoload -U colors && colors
+# autoload -U colors && colors
 
-test -r "~/.dotfiles/.dir_colors" && eval $(dircolors ~/.dotfiles/.dir_colors)
+# test -r "~/.dotfiles/.dir_colors" && eval $(dircolors ~/.dotfiles/.dir_colors)
 
 autoload -Uz compinit
 compinit
