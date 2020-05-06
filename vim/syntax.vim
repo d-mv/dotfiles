@@ -1,69 +1,81 @@
 " >>> Syntax
 " syntax enable
 
-hi Identifier gui=bold
-hi Identifier cterm=bold
-hi Statement gui=bold
-hi Statement cterm=bold
-hi htmlArg gui=italic
-hi htmlArg cterm=italic
-hi Comment gui=italic
-hi Comment cterm=italic
+" hi Identifier gui=bold
+" hi Identifier cterm=bold
+" hi Statement gui=bold
+" hi Statement cterm=bold
+" hi htmlArg gui=italic
+" hi htmlArg cterm=italic
+" hi Comment gui=italic
+" hi Comment cterm=italic
 
 " sort this out
-hi Constant gui=bold cterm=italic
-hi Todo guifg=#d9f235 gui=bold ctermfg=yellow cterm=bold
+" hi Constant gui=bold cterm=italic
+" hi Todo guifg=#428af5 gui=bold 
+hi Todo guifg=#d9f235 gui=bold 
+" ctermfg=yellow cterm=bold
+hi Fixme guifg=#f542b6 gui=bold
+" ctermfg=yellow cterm=bold
+
 " hi Special		guifg=#907000	guibg=NONE	gui=NONE
   " hi Comment		guifg=#606000	guibg=NONE	gui=NONE
   " hi Number		guifg=#907000	guibg=NONE	gui=NONE
-  hi Constant		guifg=#007068	guibg=NONE	gui=NONE
+  " hi Constant		guifg=#007068	guibg=NONE	gui=NONE
   " hi StatusLine		guifg=fg	guibg=#a6caf0	gui=NONE
-  hi LineNr		guifg=#686868	guibg=NONE	gui=NONE
-  hi Question		guifg=fg	guibg=#d0d090	gui=NONE
-  hi PreProc		guifg=#009030	guibg=NONE	gui=NONE
+  " hi LineNr		guifg=#686868	guibg=NONE	gui=NONE
+  " hi Question		guifg=fg	guibg=#d0d090	gui=NONE
+  " hi PreProc		guifg=#009030	guibg=NONE	gui=NONE
   " hi Statement		guifg=#2060a8	guibg=NONE	gui=NONE
-  " hi Type		guifg=#0850a0	guibg=NONE	gui=NONE
+  " hi Type		guifg=#0850a0	guibg=NONE 
+"
+" hi tsxAttributeComment cterm=italic
+" hi tsxAttributeComment gui=italic
+" hi tsxBlockComment cterm=italic
+" hi tsxBlockCommen gui=italic
+" hi tsxLineComment cterm=italic
+" hi tsxLineComment gui=italic
+" hi tsxComment cterm=italic
+" hi tsxComment gui=italic
+" hi jsAttributeComment cterm=italic
+" hi jsAttributeComment gui=italic
+" hi jsBlockComment cterm=italic
+" hi jsBlockCommen gui=italic
+" hi jsLineComment cterm=italic
+" hi jsLineComment gui=italic
+" hi jsComment cterm=italic
+" hi jsComment gui=italic
+" hi jsComment cterm=italic
+" hi jsComment gui=italic
+hi Type gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 
-hi tsxAttributeComment cterm=italic
-hi tsxAttributeComment gui=italic
-hi tsxBlockComment cterm=italic
-hi tsxBlockCommen gui=italic
-hi tsxLineComment cterm=italic
-hi tsxLineComment gui=italic
-hi tsxComment cterm=italic
-hi tsxComment gui=italic
-hi jsAttributeComment cterm=italic
-hi jsAttributeComment gui=italic
-hi jsBlockComment cterm=italic
-hi jsBlockCommen gui=italic
-hi jsLineComment cterm=italic
-hi jsLineComment gui=italic
-hi jsComment cterm=italic
-hi jsComment gui=italic
-hi jsComment cterm=italic
-hi jsComment gui=italic
-hi Type    gui=italic
-hi Type    cterm=italic
-hi Folded guifg=yellow guibg=NONE ctermfg=yellow ctermbg=NONE
+" hi Folded guifg=yellow guibg=NONE ctermfg=yellow ctermbg=NONE
 hi Search ctermfg=white ctermbg=red guifg=white  guibg=Red
 " hi Folded guifg=orange            guibg=black
 hi SpellBad ctermbg=yellow
-hi MatchParen	guifg=#444444 	guibg=#37c3e6
+" hi MatchParen	guifg=#444444 	guibg=#37c3e6
 hi VendorPrefix guifg=#00ffff gui=bold
 
 if has(!"gui_running") " for iTerm
     hi VertSplit guifg=#F08080
 endif
 
-hi CursorLine  guibg=#254d57 gui=underline ctermbg=237 cterm=underline
+hi CursorLine  guibg=#e0e0e0  ctermbg=237 
+hi CursorLine  guibg=#254d57  ctermbg=237 
 hi Cursor  guifg=#444444  guibg=#ffffff
 
 augroup myTodo
   autocmd!
-  autocmd Syntax * syntax match myTodo /\v\_.<(TODO|FIXME).*/hs=s+1 containedin=.*Comment
+  autocmd Syntax * syntax match myTodo /\v\_.<(TODO|HELP).*/hs=s+1 containedin=.*Comment
+augroup END
+
+augroup myFixme
+  autocmd!
+  autocmd Syntax * syntax match myFixme /\v\_.<(FIXME).*/hs=s+1 containedin=.*Comment
 augroup END
 
 highlight link myTodo Todo
+highlight link myFixme Fixme
 
 
 " Changing the shape of cursor

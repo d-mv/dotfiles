@@ -6,6 +6,7 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="/Users/dmitry/.nvm/versions/node/v12.16.2/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/sqlite/lib"
@@ -21,17 +22,24 @@ export PATH=$PATH:$HOME/.cargo/env
 export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env
 
 export EDITOR=vim
 export REACT_EDITOR=vim
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
-export TERM='screen-256color-bce'
+# export TERM='screen-256color-bce'
+# truecolor
+set -g default-terminal "screen-256color"
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=9999
+SAVEHIST=9999
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
 
 source ~/.dotfiles/zsh/aliases
 source ~/.dotfiles/zsh/private

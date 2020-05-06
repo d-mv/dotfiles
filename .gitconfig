@@ -23,19 +23,17 @@
   new = green italic
 
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 
 [difftool]
-    prompt = false
-
-[alias]
+  prompt = false
 
 [merge]
 	conflictstyle = diff3
 
 [core]
   pager = less -FRSX
-  editor = vim
+  editor = nvim
 
 [alias]
   a = add -A
@@ -44,7 +42,7 @@
   ci = commit
   co = checkout
   d = !git --no-pager diff
-    df = difftool
+  df = difftool
   dt  = difftool
   fo = fetch origin
   s = status
@@ -77,6 +75,7 @@
 
 [commit]
 	template = ~/.dotfiles/.gitmessage.txt
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

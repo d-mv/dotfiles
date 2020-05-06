@@ -12,10 +12,8 @@ function! FloatingFZF()
     " to be used in the floating window
     let buf = nvim_create_buf(v:false, v:true)
 
-    " 40% of the height
-    let height = float2nr(&lines * 0.4)
-    " 70% of the height
-    let width = float2nr(&columns * 0.7)
+    let height = float2nr(&lines * 0.6)
+    let width = float2nr(&columns * 0.8)
     " horizontal position (centralized)
     let horizontal = float2nr((&columns - width) / 2)
     " vertical position (centralized)

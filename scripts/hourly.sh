@@ -1,2 +1,0 @@
-# sync Taskwarrior
-task sync

@@ -4,41 +4,61 @@ colorscheme nord
 " colorscheme onehalfdark
 " colorscheme oceanicnext
 " colorscheme flattened_light
+" colorscheme solarized
+" colorscheme solarized8_flat
+" colorscheme monokai
+
+set background=dark
 
 let color='true'
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
+
+" if has('termguicolors')
+  set termguicolors
+" endif
+
+if !has('nvim') && $TERM ==# 'screen-256color'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 set t_Co=256
 set t_ut= " fixes transparent BG on tmux
 
-if has ('iTerm.app')
-  set termguicolors
-endif
-
-" if has ('nvim')
-"     set termguicolors
-" endif
-
-set background=dark
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
-set guifont=IBM\ Plex\ Mono
+" set guifont=IBM\ Plex\ Mono
 set noshowmode " not to show --INSERT--
 
 let g:lightline = {
- 		\ 'colorscheme': 'nord',
+ 		\ 'colorscheme': 'onehalfdark',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],
-                \             ['at'],['gitbranch']],
+      \             ['at'],['gitbranch'], [ 'gitdiff' ],  ['filepath']],
   		\   'right': [ [ 'lineinfo' ],
   		\              [ 'percent' ],
   		\              [ 'filetype' ]]
   		\ },
+      \ 'inactive': {
+      \   'left': [ [ 'filename', 'gitversion' ] ],
+      \ },
 		\ 'component': {
                 \   'at': ''
                 \ },
                 \ 'component_function': {
-                \   'gitbranch': 'gitbranch#name'
+                \   'gitbranch': 'gitbranch#name',
+                \   'filepath': 'FilenameForLightline'
+                \ },
+                \ 'component_expand': {
+                \   'gitdiff': 'lightline#gitdiff#get',
+                \ },
+                \ 'component_type': {
+                \   'gitdiff': 'middle',
                 \ },
 		\ }
+
+function! FilenameForLightline()
+    return expand('%')
+endfunction

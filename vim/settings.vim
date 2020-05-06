@@ -13,8 +13,16 @@ set completeopt-=preview
 set autoindent smartindent " Set Proper Tabs
 set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
 set clipboard=unnamed
-set smarttab
 set scrolloff=5
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2 "   Soft tab width in spaces
+set expandtab
+set smarttab
+set smartindent
+set autoindent
+set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
+set selection=exclusive  " Убирает выделение символа конца строки
 
 " encoding
 lang en_US.UTF-8
@@ -22,3 +30,5 @@ set encoding=UTF-8
 scriptencoding utf-8
 set termencoding=utf-8
 
+
+set rtp+=/usr/local/opt/fzf

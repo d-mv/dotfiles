@@ -1,15 +1,29 @@
 " let g:javascript_filetypes = ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx']
 call plug#begin('~/.config/vim/plugged')
 
+Plug 'tpope/vim-vinegar'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
+Plug 'airblade/vim-gitgutter'
+Plug 'niklaas/lightline-gitdiff'
+" Plug 'wincent/vcs-jump'
 
-Plug '/usr/local/opt/fzf'
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'ryanoasis/vim-devicons'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-highlighturl'
+Plug 'tpope/vim-vinegar'
 
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+Plug 'crusoexia/vim-monokai'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'elzr/vim-json', { 'for': 'json' }
@@ -17,32 +31,31 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typ
 " Plug 'Quramy/tsuquyomi/'
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']}
+Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']}
 
-Plug 'tmux-plugins/vim-tmux'
+" Plug 'tmux-plugins/vim-tmux'
 
 Plug 'tomtom/tcomment_vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
 Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
-Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff' ] }
-Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 
-Plug 'lilydjwg/colorizer'
-Plug 'reasonml-editor/vim-reason-plus'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
-Plug 'TovarishFin/vim-solidity' " Solidity support
-Plug 'jacqueswww/vim-vyper' " Vyper support
-Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
-Plug 'othree/html5.vim', {'for':'html'}
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'tpope/vim-dotenv', { 'for': 'env' }
-Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
+" Plug 'lilydjwg/colorizer'
+Plug 'RRethy/vim-hexokinase'
+" Plug 'reasonml-editor/vim-reason-plus'
+Plug 'rust-lang/rust.vim', {'for': 'rs'} 
 Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
+Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
+" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
+" Plug 'jacqueswww/vim-vyper' " Vyper support
+" Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
+Plug 'othree/html5.vim', {'for':'html'}
+Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
+Plug 'tpope/vim-dotenv', { 'for': 'env' }
+Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 call plug#end()
 
 if has ('nvim')
@@ -52,7 +65,26 @@ endif
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
 " Better display for messages
-set cmdheight=2
+" set cmdheight=2
 " always show signcolumns
 set signcolumn=yes
+
+let g:indentLine_char = '│'
+let g:rustfmt_autosave = 1
+let g:Hexokinase_highlighters = ['backgroundfull']
+
+" Always enable preview window on the right with 60% width
+let g:fzf_preview_window = 'right:60%'
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:lightline#gitdiff#indicator_added = ' '
+let g:lightline#gitdiff#indicator_modified = ' '
+let g:lightline#gitdiff#indicator_deleted = ' '
+let g:lightline#gitdiff#separator = ' '
+
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_removed_first_line = ''
+let g:gitgutter_sign_modified_removed = ''
 
