@@ -12,22 +12,22 @@
 
 " sort this out
 " hi Constant gui=bold cterm=italic
-" hi Todo guifg=#428af5 gui=bold 
-hi Todo guifg=#d9f235 gui=bold 
+" hi Todo guifg=#428af5 gui=bold
+hi Todo guifg=#d9f235 gui=bold
 " ctermfg=yellow cterm=bold
 hi Fixme guifg=#f542b6 gui=bold
 " ctermfg=yellow cterm=bold
 
 " hi Special		guifg=#907000	guibg=NONE	gui=NONE
-  " hi Comment		guifg=#606000	guibg=NONE	gui=NONE
-  " hi Number		guifg=#907000	guibg=NONE	gui=NONE
-  " hi Constant		guifg=#007068	guibg=NONE	gui=NONE
-  " hi StatusLine		guifg=fg	guibg=#a6caf0	gui=NONE
-  " hi LineNr		guifg=#686868	guibg=NONE	gui=NONE
-  " hi Question		guifg=fg	guibg=#d0d090	gui=NONE
-  " hi PreProc		guifg=#009030	guibg=NONE	gui=NONE
-  " hi Statement		guifg=#2060a8	guibg=NONE	gui=NONE
-  " hi Type		guifg=#0850a0	guibg=NONE 
+" hi Comment		guifg=#606000	guibg=NONE	gui=NONE
+" hi Number		guifg=#907000	guibg=NONE	gui=NONE
+" hi Constant		guifg=#007068	guibg=NONE	gui=NONE
+" hi StatusLine		guifg=fg	guibg=#a6caf0	gui=NONE
+" hi LineNr		guifg=#686868	guibg=NONE	gui=NONE
+" hi Question		guifg=fg	guibg=#d0d090	gui=NONE
+" hi PreProc		guifg=#009030	guibg=NONE	gui=NONE
+" hi Statement		guifg=#2060a8	guibg=NONE	gui=NONE
+" hi Type		guifg=#0850a0	guibg=NONE
 "
 " hi tsxAttributeComment cterm=italic
 " hi tsxAttributeComment gui=italic
@@ -60,8 +60,8 @@ if has(!"gui_running") " for iTerm
     hi VertSplit guifg=#F08080
 endif
 
-hi CursorLine  guibg=#e0e0e0  ctermbg=237 
-hi CursorLine  guibg=#254d57  ctermbg=237 
+hi CursorLine  guibg=#e0e0e0  ctermbg=237
+hi CursorLine  guibg=#254d57  ctermbg=237
 hi Cursor  guifg=#444444  guibg=#ffffff
 
 augroup myTodo

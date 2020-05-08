@@ -94,7 +94,7 @@ map <C-k> Vd2kp
 map <C-j> Vdp
 map <C-l> o<CR><CR><Esc>ki
 
-map <C-m> :VcsJump merge
+" map <C-m> :VcsJump merge
 
 " turn off keys
 noremap <Up> <NOP>
