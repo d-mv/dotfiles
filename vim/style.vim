@@ -1,5 +1,5 @@
 " colorscheme slate
-colorscheme nord
+" colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
 " colorscheme oceanicnext
@@ -7,6 +7,7 @@ colorscheme nord
 " colorscheme solarized
 " colorscheme solarized8_flat
 " colorscheme monokai
+colorscheme OceanicNext
 
 set background=dark
 
@@ -15,7 +16,7 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
 " if has('termguicolors')
-  set termguicolors
+set termguicolors
 " endif
 
 if !has('nvim') && $TERM ==# 'screen-256color'
@@ -28,11 +29,13 @@ set t_ut= " fixes transparent BG on tmux
 
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 " set guifont=IBM\ Plex\ Mono
 set noshowmode " not to show --INSERT--
 
 let g:lightline = {
- 		\ 'colorscheme': 'onehalfdark',
+ 		\ 'colorscheme': 'oceanicnext',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],

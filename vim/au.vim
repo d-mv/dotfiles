@@ -4,10 +4,10 @@ autocmd BufReadPost *
      \     exe "normal g'\"" |
      \ endif |
 
-" augroup vimrc
-"   au BufReadPre * setlocal foldmethod=indent
-"   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-" augroup END
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif " start terminal in insert mode
 

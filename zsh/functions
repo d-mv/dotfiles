@@ -17,7 +17,7 @@ fd() {
 }
 
 
-gs() {
+gsw() {
   git switch "$@"
   }
 

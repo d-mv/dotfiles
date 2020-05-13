@@ -24,6 +24,9 @@ set autoindent
 set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
 set selection=exclusive  " Убирает выделение символа конца строки
 
+" set wildmenu                                
+" set wildmode=longest,list,full
+
 " encoding
 lang en_US.UTF-8
 set encoding=UTF-8

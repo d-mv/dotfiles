@@ -17,24 +17,30 @@ Plug 'niklaas/lightline-gitdiff'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-highlighturl'
-Plug 'tpope/vim-vinegar'
 
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
-Plug 'crusoexia/vim-monokai'
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'lifepillar/vim-solarized8'
+" Plug 'crusoexia/vim-monokai'
+Plug 'mhartington/oceanic-next'
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'bigfish/vim-stylelint'
 
-" Plug 'Quramy/tsuquyomi/'
-" Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']}
-Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']}
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
+Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
+Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
+Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
+Plug 'mhartington/vim-typings' "  search for typings in vim
 
-" Plug 'tmux-plugins/vim-tmux'
+Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
+
+Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
 
 Plug 'tomtom/tcomment_vim'
 Plug 'mileszs/ack.vim'
@@ -87,4 +93,8 @@ let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = ''
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 

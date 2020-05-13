@@ -1,34 +1,15 @@
 " >>> Syntax
 " syntax enable
 
-" hi Identifier gui=bold
-" hi Identifier cterm=bold
-" hi Statement gui=bold
-" hi Statement cterm=bold
-" hi htmlArg gui=italic
-" hi htmlArg cterm=italic
+hi Identifier gui=bold
+hi Identifier cterm=bold
+hi Statement gui=bold
+hi Statement cterm=bold
+hi htmlArg gui=italic
+hi htmlArg cterm=italic
 " hi Comment gui=italic
 " hi Comment cterm=italic
 
-" sort this out
-" hi Constant gui=bold cterm=italic
-" hi Todo guifg=#428af5 gui=bold
-hi Todo guifg=#d9f235 gui=bold
-" ctermfg=yellow cterm=bold
-hi Fixme guifg=#f542b6 gui=bold
-" ctermfg=yellow cterm=bold
-
-" hi Special		guifg=#907000	guibg=NONE	gui=NONE
-" hi Comment		guifg=#606000	guibg=NONE	gui=NONE
-" hi Number		guifg=#907000	guibg=NONE	gui=NONE
-" hi Constant		guifg=#007068	guibg=NONE	gui=NONE
-" hi StatusLine		guifg=fg	guibg=#a6caf0	gui=NONE
-" hi LineNr		guifg=#686868	guibg=NONE	gui=NONE
-" hi Question		guifg=fg	guibg=#d0d090	gui=NONE
-" hi PreProc		guifg=#009030	guibg=NONE	gui=NONE
-" hi Statement		guifg=#2060a8	guibg=NONE	gui=NONE
-" hi Type		guifg=#0850a0	guibg=NONE
-"
 " hi tsxAttributeComment cterm=italic
 " hi tsxAttributeComment gui=italic
 " hi tsxBlockComment cterm=italic
@@ -47,12 +28,29 @@ hi Fixme guifg=#f542b6 gui=bold
 " hi jsComment gui=italic
 " hi jsComment cterm=italic
 " hi jsComment gui=italic
-hi Type gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 
-" hi Folded guifg=yellow guibg=NONE ctermfg=yellow ctermbg=NONE
-hi Search ctermfg=white ctermbg=red guifg=white  guibg=Red
-" hi Folded guifg=orange            guibg=black
-hi SpellBad ctermbg=yellow
+" sort this out
+hi Todo guifg=#d9f235 gui=bold
+hi Fixme guifg=#f542b6 gui=bold
+
+" hi Special		guifg=#b4d7fa	guibg=NONE	gui=italic
+hi Comment gui=italic
+" hi Number		guifg=#907000	guibg=NONE	gui=NONE
+" hi Constant gui=bold
+" hi StatusLine		guifg=fg	guibg=#a6caf0	gui=NONE
+" hi LineNr		guifg=#686868	guibg=NONE	gui=NONE
+" hi Question		guifg=white	guibg=#d0d090	gui=NONE
+" hi PreProc		guifg=#009030	guibg=NONE	gui=NONE
+" hi Statement		guifg=#428af5	guibg=NONE	gui=NONE
+" hi Type		guifg=#0850a0	guibg=NONE
+"
+hi Type gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
+hi typescriptType  gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
+" hi Identifier gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
+
+hi Search ctermfg=white ctermbg=red guifg=red  guibg=pink
+hi Folded guifg=orange
+hi SpellBad guifg=yellow
 " hi MatchParen	guifg=#444444 	guibg=#37c3e6
 hi VendorPrefix guifg=#00ffff gui=bold
 
@@ -106,3 +104,6 @@ set cc=100 " Show column @ 100
 hi Directory guifg=#F08080
 
 match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
+
+
+
