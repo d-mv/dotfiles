@@ -16,7 +16,7 @@ export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.cargo/env
 export PATH="/Users/dmitry/.rbenv/shims/:$PATH"

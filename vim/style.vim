@@ -1,8 +1,8 @@
 " colorscheme slate
-colorscheme nord
+" colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
-" colorscheme oceanicnext
+colorscheme oceanicnext
 " colorscheme flattened_light
 " colorscheme solarized
 " colorscheme solarized8_flat
@@ -36,7 +36,7 @@ let g:highlightedyank_highlight_duration = 1000
 set noshowmode " not to show --INSERT--
 
 let g:lightline = {
- 		\ 'colorscheme': 'nord',
+ 		\ 'colorscheme': 'oceanicnext',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],

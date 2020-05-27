@@ -23,7 +23,7 @@ Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'
 " Plug 'crusoexia/vim-monokai'
-" Plug 'mhartington/oceanic-next'
+Plug 'mhartington/oceanic-next'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
