@@ -1,5 +1,5 @@
 " colorscheme slate
-" colorscheme nord
+colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
 " colorscheme oceanicnext
@@ -7,7 +7,7 @@
 " colorscheme solarized
 " colorscheme solarized8_flat
 " colorscheme monokai
-colorscheme OceanicNext
+" colorscheme OceanicNext
 
 set background=dark
 
@@ -31,11 +31,12 @@ let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
+let g:highlightedyank_highlight_duration = 1000
 " set guifont=IBM\ Plex\ Mono
 set noshowmode " not to show --INSERT--
 
 let g:lightline = {
- 		\ 'colorscheme': 'oceanicnext',
+ 		\ 'colorscheme': 'nord',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],

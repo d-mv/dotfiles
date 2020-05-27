@@ -16,14 +16,14 @@ Plug 'niklaas/lightline-gitdiff'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/vim-highlighturl'
+" Plug 'itchyny/vim-highlighturl'
 
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'
 " Plug 'crusoexia/vim-monokai'
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -63,6 +63,8 @@ Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 call plug#end()
+
+set rtp+=/usr/local/opt/fzf
 
 if has ('nvim')
 	source ~/.dotfiles/vim/fzf.vim

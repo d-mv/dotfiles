@@ -29,8 +29,6 @@ export REACT_EDITOR=vim
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
-# export TERM='screen-256color-bce'
-# truecolor
 set -g default-terminal "screen-256color"
 
 HISTFILE=~/.histfile
@@ -44,8 +42,8 @@ setopt hist_reduce_blanks
 source ~/.dotfiles/zsh/aliases
 source ~/.dotfiles/zsh/private
 source ~/.dotfiles/zsh/functions
-source ~/.dotfiles/zsh/path
-    # source ~/.dotfiles/zsh/iterm
+# source ~/.dotfiles/zsh/path
+# source ~/.dotfiles/zsh/iterm
 
 # eval "$(rbenv init -)"
 
@@ -80,5 +78,8 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 
 autoload -Uz compinit
 compinit
+
+autoload -U promptinit; promptinit
+prompt pure
 
 # eval "$(starship init zsh)"

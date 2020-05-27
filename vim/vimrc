@@ -1,0 +1,128 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
+Plug 'airblade/vim-gitgutter'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
+Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
+Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
+Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
+Plug 'mhartington/vim-typings' "  search for typings in vim
+
+Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
+
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'machakann/vim-highlightedyank'
+call plug#end()
+
+filetype plugin indent on
+filetype plugin on
+set nocompatible
+syntax enable
+set noerrorbells
+set cursorline
+" set confirm
+set hidden " switch between buffers without error
+set number
+set relativenumber
+set complete=.,w,b,u,U,t,i,d
+set completeopt-=preview
+set autoindent smartindent " Set Proper Tabs
+set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
+set clipboard=unnamed
+set scrolloff=5
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2 "   Soft tab width in spaces
+set expandtab
+set smarttab
+set smartindent
+set autoindent
+set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
+set selection=exclusive  " Убирает выделение символа конца строки
+
+" set wildmenu                                
+" set wildmode=longest,list,full
+
+" encoding
+lang en_US.UTF-8
+set encoding=UTF-8
+scriptencoding utf-8
+set termencoding=utf-8
+
+  let g:highlightedyank_highlight_duration = 1000
+  let g:highlightedyank_highlight_duration = 1000
+
+set rtp+=/usr/local/opt/fzf
+
+
+source $HOME/.dotfiles/vim/syntax.vim
+source $HOME/.dotfiles/vim/au.vim
+source $HOME/.dotfiles/vim/mappings.vim
+source $HOME/.dotfiles/vim/netrw.vim
+source $HOME/.dotfiles/vim/search.vim
+
+
+colorscheme nord
+set background=dark
+
+let color='true'
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
+" if has('termguicolors')
+set termguicolors
+" endif
+
+if !has('nvim') && $TERM ==# 'screen-256color'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+set t_Co=256
+set t_ut= " fixes transparent BG on tmux
+
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+" set guifont=IBM\ Plex\ Mono
+set noshowmode " not to show --INSERT--
+
+let g:lightline = {
+ 		\ 'colorscheme': 'nord',
+ 		\ 'active': {
+  		\   'left': [ [ 'mode', 'paste' ],
+  		\             [ 'readonly', 'filename', 'modified'],
+      \             ['at'],['gitbranch'], [ 'gitdiff' ],  ['filepath']],
+  		\   'right': [ [ 'lineinfo' ],
+  		\              [ 'percent' ],
+  		\              [ 'filetype' ]]
+  		\ },
+      \ 'inactive': {
+      \   'left': [ [ 'filename', 'gitversion' ] ],
+      \ },
+		\ 'component': {
+                \   'at': ''
+                \ },
+                \ 'component_function': {
+                \   'gitbranch': 'gitbranch#name',
+                \   'filepath': 'FilenameForLightline'
+                \ },
+                \ 'component_expand': {
+                \   'gitdiff': 'lightline#gitdiff#get',
+                \ },
+                \ 'component_type': {
+                \   'gitdiff': 'middle',
+                \ },
+		\ }
+
+function! FilenameForLightline()
+    return expand('%')
+endfunction

@@ -24,6 +24,10 @@ set autoindent
 set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
 set selection=exclusive  " Убирает выделение символа конца строки
 
+" set highlight to 1000 ms
+" if !has('nvim')
+" endif
+
 " set wildmenu                                
 " set wildmode=longest,list,full
 

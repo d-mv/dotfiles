@@ -11,6 +11,11 @@ augroup END
 
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif " start terminal in insert mode
 
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+augroup END
+
 autocmd FileType scss set iskeyword+=-
 autocmd Filetype gitcommit,markdown,note setlocal spell textwidth=72
 autocmd Filetype gitcommit,markdown,note setlocal complete+=kspell
