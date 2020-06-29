@@ -32,8 +32,8 @@ export GREP_OPTIONS='--color=always'
 set -g default-terminal "screen-256color"
 
 HISTFILE=~/.histfile
-HISTSIZE=9999
-SAVEHIST=9999
+HISTSIZE=99999
+SAVEHIST=99999
 setopt extended_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space

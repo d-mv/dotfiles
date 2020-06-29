@@ -2,11 +2,11 @@
 call plug#begin('~/.config/vim/plugged')
 
 Plug 'tpope/vim-vinegar'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
-Plug 'niklaas/lightline-gitdiff'
+" Plug 'niklaas/lightline-gitdiff'
 " Plug 'wincent/vcs-jump'
 
 " Plug 'scrooloose/nerdtree'
@@ -19,12 +19,15 @@ Plug 'junegunn/fzf.vim'
 " Plug 'itchyny/vim-highlighturl'
 
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'
-" Plug 'crusoexia/vim-monokai'
+Plug 'crusoexia/vim-monokai'
 Plug 'mhartington/oceanic-next'
-" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'chriskempson/base16-vim'
+Plug 'nicknisi/vim-base16-lightline'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'elzr/vim-json', { 'for': 'json' }
@@ -48,8 +51,11 @@ Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
 Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
 Plug 'machakann/vim-highlightedyank'
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
 
-" Plug 'lilydjwg/colorizer'
+Plug 'yegappan/greplace'
+Plug 'lilydjwg/colorizer'
 Plug 'RRethy/vim-hexokinase'
 " Plug 'reasonml-editor/vim-reason-plus'
 Plug 'rust-lang/rust.vim', {'for': 'rs'} 
@@ -64,7 +70,7 @@ Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 call plug#end()
 
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
 
 if has ('nvim')
 	source ~/.dotfiles/vim/fzf.vim

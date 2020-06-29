@@ -2,7 +2,8 @@
 " colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
-colorscheme oceanicnext
+" colorscheme oceanicnext
+colorscheme onedark
 " colorscheme flattened_light
 " colorscheme solarized
 " colorscheme solarized8_flat
@@ -27,6 +28,8 @@ endif
 set t_Co=256
 set t_ut= " fixes transparent BG on tmux
 
+let g:onedark_termcolors=16
+let g:onedark_terminal_italics=1
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 let g:oceanic_next_terminal_bold = 1
@@ -36,7 +39,7 @@ let g:highlightedyank_highlight_duration = 1000
 set noshowmode " not to show --INSERT--
 
 let g:lightline = {
- 		\ 'colorscheme': 'oceanicnext',
+ 		\ 'colorscheme': 'nord',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],

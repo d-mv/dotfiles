@@ -1,6 +1,6 @@
 " search
 set path+=**
-set wildmenu
+
 set wildignore+=*.png,*.jpg,*.otf,*.woff,*.jpeg,*.orig
 set wildignore+=*/build/*
 set wildignore+=*/coverage/*
@@ -10,9 +10,20 @@ set wildignore+=*/public/*
 set wildignore+=*/spec/vcr/*
 set wildignore+=*/tmp/*
 set wildignore+=tags
-set hlsearch
-set ignorecase
-set incsearch
+" Searching
+set ignorecase " case insensitive searching
+set smartcase " case-sensitive if expresson contains a capital letter
+set hlsearch " highlight search results
+set incsearch " set incremental search, like modern browsers
+set nolazyredraw " don't redraw while executing macros
+
+set magic " Set magic on, for regex
+
+" error bells
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
 set laststatus=2          " When you go into insert mode, the status line color changes. When you leave insert mode, the status line color changes back."
 
 set rtp+=/usr/local/opt/fzf
