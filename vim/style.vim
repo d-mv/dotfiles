@@ -9,6 +9,7 @@ colorscheme onedark
 " colorscheme solarized8_flat
 " colorscheme monokai
 " colorscheme OceanicNext
+" colorscheme base16-default-dark
 
 set background=dark
 

@@ -33,7 +33,7 @@ au FileType html setlocal formatprg=prettier\ --type\ html
 au FileType scss setlocal formatprg=prettier\ --parser\ scss
 au FileType css setlocal formatprg=prettier\ --parser\ css
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd BufWritePre *.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
 au BufWritePre  *.js,*.jsx,*.mjs,*.ts,*.tsx CocCommand eslint.executeAutofix
 autocmd StdinReadPre * let s:std_in=1
 

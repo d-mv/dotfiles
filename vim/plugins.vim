@@ -3,7 +3,7 @@ call plug#begin('~/.config/vim/plugged')
 
 Plug 'tpope/vim-vinegar'
 " Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch'
+" Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
 " Plug 'niklaas/lightline-gitdiff'
@@ -18,20 +18,20 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'itchyny/vim-highlighturl'
 
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'
-Plug 'crusoexia/vim-monokai'
-Plug 'mhartington/oceanic-next'
-Plug 'chriskempson/base16-vim'
-Plug 'nicknisi/vim-base16-lightline'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'mhartington/oceanic-next'
+" Plug 'chriskempson/base16-vim'
+" Plug 'nicknisi/vim-base16-lightline'
 Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'bigfish/vim-stylelint'
+" Plug 'bigfish/vim-stylelint'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'HerringtonDarkholme/yats.vim'
@@ -46,7 +46,7 @@ Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syn
 Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
 
 Plug 'tomtom/tcomment_vim'
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
 Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
