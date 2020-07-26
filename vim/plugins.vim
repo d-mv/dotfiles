@@ -2,38 +2,52 @@
 call plug#begin('~/.config/vim/plugged')
 
 Plug 'tpope/vim-vinegar'
-" Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-gitbranch'
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
+Plug 'kshenoy/vim-signature'
+" Plug 'itchyny/vim-gitbranch'
+" Plug 'itchyny/lightline.vim'
 " Plug 'niklaas/lightline-gitdiff'
 " Plug 'wincent/vcs-jump'
 
-" Plug 'scrooloose/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'ryanoasis/vim-devicons'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'itchyny/vim-highlighturl'
 
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'crusoexia/vim-monokai'
-" Plug 'mhartington/oceanic-next'
-" Plug 'chriskempson/base16-vim'
-" Plug 'nicknisi/vim-base16-lightline'
-Plug 'joshdick/onedark.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'bigfish/vim-stylelint'
 
+" ::: FEATURES :::
+" << NERDTree >>
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+
+" ::: LANGUAGE & FRAMEWORK SUPPORT :::
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
+" Plug 'rust-lang/rust.vim', {'for': 'rs'} 
+Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
+
+" ::: THEMING :::
+Plug 'pgdouyon/vim-yin-yang'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+Plug 'crusoexia/vim-monokai'
+Plug 'mhartington/oceanic-next'
+" Plug 'chriskempson/base16-vim'
+" Plug 'nicknisi/vim-base16-lightline'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+
+
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
 Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
@@ -58,8 +72,6 @@ Plug 'yegappan/greplace'
 Plug 'lilydjwg/colorizer'
 Plug 'RRethy/vim-hexokinase'
 " Plug 'reasonml-editor/vim-reason-plus'
-Plug 'rust-lang/rust.vim', {'for': 'rs'} 
-Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
 " Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
 " Plug 'jacqueswww/vim-vyper' " Vyper support

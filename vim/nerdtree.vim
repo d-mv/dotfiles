@@ -1,8 +1,8 @@
 " settings
-let g:NERDTreeWinPos = 'right'
+let g:NERDTreeWinPos = 'left'
 let g:NERDTreeWinSize=get(g:,'NERDTreeWinSize',40)
 let g:NERDTreeChDirMode=get(g:,'NERDTreeChDirMode',1)
-let g:NERDTreeShowHidden = get(g:, 'NERDTreeShowHidden', 0)
+" let g:NERDTreeShowHidden = get(g:, 'NERDTreeShowHidden', 0)
 
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeShowHidden = 1

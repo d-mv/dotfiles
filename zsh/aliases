@@ -2,6 +2,7 @@ alias loadnvm="[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/
 alias node8="loadnvm && nvm use lts/carbon"
 alias node10="loadnvm && nvm use 10"
 alias node12="loadnvm && nvm use lts/erbium"
+alias cargo-watch="systemfd --no-pid -s http::8001 -- cargo watch -x run"
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"

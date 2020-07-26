@@ -14,19 +14,15 @@ set autoindent smartindent " Set Proper Tabs
 set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
 set clipboard=unnamed
 set scrolloff=5
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2 "   Soft tab width in spaces
-set expandtab
+" set expandtab
 set smarttab
 set smartindent
-set autoindent
 set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
 set selection=exclusive  " Убирает выделение символа конца строки
 
 
 set wrap " turn on line wrapping
-set wrapmargin=8 " wrap lines when coming within n characters from side
+set wrapmargin=4 " wrap lines when coming within n characters from side
 set linebreak " set soft wrapping
 set showbreak=↪
 set autoindent " automatically set indent of new line
@@ -50,9 +46,9 @@ set shortmess+=c
 
 " Tab control
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set tabstop=4 " the visible width of tabs
-set softtabstop=4 " edit as if the tabs are 4 characters wide
-set shiftwidth=4 " number of spaces to use for indent and unindent
+set tabstop=2 " the visible width of tabs
+set softtabstop=2 " edit as if the tabs are 4 characters wide
+set shiftwidth=2 " number of spaces to use for indent and unindent
 set shiftround " round indent to a multiple of 'shiftwidth'
 
 " code folding settings

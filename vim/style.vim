@@ -3,13 +3,14 @@
 " colorscheme dracula
 " colorscheme onehalfdark
 " colorscheme oceanicnext
-colorscheme onedark
+" colorscheme onedark
 " colorscheme flattened_light
 " colorscheme solarized
 " colorscheme solarized8_flat
 " colorscheme monokai
 " colorscheme OceanicNext
 " colorscheme base16-default-dark
+colorscheme yin
 
 set background=dark
 
