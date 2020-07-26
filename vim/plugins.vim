@@ -35,16 +35,17 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 
 " ::: THEMING :::
 Plug 'pgdouyon/vim-yin-yang'
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'danishprakash/vim-yami'
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
-Plug 'crusoexia/vim-monokai'
-Plug 'mhartington/oceanic-next'
+" Plug 'lifepillar/vim-solarized8'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'mhartington/oceanic-next'
 " Plug 'chriskempson/base16-vim'
 " Plug 'nicknisi/vim-base16-lightline'
-Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'joshdick/onedark.vim'
+" Plug 'dracula/vim', { 'as': 'dracula' }
 
 
 
@@ -69,7 +70,6 @@ Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'yegappan/greplace'
-Plug 'lilydjwg/colorizer'
 Plug 'RRethy/vim-hexokinase'
 " Plug 'reasonml-editor/vim-reason-plus'
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support

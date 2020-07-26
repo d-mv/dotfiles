@@ -11,6 +11,7 @@
 " colorscheme OceanicNext
 " colorscheme base16-default-dark
 colorscheme yin
+" colorscheme yami
 
 set background=dark
 
