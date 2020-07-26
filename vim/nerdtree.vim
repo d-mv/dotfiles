@@ -66,14 +66,15 @@ let s:type_script = '398AD7'
 let s:react = '08B6CE'
 
 " what to highlight
-let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb"
+" let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+" let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+" let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb"
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['ts'] = s:type_script " sets the color for TS files
-let g:NERDTreeExtensionHighlightColor['tsx'] = s:react " sets the color for TSX files
-let g:NERDTreeExtensionHighlightColor['jsx'] = s:react " sets the color for TSX files
+" let g:NERDTreeExtensionHighlightColor['ts'] = s:type_script " sets the color for TS files
+" let g:NERDTreeExtensionHighlightColor['tsx'] = s:react " sets the color for TSX files
+let g:NERDTreeExtensionHighlightColor['tsx'] = s:white " sets the color for TSX files
+" let g:NERDTreeExtensionHighlightColor['jsx'] = s:react " sets the color for TSX files
 
 let g:WebDevIconsConcealNerdtreeBrackets = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1

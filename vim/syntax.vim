@@ -33,10 +33,10 @@
 " hi tsxLineComment gui=italic
 hi Cursor  guifg=#444444  guibg=#ffffff
 hi CursorLine  guibg=#254d57  ctermbg=237
-hi Directory guifg=#F08080  
+" hi Directory guifg=#F08080  
 hi Fixme guifg=#f542b6 gui=bold
 hi Folded guifg=orange
-hi ReduxHooksKeywords guifg=#428af5 gui=bold
+" hi ReduxHooksKeywords guifg=#428af5 gui=bold
 hi foldBraces gui=bold
 " hi Identifier gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 hi MatchParen	guifg=#444444 	guibg=#37c3e6
@@ -45,12 +45,12 @@ hi SpellBad guifg=yellow
 hi Statement cterm=bold
 hi Statement gui=bold
 hi Todo guifg=#d9f235 gui=bold
-hi Type gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
-hi VendorPrefix guifg=#00ffff gui=bold
+" hi Type gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
+" hi VendorPrefix guifg=#00ffff gui=bold
 hi VertSplit guifg=#F08080
-hi htmlArg cterm=italic
-hi htmlArg gui=italic
-hi typescriptType  gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
+" hi htmlArg cterm=italic
+" hi htmlArg gui=italic
+" hi typescriptType  gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 
 augroup myTodo
   autocmd!
@@ -90,7 +90,7 @@ set cc=100 " Show column @ 100
 
 
 
-match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
+" match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
 
 
 

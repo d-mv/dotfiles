@@ -12,6 +12,8 @@
 " colorscheme base16-default-dark
 colorscheme yin
 " colorscheme yami
+" colorscheme eink
+" colorscheme monotone
 
 set background=dark
 
@@ -23,10 +25,10 @@ let &t_ZR="\e[23m"
 set termguicolors
 " endif
 
-if !has('nvim') && $TERM ==# 'screen-256color'
+ if !has('nvim') && $TERM ==# 'screen-256color'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
+ endif
 
 set t_Co=256
 set t_ut= " fixes transparent BG on tmux

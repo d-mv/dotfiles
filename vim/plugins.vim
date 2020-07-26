@@ -35,6 +35,8 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 
 " ::: THEMING :::
 Plug 'pgdouyon/vim-yin-yang'
+Plug 'Lokaltog/vim-monotone'
+" Plug 'kisom/eink.vim'
 " Plug 'danishprakash/vim-yami'
 " Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
