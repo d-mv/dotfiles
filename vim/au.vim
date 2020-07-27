@@ -1,3 +1,10 @@
+" assumes set ignorecase smartcase
+augroup dynamic_smartcase
+    autocmd!
+    autocmd CmdLineEnter : set nosmartcase
+    autocmd CmdLineLeave : set smartcase
+augroup END
+
 " auto run
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line ("'\"") <= line("$") |
@@ -34,6 +41,6 @@ au FileType scss setlocal formatprg=prettier\ --parser\ scss
 au FileType css setlocal formatprg=prettier\ --parser\ css
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd BufWritePre *.css,*.less,*.scss,*.json,*.graphql,*.vue,*.yaml,*.html PrettierAsync
-au BufWritePre  *.js,*.jsx,*.mjs,*.ts,*.tsx CocCommand eslint.executeAutofix
+" au BufWritePre  *.js,*.jsx,*.mjs,*.ts,*.tsx CocCommand eslint.executeAutofix
 autocmd StdinReadPre * let s:std_in=1
 

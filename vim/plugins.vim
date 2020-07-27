@@ -5,19 +5,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
-" Plug 'itchyny/vim-gitbranch'
-" Plug 'itchyny/lightline.vim'
-" Plug 'niklaas/lightline-gitdiff'
-" Plug 'wincent/vcs-jump'
 
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'itchyny/vim-highlighturl'
-
-
-" Plug 'elzr/vim-json', { 'for': 'json' }
-" Plug 'bigfish/vim-stylelint'
 
 " ::: FEATURES :::
 " << NERDTree >>
@@ -30,8 +21,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
-" Plug 'rust-lang/rust.vim', {'for': 'rs'} 
 Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
+" Plug 'rust-lang/rust.vim', {'for': 'rs'} 
+" Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
+" Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
 
 " ::: THEMING :::
 Plug 'pgdouyon/vim-yin-yang'
@@ -51,39 +44,44 @@ Plug 'Lokaltog/vim-monotone'
 
 
 
-" Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
-Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
-Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
-Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
-Plug 'mhartington/vim-typings' "  search for typings in vim
-
-Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
-
-Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
 
 Plug 'tomtom/tcomment_vim'
-" Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
-Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
 Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
 Plug 'machakann/vim-highlightedyank'
-Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'yegappan/greplace'
 Plug 'RRethy/vim-hexokinase'
-" Plug 'reasonml-editor/vim-reason-plus'
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
-" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
-" Plug 'jacqueswww/vim-vyper' " Vyper support
-" Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
 Plug 'othree/html5.vim', {'for':'html'}
-Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
+
+
+" Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
+" Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
+" Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
+" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
+" Plug 'bigfish/vim-stylelint'
+" Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
+" Plug 'elzr/vim-json', { 'for': 'json' }
+" Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/vim-gitbranch'
+" Plug 'itchyny/vim-highlighturl'
+" Plug 'jacqueswww/vim-vyper' " Vyper support
+" Plug 'mhartington/vim-typings' "  search for typings in vim
+" Plug 'mileszs/ack.vim'
+" Plug 'niklaas/lightline-gitdiff'
+" Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
+" Plug 'reasonml-editor/vim-reason-plus'
+" Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
+" Plug 'wincent/vcs-jump'
 call plug#end()
 
+"
 " set rtp+=/usr/local/opt/fzf
 
 if has ('nvim')
