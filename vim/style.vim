@@ -2,7 +2,7 @@
 " colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
-" colorscheme oceanicnext
+colorscheme oceanicnext
 " colorscheme onedark
 " colorscheme flattened_light
 " colorscheme solarized
@@ -13,7 +13,8 @@
 " colorscheme yami
 " colorscheme eink
 " colorscheme monotone
-colorscheme yin
+" colorscheme yin
+" colorscheme typewriter-night
 
 set background=dark
 

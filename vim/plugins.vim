@@ -1,10 +1,9 @@
 " let g:javascript_filetypes = ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx']
 call plug#begin('~/.config/vim/plugged')
 
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
-Plug 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
 
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -13,8 +12,8 @@ Plug 'junegunn/fzf.vim'
 " ::: FEATURES :::
 " << NERDTree >>
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
@@ -22,63 +21,54 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
 Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
-" Plug 'rust-lang/rust.vim', {'for': 'rs'} 
-" Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
-" Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
-
-" ::: THEMING :::
-Plug 'pgdouyon/vim-yin-yang'
-Plug 'Lokaltog/vim-monotone'
-" Plug 'kisom/eink.vim'
-" Plug 'danishprakash/vim-yami'
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'crusoexia/vim-monokai'
-" Plug 'mhartington/oceanic-next'
-" Plug 'chriskempson/base16-vim'
-" Plug 'nicknisi/vim-base16-lightline'
-" Plug 'joshdick/onedark.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
-
-
-
-
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
-Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
-Plug 'machakann/vim-highlightedyank'
-Plug 'jiangmiao/auto-pairs'
-
-Plug 'yegappan/greplace'
-Plug 'RRethy/vim-hexokinase'
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
 Plug 'othree/html5.vim', {'for':'html'}
 Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
-
-
-" Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
+" Plug 'rust-lang/rust.vim', {'for': 'rs'} 
+" Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
+" Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
 " Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
 " Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
 " Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
-" Plug 'bigfish/vim-stylelint'
 " Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 " Plug 'elzr/vim-json', { 'for': 'json' }
+" Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
+" Plug 'reasonml-editor/vim-reason-plus'
+" Plug 'jacqueswww/vim-vyper' " Vyper support
+
+" ::: THEMING :::
+" Plug 'pgdouyon/vim-yin-yang' " mono
+" Plug 'logico/typewriter-vim' " mono, same as yin, but brighter
+" Plug 'Lokaltog/vim-monotone' " mono
+" Plug 'kisom/eink.vim' " mono
+" Plug 'danishprakash/vim-yami' " mono
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'lifepillar/vim-solarized8'
+" Plug 'crusoexia/vim-monokai'
+Plug 'mhartington/oceanic-next'
+" Plug 'chriskempson/base16-vim'
+" Plug 'nicknisi/vim-base16-lightline'
+" Plug 'joshdick/onedark.vim'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
+Plug 'machakann/vim-highlightedyank'
+Plug 'jiangmiao/auto-pairs'
+Plug 'RRethy/vim-hexokinase'
+" " Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
 " Plug 'itchyny/lightline.vim'
 " Plug 'itchyny/vim-gitbranch'
-" Plug 'itchyny/vim-highlighturl'
-" Plug 'jacqueswww/vim-vyper' " Vyper support
 " Plug 'mhartington/vim-typings' "  search for typings in vim
 " Plug 'mileszs/ack.vim'
 " Plug 'niklaas/lightline-gitdiff'
-" Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
-" Plug 'reasonml-editor/vim-reason-plus'
 " Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
-" Plug 'wincent/vcs-jump'
 call plug#end()
 
 "

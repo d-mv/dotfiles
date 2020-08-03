@@ -73,7 +73,7 @@ let s:react = '08B6CE'
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
 " let g:NERDTreeExtensionHighlightColor['ts'] = s:type_script " sets the color for TS files
 " let g:NERDTreeExtensionHighlightColor['tsx'] = s:react " sets the color for TSX files
-let g:NERDTreeExtensionHighlightColor['tsx'] = s:white " sets the color for TSX files
+" let g:NERDTreeExtensionHighlightColor['tsx'] = s:white " sets the color for TSX files
 " let g:NERDTreeExtensionHighlightColor['jsx'] = s:react " sets the color for TSX files
 
 let g:WebDevIconsConcealNerdtreeBrackets = 1

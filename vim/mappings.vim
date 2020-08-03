@@ -82,15 +82,14 @@ nmap <space>e :CocCommand explorer<CR>
 map <C-d> yyp
 map ∂ yyP
 " map <C-o> :ls<CR>
-map π :Buffers<CR>
-map <C-g> :Ag!<CR>
-map © :Rg!<CR>
+map <C-l> :Buffers<CR>
+map <C-f> :Rg!<CR>
 " map <C-p> :find
 map <C-p> :GFiles<CR>
 map <C-a> :FZF<CR>
 " map <C-x> :edit .<CR>
 " map <C-x> :CocCommand explorer<CR>
-map <C-F> :Ack
+" map <C-F> :Ack
 map <C-k> Vd2kp
 map <C-j> Vdp
 map <C-l> o<CR><CR><Esc>ki
