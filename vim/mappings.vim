@@ -80,8 +80,8 @@ nmap <space>e :CocCommand explorer<CR>
 " map <C-b> :NERDTreeToggle<CR>
 map <C-d> yyp
 map ∂ yyP
-map <C-o> :ls<CR>
-map <C-o> :Buffers<CR>
+" map <C-o> :ls<CR>
+map π :Buffers<CR>
 map <C-g> :Ag!<CR>
 map © :Rg!<CR>
 " map <C-p> :find

@@ -18,7 +18,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Plug 'itchyny/vim-highlighturl'
 
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'logico/typewriter-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'

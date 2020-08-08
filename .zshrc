@@ -42,7 +42,7 @@ setopt hist_reduce_blanks
 source ~/.dotfiles/zsh/aliases
 source ~/.dotfiles/zsh/private
 source ~/.dotfiles/zsh/functions
-# source ~/.dotfiles/zsh/path
+source ~/.dotfiles/zsh/path
 # source ~/.dotfiles/zsh/iterm
 
 # eval "$(rbenv init -)"
@@ -79,7 +79,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 autoload -Uz compinit
 compinit
 
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # eval "$(starship init zsh)"
