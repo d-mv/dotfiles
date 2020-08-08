@@ -79,7 +79,3 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 autoload -Uz compinit
 compinit
 
-# autoload -U promptinit; promptinit
-# prompt pure
-
-# eval "$(starship init zsh)"

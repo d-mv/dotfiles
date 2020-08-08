@@ -62,11 +62,12 @@ function! OpenTerminal()
 endfunction
 nnoremap <C-t> :call OpenTerminal()<CR>
 
-" map <A-i> :NERDTreeFind<CR>
-" nmap ,f :NERDTreeFind<CR>
+map - :NERDTreeFind<CR>
+nmap ,f :NERDTreeFind<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 " close all, except current
-nmap ,bda :bufdo bd<CR>  
+nmap ,bda :bufdo bd<CR>
 nmap <space>e :CocCommand explorer<CR>
 
 " " matchit - <%> jums to other end of selected brackets
@@ -80,16 +81,16 @@ nmap <space>e :CocCommand explorer<CR>
 " map <C-b> :NERDTreeToggle<CR>
 map <C-d> yyp
 map ∂ yyP
+
 " map <C-o> :ls<CR>
-map π :Buffers<CR>
-map <C-g> :Ag!<CR>
-map © :Rg!<CR>
+map <C-l> :Buffers<CR>
+map <C-f> :Rg!<CR>
 " map <C-p> :find
 map <C-p> :GFiles<CR>
 map <C-a> :FZF<CR>
 " map <C-x> :edit .<CR>
-map <C-x> :CocCommand explorer<CR>
-map <C-F> :Ack 
+" map <C-x> :CocCommand explorer<CR>
+" map <C-F> :Ack
 map <C-k> Vd2kp
 map <C-j> Vdp
 map <C-l> o<CR><CR><Esc>ki
@@ -142,6 +143,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh <Plug>(coc-doHover)
 
 map <C-I> :CocAction<CR>
 
