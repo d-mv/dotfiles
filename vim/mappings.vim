@@ -93,7 +93,7 @@ map <C-a> :FZF<CR>
 " map <C-F> :Ack
 map <C-k> Vd2kp
 map <C-j> Vdp
-map <C-l> o<CR><CR><Esc>ki
+" map <C-l> o<CR><CR><Esc>ki
 "  get highlighting group
 " map <C-[> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
