@@ -55,6 +55,7 @@ Plug 'mhartington/oceanic-next'
 " Plug 'nicknisi/vim-base16-lightline'
 " Plug 'joshdick/onedark.vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'sainnhe/gruvbox-material'
 
 Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
@@ -62,7 +63,7 @@ Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with t
 Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
 Plug 'RRethy/vim-hexokinase'
-" " Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
+" Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
 " Plug 'itchyny/lightline.vim'
 " Plug 'itchyny/vim-gitbranch'
 " Plug 'mhartington/vim-typings' "  search for typings in vim
@@ -78,7 +79,7 @@ if has ('nvim')
 	source ~/.dotfiles/vim/fzf.vim
 endif
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 
 " Better display for messages
 " set cmdheight=2

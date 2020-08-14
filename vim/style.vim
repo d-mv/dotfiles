@@ -2,7 +2,7 @@
 " colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
-colorscheme oceanicnext
+" colorscheme oceanicnext
 " colorscheme onedark
 " colorscheme flattened_light
 " colorscheme solarized
@@ -15,6 +15,8 @@ colorscheme oceanicnext
 " colorscheme monotone
 " colorscheme yin
 " colorscheme typewriter-night
+colorscheme gruvbox-material
+
 
 set background=dark
 
