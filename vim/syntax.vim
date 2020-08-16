@@ -31,26 +31,28 @@
 " hi tsxComment gui=italic
 " hi tsxLineComment cterm=italic
 " hi tsxLineComment gui=italic
-hi Cursor  guifg=#444444  guibg=#ffffff
-hi CursorLine  guibg=#254d57  ctermbg=237
+" hi Cursor guifg=#444444  guibg=#ffffff
+" hi CursorLine guibg=#254d57 ctermbg=237
 " hi Directory guifg=#F08080  
-hi Fixme guifg=#f542b6 gui=bold
-hi Folded guifg=orange
-" hi ReduxHooksKeywords guifg=#428af5 gui=bold
-hi foldBraces gui=bold
 " hi Identifier gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
-hi MatchParen	guifg=#444444 	guibg=#37c3e6
-hi Search ctermfg=white ctermbg=red guifg=red  guibg=pink
-hi SpellBad guifg=yellow
-hi Statement cterm=bold
-hi Statement gui=bold
-hi Todo guifg=#d9f235 gui=bold
+" hi MatchParen	guifg=#444444 	guibg=#37c3e6
+" hi ReduxHooksKeywords guifg=#428af5 gui=bold
+" hi Statement cterm=bold
+" hi Statement gui=bold
 " hi Type gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 " hi VendorPrefix guifg=#00ffff gui=bold
-hi VertSplit guifg=#F08080
 " hi htmlArg cterm=italic
 " hi htmlArg gui=italic
 " hi typescriptType  gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
+hi Cursor guibg=white guifg=black 
+" hi CursorLine guibg=#444444 ctermbg=237
+hi Fixme guifg=#f542b6 gui=bold
+hi Folded guifg=orange
+hi Search ctermfg=white ctermbg=red guifg=red  guibg=pink
+hi SpellBad guifg=yellow
+hi Todo guifg=#d9f235
+hi VertSplit guifg=#F08080
+hi foldBraces gui=bold
 
 augroup myTodo
   autocmd!

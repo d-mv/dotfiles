@@ -56,6 +56,7 @@ Plug 'mhartington/oceanic-next'
 " Plug 'joshdick/onedark.vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/forest-night'
 
 Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
