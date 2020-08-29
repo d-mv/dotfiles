@@ -16,7 +16,7 @@ export LDFLAGS="-L/usr/local/opt/readline/lib"
 export CPPFLAGS="-I/usr/local/opt/readline/include"
 export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.cargo/env
 export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
@@ -42,7 +42,7 @@ setopt hist_reduce_blanks
 source ~/.dotfiles/zsh/aliases
 source ~/.dotfiles/zsh/private
 source ~/.dotfiles/zsh/functions
-source ~/.dotfiles/zsh/path
+# source ~/.dotfiles/zsh/path
 # source ~/.dotfiles/zsh/iterm
 
 # eval "$(rbenv init -)"
@@ -82,4 +82,4 @@ compinit
 # autoload -U promptinit; promptinit
 # prompt pure
 #
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"

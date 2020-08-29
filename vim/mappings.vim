@@ -12,16 +12,16 @@ nnoremap ,( bcw(<Esc>pa)<Space><Esc>
 nnoremap ,[ bcw[<Esc>pa]<Space><Esc>
 nnoremap ,' bcw'<Esc>pa'<Space><Esc>
 
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
-inoremap " ""<Esc>i
-inoremap < <><Esc>i
-inoremap ' ''<Esc>i
-inoremap clg  <Esc>ciwconsole.log()<Esc>i
+" inoremap ( ()<Esc>i
+" inoremap { {}<Esc>i
+" inoremap [ []<Esc>i
+" inoremap " ""<Esc>i
+" inoremap < <><Esc>i
+" inoremap ' ''<Esc>i
+" inoremap clg  <Esc>ciwconsole.log()<Esc>i
 
-autocmd FileType vim inoremap < <><Esc>i
-autocmd FileType vim inoremap " "<Space><Space>
+" autocmd FileType vim inoremap < <><Esc>i
+" autocmd FileType vim inoremap " "<Space><Space>
 autocmd FileType vim nnoremap gc 0i"<Space><Esc>$
 autocmd FileType vim nnoremap gcu F"vlc<Esc>
 

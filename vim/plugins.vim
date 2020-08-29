@@ -14,18 +14,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
 Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
 Plug 'othree/html5.vim', {'for':'html'}
 Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 " Plug 'rust-lang/rust.vim', {'for': 'rs'} 
+" Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
 " Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
 " Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
 " Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
@@ -50,13 +50,15 @@ Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'
 " Plug 'crusoexia/vim-monokai'
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
 " Plug 'chriskempson/base16-vim'
 " Plug 'nicknisi/vim-base16-lightline'
 " Plug 'joshdick/onedark.vim'
 " Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'sainnhe/gruvbox-material'
+" Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/forest-night'
+" Plug 'KKPMW/sacredforest-vim'
+" Plug 'rhysd/vim-color-spring-night'
 
 Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
