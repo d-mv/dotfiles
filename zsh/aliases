@@ -10,8 +10,16 @@ alias adog='git log --all --decorate --oneline --graph'
 alias vi='vim --clean'
 alias nv='nvim'
 alias rn='ranger'
+<<<<<<< HEAD
 alias code='/usr/local/bin/code .'
 # alias code='/Applications/Code.app/Contents/Resources/app/bin/code .'
+||||||| 4956580
+# alias code='/usr/local/bin/code .' */
+alias code='/Applications/Code.app/Contents/Resources/app/bin/code .'
+=======
+alias code='/usr/local/bin/code .' */
+# alias code='/Applications/Code.app/Contents/Resources/app/bin/code .'
+>>>>>>> b54cbcdb76487a5e927f8931c3dc973e75a17833
 alias weather='curl wttr.in/TelAviv-Yafo'
 alias weather2='curl http://v2.wttr.in'
 alias search='ddgr'

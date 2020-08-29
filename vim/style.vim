@@ -10,7 +10,8 @@ let g:highlightedyank_highlight_duration = 1000
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_italic = 1
 let g:forest_night_enable_italic = 1
-
+let g:spring_night_highlight_terminal = 1
+let g:spring_night_cterm_italic = 1
 
 
 let color='true'
@@ -31,6 +32,8 @@ set t_ut= " fixes transparent BG on tmux
 
 
 colorscheme forest-night
+" colorscheme spring-night
+" colorscheme sacredforest
 " colorscheme slate
 " colorscheme nord
 " colorscheme dracula
