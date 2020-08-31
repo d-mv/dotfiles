@@ -21,8 +21,6 @@ Plug 'scrooloose/nerdtree'
 " Plug 'neovim/nvim-lsp'
 " Plug 'nvim-lua/completion-nvim'  "  A async completion framework aims to provide completion to neovim's built in LSP written in Lua
 " Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
-
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
