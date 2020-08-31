@@ -44,6 +44,9 @@ noremap ∆ <C-w>j
 noremap ˚ <C-w>k
 noremap ¬ <C-w>l
 
+nmap <C-n> :NextDiagnostic<CR>
+nmap <C-m> :PrevDiagnostic<CR>
+
 
 " Toggle fold at current position.
 nnoremap <Tab> za

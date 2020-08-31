@@ -38,7 +38,6 @@ colorscheme forest-night
 " colorscheme nord
 " colorscheme dracula
 " colorscheme onehalfdark
-" colorscheme oceanicnext
 " colorscheme onedark
 " colorscheme flattened_light
 " colorscheme solarized

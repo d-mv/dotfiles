@@ -17,6 +17,11 @@ Plug 'scrooloose/nerdtree'
 " Plug 'ryanoasis/vim-devicons'
 
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
+" Plug 'neovim/nvim-lsp'
+" Plug 'nvim-lua/completion-nvim'  "  A async completion framework aims to provide completion to neovim's built in LSP written in Lua
+" Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
+
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
@@ -45,12 +50,12 @@ Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 " Plug 'Lokaltog/vim-monotone' " mono
 " Plug 'kisom/eink.vim' " mono
 " Plug 'danishprakash/vim-yami' " mono
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'lifepillar/vim-solarized8'
 " Plug 'crusoexia/vim-monokai'
-" Plug 'mhartington/oceanic-next'
+Plug 'mhartington/oceanic-next'
 " Plug 'chriskempson/base16-vim'
 " Plug 'nicknisi/vim-base16-lightline'
 " Plug 'joshdick/onedark.vim'

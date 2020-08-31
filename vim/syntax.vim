@@ -53,6 +53,59 @@ hi SpellBad guifg=yellow
 hi Todo guifg=#d9f235
 hi VertSplit guifg=#F08080
 hi foldBraces gui=bold
+"                 *hl-LspDiagnosticsError*
+hi LspDiagnosticsError guifg=red  "            used for "Error" diagnostic virtual text
+"
+"                                                     *hl-LspDiagnosticsErrorSign*
+" LspDiagnosticsErrorSign           used for "Error" diagnostic signs in sign
+"                                   column
+"
+"                                                 *hl-LspDiagnosticsErrorFloating*
+" LspDiagnosticsErrorFloating       used for "Error" diagnostic messages in the
+"                                   diagnostics float
+"
+"                                                       *hl-LspDiagnosticsWarning*
+" LspDiagnosticsWarning             used for "Warning" diagnostic virtual text
+"
+"                                                   *hl-LspDiagnosticsWarningSign*
+" LspDiagnosticsWarningSign         used for "Warning" diagnostic signs in sign
+"                                   column
+"
+"                                               *hl-LspDiagnosticsWarningFloating*
+" LspDiagnosticsWarningFloating     used for "Warning" diagnostic messages in the
+"                                   diagnostics float
+"
+"                                                   *hl-LspDiagnosticsInformation*
+" LspDiagnosticsInformation         used for "Information" diagnostic virtual text
+"
+"                                               *hl-LspDiagnosticsInformationSign*
+" LspDiagnosticsInformationSign     used for "Information" signs in sign column
+"
+"                                           *hl-LspDiagnosticsInformationFloating*
+" LspDiagnosticsInformationFloating used for "Information" diagnostic messages in
+"                                   the diagnostics float
+"
+"                                                          *hl-LspDiagnosticsHint*
+" LspDiagnosticsHint                used for "Hint" diagnostic virtual text
+"
+"                                                      *hl-LspDiagnosticsHintSign*
+" LspDiagnosticsHintSign            used for "Hint" diagnostic signs in sign
+"                                   column
+"
+"                                                  *hl-LspDiagnosticsHintFloating*
+" LspDiagnosticsHintFloating        used for "Hint" diagnostic messages in the
+"                                   diagnostics float
+"
+"                                                            *hl-LspReferenceText*
+" LspReferenceText          used for highlighting "text" references
+"
+"                                                            *hl-LspReferenceRead*
+" LspReferenceRead          used for highlighting "read" references
+"
+"                                                           *hl-LspReferenceWrite*
+" LspReferenceWrite         used for highlighting "write" references
+"
+"
 
 augroup myTodo
   autocmd!

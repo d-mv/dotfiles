@@ -9,7 +9,8 @@ set hidden " switch between buffers without error
 set number
 set relativenumber
 set complete=.,w,b,u,U,t,i,d
-set completeopt-=preview
+" set completeopt-=preview
+set completeopt=menuone,noinsert
 set autoindent smartindent " Set Proper Tabs
 set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
 set clipboard=unnamed
