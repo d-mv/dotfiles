@@ -9,6 +9,7 @@ Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+
 " ::: FEATURES :::
 " << NERDTree >>
 Plug 'scrooloose/nerdtree'
@@ -36,7 +37,7 @@ Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 " Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
-" Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
+" Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule
 " Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
 " Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 " Plug 'elzr/vim-json', { 'for': 'json' }

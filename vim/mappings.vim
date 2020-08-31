@@ -84,6 +84,7 @@ nmap <space>e :CocCommand explorer<CR>
 " map <C-b> :NERDTreeToggle<CR>
 map <C-d> yyp
 map ∂ yyP
+
 " map <C-o> :ls<CR>
 map <C-l> :Buffers<CR>
 map <C-f> :Rg!<CR>
