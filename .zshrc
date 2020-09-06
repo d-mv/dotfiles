@@ -79,6 +79,8 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 autoload -Uz compinit
 compinit
 
+nvm use 12
+
 # autoload -U promptinit; promptinit
 # prompt pure
 #
