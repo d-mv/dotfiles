@@ -21,14 +21,17 @@ Plug 'scrooloose/nerdtree'
 " Plug 'neovim/nvim-lsp'
 " Plug 'nvim-lua/completion-nvim'  "  A async completion framework aims to provide completion to neovim's built in LSP written in Lua
 " Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
+Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'dense-analysis/ale'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
+" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
-Plug 'othree/html5.vim', {'for':'html'}
+" Plug 'othree/html5.vim', {'for':'html'}
 Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
-" Plug 'rust-lang/rust.vim', {'for': 'rs'} 
+" Plug 'rust-lang/rust.vim', {'for': 'rs'}
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
 " Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
 " Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
@@ -116,3 +119,17 @@ let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
+let g:ale_completion_autoimport = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier','eslint'],
+\   'javascriptreact': ['prettier','eslint'],
+\   'typescript': ['prettier','eslint'],
+\   'typescriptreact': ['prettier','eslint'],
+\}
+
+" treesitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
