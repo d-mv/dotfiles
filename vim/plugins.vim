@@ -5,10 +5,8 @@ Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit',
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
 
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 
 " ::: FEATURES :::
 " << NERDTree >>
@@ -18,19 +16,19 @@ Plug 'scrooloose/nerdtree'
 " Plug 'ryanoasis/vim-devicons'
 
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
-" Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lsp'
 " Plug 'nvim-lua/completion-nvim'  "  A async completion framework aims to provide completion to neovim's built in LSP written in Lua
-" Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
+Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
 Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'dense-analysis/ale'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
-" Plug 'othree/html5.vim', {'for':'html'}
 Plug 'tpope/vim-dotenv', { 'for': 'env' }
 Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
+" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
+" Plug 'othree/html5.vim', {'for':'html'}
 " Plug 'rust-lang/rust.vim', {'for': 'rs'}
 " Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
 " Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
@@ -39,7 +37,7 @@ Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
 " Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule
-" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
+Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
 " Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 " Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim

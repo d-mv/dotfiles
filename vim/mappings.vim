@@ -5,7 +5,7 @@ nnoremap ,rf :-1read $HOME/.dotfiles/vim/snippets/react_function.tsx<CR>2jfCvc
 nnoremap ,rc :-1read $HOME/.dotfiles/vim/snippets/react_class.tsx<CR>2jf>la
 nnoremap ,ri :-1read $HOME/.dotfiles/vim/snippets/react_import.tsx<CR>1ja
 nnoremap ,si :-1read $HOME/.dotfiles/vim/snippets/styled_import.tsx<CR>1ja
-nnoremap ,lg :-1read $HOME/.dotfiles/vim/snippets/console_import.tsx<CR>1ja
+nnoremap ,lg :-1read $HOME/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i
 nnoremap ,m[ a{<Esc>pa}<Esc>
 nnoremap ,{ bcw{<Esc>pa}<Space><Esc>
 nnoremap ," bcw"<Esc>pa"<Space><Esc>
