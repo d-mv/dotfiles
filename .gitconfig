@@ -1,5 +1,5 @@
 [user]
-	name = d-mv
+	name = Dmitry Melnikov
 	email = d.dash.mv@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -34,7 +34,12 @@
 [core]
   # pager = less -FRSX
   editor = nvim
-  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+  pager = delta
+
+[delta]
+	plus-color="#012800" 
+	minus-color="#340001" 
+	theme='Monokai Extended'
 
 [interactive]
     diffFilter = delta --color-only
@@ -59,7 +64,7 @@
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
   # http://www.jukie.net/bart/blog/pimping-out-git-log
   lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
-  lgd = log --oneline --graph --pretty="[%ad] %C(bold blue)%cn%Creset: %s %C(yellow)%D%Creset" --date=format-local:"%d.%m.%y"
+  lgd = log --oneline --graph --pretty='[%ad] %C(bold blue)%cn%Creset: %s %C(yellow)%D%Creset' --date=format-local:'%d.%m.%y'
   lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -15
 # Serve local repo. http://coderwall.com/p/eybtga
   # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
