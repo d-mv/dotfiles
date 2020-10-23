@@ -16,10 +16,10 @@ Plug 'scrooloose/nerdtree'
 " Plug 'ryanoasis/vim-devicons'
 
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
-Plug 'neovim/nvim-lsp'
-Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'neovim/nvim-lsp'
+" Plug 'nvim-treesitter/nvim-treesitter'
 
-Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
+" Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
