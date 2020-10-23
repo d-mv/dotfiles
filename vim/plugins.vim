@@ -1,93 +1,55 @@
 " let g:javascript_filetypes = ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx']
 call plug#begin('~/.config/vim/plugged')
-
-Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
-Plug 'airblade/vim-gitgutter'
-Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 " ::: FEATURES :::
 " << NERDTree >>
 Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'ryanoasis/vim-devicons'
-
-" ::: LANGUAGE & FRAMEWORK SUPPORT :::
-Plug 'neovim/nvim-lsp'
-" Plug 'nvim-lua/completion-nvim'  "  A async completion framework aims to provide completion to neovim's built in LSP written in Lua
-Plug 'nvim-lua/diagnostic-nvim'  "  A wrapper for neovim built in LSP diagnosis config
-Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'dense-analysis/ale'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
-Plug 'tpope/vim-dotenv', { 'for': 'env' }
-Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
-" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
-" Plug 'othree/html5.vim', {'for':'html'}
-" Plug 'rust-lang/rust.vim', {'for': 'rs'}
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' } " bundle for styled-components, diet-cola, emotion, experimental glamor/styled, and astroturf content
-" Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
-" Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
-" Plug 'ElmCast/elm-vim', {'for': 'elm'} " Elm
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
-" Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule
-Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
-" Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
-" Plug 'elzr/vim-json', { 'for': 'json' }
-" Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
-" Plug 'reasonml-editor/vim-reason-plus'
-" Plug 'jacqueswww/vim-vyper' " Vyper support
-
-" ::: THEMING :::
-" Plug 'pgdouyon/vim-yin-yang' " mono
-" Plug 'logico/typewriter-vim' " mono, same as yin, but brighter
-" Plug 'Lokaltog/vim-monotone' " mono
-" Plug 'kisom/eink.vim' " mono
-" Plug 'danishprakash/vim-yami' " mono
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'crusoexia/vim-monokai'
-Plug 'mhartington/oceanic-next'
-" Plug 'chriskempson/base16-vim'
-" Plug 'nicknisi/vim-base16-lightline'
-" Plug 'joshdick/onedark.vim'
-" Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/forest-night'
-" Plug 'KKPMW/sacredforest-vim'
-" Plug 'rhysd/vim-color-spring-night'
-
+"
+" << Git >>
+Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
+Plug 'airblade/vim-gitgutter'
+Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
+"
+" << fzf >>
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"
+" << other >>
 Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
 Plug 'machakann/vim-highlightedyank'
 Plug 'jiangmiao/auto-pairs'
 Plug 'RRethy/vim-hexokinase'
-" Plug 'AndrewRadev/tagalong.vim' " Automatically change closing tag
-" Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-gitbranch'
-" Plug 'mhartington/vim-typings' "  search for typings in vim
-" Plug 'mileszs/ack.vim'
-" Plug 'niklaas/lightline-gitdiff'
+"
+" ::: LANGUAGE & FRAMEWORK SUPPORT :::
+Plug 'neovim/nvim-lsp'
+
+" Plug 'haorenW1025/completion-nvim'
+" Plug 'haorenW1025/diagnostic-nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
+" Plug 'tpope/vim-dotenv', { 'for': 'env' }
+" Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
+" Plug 'rust-lang/rust.vim', {'for': 'rs'}
+" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
 " Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
+" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
+
+" ::: THEMING :::
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'mhartington/oceanic-next'
+Plug 'sainnhe/forest-night'
 call plug#end()
 
-"
-" set rtp+=/usr/local/opt/fzf
-
-if has ('nvim')
-	source ~/.dotfiles/vim/fzf.vim
-endif
-
-let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-stylelintplus', 'coc-prettier']
 
 " Better display for messages
 " set cmdheight=2
@@ -102,10 +64,6 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 let g:fzf_preview_window = 'right:60%'
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
-let g:lightline#gitdiff#indicator_added = ' '
-let g:lightline#gitdiff#indicator_modified = ' '
-let g:lightline#gitdiff#indicator_deleted = ' '
-let g:lightline#gitdiff#separator = ' '
 
 let g:gitgutter_sign_added = ''
 let g:gitgutter_sign_modified = ''
@@ -116,17 +74,6 @@ let g:gitgutter_sign_modified_removed = ''
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
-
-let g:ale_completion_autoimport = 1
-set omnifunc=ale#completion#OmniFunc
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier','eslint'],
-\   'javascriptreact': ['prettier','eslint'],
-\   'typescript': ['prettier','eslint'],
-\   'typescriptreact': ['prettier','eslint'],
-\}
 
 " treesitter
 set foldmethod=expr

@@ -24,6 +24,7 @@ augroup highlight_yank
 augroup END
 
 " autocmd BufEnter * lua require'completion'.on_attach()
+" autocmd BufEnter * lua require'diagnostic'.on_attach()
 autocmd FileType scss set iskeyword+=-
 autocmd Filetype gitcommit,markdown,note setlocal spell textwidth=72
 autocmd Filetype gitcommit,markdown,note setlocal complete+=kspell

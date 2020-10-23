@@ -20,7 +20,7 @@ set smarttab
 set smartindent
 set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
 set selection=exclusive  " Убирает выделение символа конца строки
-
+set noshowmode " not to show --INSERT--
 
 set wrap " turn on line wrapping
 set wrapmargin=4 " wrap lines when coming within n characters from side

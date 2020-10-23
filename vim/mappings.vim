@@ -13,19 +13,6 @@ nnoremap ,( bcw(<Esc>pa)<Space><Esc>
 nnoremap ,[ bcw[<Esc>pa]<Space><Esc>
 nnoremap ,' bcw'<Esc>pa'<Space><Esc>
 
-" inoremap ( ()<Esc>i
-" inoremap { {}<Esc>i
-" inoremap [ []<Esc>i
-" inoremap " ""<Esc>i
-" inoremap < <><Esc>i
-" inoremap ' ''<Esc>i
-" inoremap clg  <Esc>ciwconsole.log()<Esc>i
-
-" autocmd FileType vim inoremap < <><Esc>i
-" autocmd FileType vim inoremap " "<Space><Space>
-autocmd FileType vim nnoremap gc 0i"<Space><Esc>$
-autocmd FileType vim nnoremap gcu F"vlc<Esc>
-
 autocmd FileType javascript nnoremap gc 0i//<Space><Esc>
 autocmd FileType typescript nnoremap gc 0i//<Space><Esc>
 
@@ -72,7 +59,6 @@ map <C-b> :NERDTreeToggle<CR>
 
 " close all, except current
 nmap ,bda :bufdo bd<CR>
-nmap <space>e :CocCommand explorer<CR>
 
 " " matchit - <%> jums to other end of selected brackets
 " " surround - <cs'"> - change ' to " around current selection
@@ -81,23 +67,17 @@ nmap <space>e :CocCommand explorer<CR>
 " " textobj-rubyblock - var - selects outer ruby block
 " "       vir - selects inner ruby block
 " ]]"'"
-" "
-" map <C-b> :NERDTreeToggle<CR>
+
 map <C-d> yyp
 map ∂ yyP
 
-" map <C-o> :ls<CR>
 map <C-l> :Buffers<CR>
 map <C-f> :Rg!<CR>
-" map <C-p> :find
 map <C-p> :GFiles<CR>
 map <C-a> :FZF<CR>
-" map <C-x> :edit .<CR>
-" map <C-x> :CocCommand explorer<CR>
-" map <C-F> :Ack
 map <C-k> Vd2kp
 map <C-j> Vdp
-" map <C-l> o<CR><CR><Esc>ki
+
 "  get highlighting group
 " map <C-[> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -115,11 +95,11 @@ noremap <Right> <NOP>
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -127,7 +107,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -167,4 +147,13 @@ function! s:show_documentation()
   endif
 endfunction
 
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
