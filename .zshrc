@@ -1,29 +1,3 @@
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH="/Users/dmitry/.nvm/versions/node/v12.16.2/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/sqlite/lib"
-export CPPFLAGS="-I/usr/local/opt/sqlite/include"
-export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
-export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" --no-use # This loads nvm
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.cargo/env
-export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-source $HOME/.cargo/env
-
 export EDITOR=vim
 export REACT_EDITOR=vim
 
@@ -31,23 +5,12 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
 set -g default-terminal "screen-256color"
 
-# HISTFILE=~/.histfile
-# HISTSIZE=99999
-# SAVEHIST=99999
-# setopt extended_history
-# setopt hist_ignore_all_dups
-# setopt hist_ignore_space
-# setopt hist_reduce_blanks
-
+source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/private.zsh
 source ~/.dotfiles/zsh/functions.zsh
 # # source ~/.dotfiles/zsh/path.zsh
 # # source ~/.dotfiles/zsh/iterm
-
-# # source ~/.dotfiles/zsh/colors.zsh
-
-# # eval "$(rbenv init -)"
 
 # Homebrew completion
 if type brew &>/dev/null; then
@@ -68,27 +31,8 @@ bindkey "\e\e[C" forward-word
 set -o vi
 bindkey -v
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# autoload -Uz compinit
-# compinit
-
-# # ignore case in autocompletion
-# zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
-
-
-# # autoload -U colors && colors
-
-# # test -r "~/.dotfiles/.dir_colors" && eval $(dircolors ~/.dotfiles/.dir_colors)
-
-
-
-# nvm use 12
-
-# # autoload -U promptinit; promptinit
-# # prompt pure
-# #
-# # eval "$(starship init zsh)"
 
 #
 # Global
@@ -205,8 +149,8 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git hg
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' disable-patterns "${(b)HOME}/code/(portal|portal-ee|portal-master)(|/*)"
-zstyle ':vcs_info:*' stagedstr "%F{green}●%f" # default 'S'
-zstyle ':vcs_info:*' unstagedstr "%F{red}●%f" # default 'U'
+zstyle ':vcs_info:*' stagedstr "%F{green} ●%f" # default 'S'
+zstyle ':vcs_info:*' unstagedstr "%F{red} ●%f" # default 'U'
 zstyle ':vcs_info:*' use-simple true
 zstyle ':vcs_info:git+set-message:*' hooks git-untracked
 zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] ' # default ' (%s)-[%b]%c%u-'
@@ -241,7 +185,7 @@ function +vi-hg-message() {
 function +vi-git-untracked() {
   emulate -L zsh
   if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
-    hook_com[unstaged]+="%F{blue}●%f"
+    hook_com[unstaged]+="%F{blue} ●%f"
   fi
 }
 
@@ -327,7 +271,7 @@ select-word-style bash # only alphanumeric chars are considered WORDCHARS
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
 # NOTE: must come after select-word-style.
-# source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Note that this will only ensure unique history if we supply a prefix
 # before hitting "up" (ie. we perform a "search"). HIST_FIND_NO_DUPS
@@ -391,7 +335,6 @@ bindkey '^Z' fg-bg
 # source $HOME/.zsh/common
 # source $HOME/.zsh/colors
 # source $HOME/.zsh/exports
-# source $HOME/.zsh/functions
 # source $HOME/.zsh/hash
 # source $HOME/.zsh/path
 # source $HOME/.zsh/vars
@@ -399,11 +342,6 @@ bindkey '^Z' fg-bg
 #
 # Third-party
 #
-
-# Skim
-
-# test -e "$HOME/.zsh/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/skim/shell/key-bindings.zsh"
-test -e "$HOME/.zsh/skim/shell/completion.zsh" && source "$HOME/.zsh/skim/shell/completion.zsh"
 
 #
 # Hooks
@@ -441,6 +379,7 @@ function -update-window-title-precmd() {
     fi
   fi
 }
+
 add-zsh-hook precmd -update-window-title-precmd
 
 # Executed before executing a command: $2 is one-line (truncated) version of
@@ -463,6 +402,7 @@ function -update-window-title-preexec() {
     -set-tab-and-window-title "$(basename $PWD) > $TRIMMED"
   fi
 }
+
 add-zsh-hook preexec -update-window-title-preexec
 
 typeset -F SECONDS
@@ -470,6 +410,7 @@ function -record-start-time() {
   emulate -L zsh
   ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
 }
+
 add-zsh-hook preexec -record-start-time
 
 function -report-start-time() {
@@ -510,12 +451,14 @@ function -auto-ls-after-cd() {
     ls -a
   fi
 }
+
 add-zsh-hook chpwd -auto-ls-after-cd
 
 # Remember each command we run.
 function -record-command() {
   __VARS[LAST_COMMAND]="$2"
 }
+
 add-zsh-hook preexec -record-command
 
 # Update vcs_info (slow) after any command that probably changed it.
@@ -536,6 +479,7 @@ function -maybe-show-vcs-info() {
       ;;
   esac
 }
+
 add-zsh-hook precmd -maybe-show-vcs-info
 
 # adds `cdr` command for navigating to recent directories
@@ -548,20 +492,3 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 # fall through to cd if cdr is passed a non-recent dir as an argument
 zstyle ':chpwd:*' recent-dirs-default true
 
-# Local and host-specific overrides.
-
-LOCAL_RC=$HOME/.zshrc.local
-test -f $LOCAL_RC && source $LOCAL_RC
-
-HOST_RC=$HOME/.zsh/host/$(hostname -s | tr '[:upper:]' '[:lower:]')
-test -f $HOST_RC && source $HOST_RC
-
-#
-# /etc/motd
-#
-
-if [ -e /etc/motd ]; then
-  if ! cmp -s $HOME/.hushlogin /etc/motd; then
-    tee $HOME/.hushlogin < /etc/motd
-  fi
-fi

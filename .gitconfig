@@ -68,10 +68,10 @@
 	get = "!f() { git fresh && git ff \"$@\"; }; f"
 
 	# equivalent to: graph --all
-	# gr = !git --paginate log --graph --all --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%= '<\%' %>aN>%Creset'
+	gr = !git --paginate log --graph --all --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)%Creset'
 
 	# requires Git 1.6.3 or later; %C(auto) requires Git 1.8.3 or later
-	# graph = !git --paginate log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%= '<\%' %>aN>%Creset'
+	graph = !git --paginate log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)%Creset'
 
 	jump = "!f() { vcs-jump \"$@\"; }; f"
 
@@ -82,8 +82,8 @@
 	no-edit = commit --amend --no-edit
 
 	# %C(auto) requires Git 1.8.3 or later
-	# one = !git --paginate log --pretty=format:'%C(auto)%h%Creset %s%C(auto)%d%Creset %C(magenta bold)(%cr)%Creset %C(cyan)<%= '<\%' %>aN>%Creset'
-	# oneline = !git --paginate log --pretty=format:'%C(auto)%h%Creset %s%C(auto)%d%Creset %C(magenta bold)(%cr)%Creset %C(cyan)<%= '<\%' %>aN>%Creset'
+	one = !git --paginate log --pretty=format:'%C(auto)%h%Creset %s%C(auto)%d%Creset %C(magenta bold)(%cr)%Creset %C(cyan)%Creset'
+	oneline = !git --paginate log --pretty=format:'%C(auto)%h%Creset %s%C(auto)%d%Creset %C(magenta bold)(%cr)%Creset %C(cyan)%Creset'
 
 	# requires Git 1.5.4 or later
 	p = add -p
@@ -97,13 +97,13 @@
 
 	# "smartlog", although it's not that smart.
 	# Equivalent to `git graph --all --simplify-by-decoration.
-	# sl = !git --paginate log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%= '<\%' %>aN>%Creset' --all --simplify-by-decoration
+	sl = !git --paginate log --graph --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)%Creset' --all --simplify-by-decoration
 
 	st = status
 	staged = diff --cached --ignore-submodules=dirty
 
 	# %C(auto) requires Git 1.8.3 or later
-	# ten = !git --paginate log -10 --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%= '<\%' %>aN>%Creset'
+	ten = !git --paginate log -10 --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)%Creset'
 
 	# compensate for brain damage caused by using Mercurial
 	up = checkout
@@ -113,27 +113,28 @@
 	# similar to whatchanged, but gives a dir-level overview:
 	# usage: git wd [diff-against=HEAD] [max-depth=4]
 	wd = "!f() { git --paginate diff --dirstat=cumulative,files,0 ${1:-HEAD} | awk '{print $2}' | cut -d / -f1-${2:-4} | sort | uniq; }; f"
-#   a = add -A
-#   b = branch
-#   br = branch
-#   ci = commit
-#   co = checkout
-#   d = !git --no-pager diff
-#   df = difftool
-#   dt  = difftool
+
+  a = add -A
+  b = branch
+  br = branch
+  ci = commit
+  co = checkout
+  d = !git --no-pager diff
+  df = difftool
+  dt  = difftool
 #   fo = fetch origin
-#   s = status
-#   st = status -sb
-#   stat = !git --no-pager diff --stat
-#   log-fn = "!f() { git log -L :$1:$2; }; f"
-#   last = log -1 --oneline
-#   p = push -u origin HEAD
+  s = status
+  st = status -sb
+  stat = !git --no-pager diff --stat
+  log-fn = "!f() { git log -L :$1:$2; }; f"
+  last = log -1 --oneline
+  p = push -u origin HEAD
 #   # Clean merged branches
-#   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
+  sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin
 #   # http://www.jukie.net/bart/blog/pimping-out-git-log
-#   lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
-#   lgd = log --oneline --graph --pretty='[%ad] %C(bold blue)%cn%Creset: %s %C(yellow)%D%Creset' --date=format-local:'%d.%m.%y'
-#   lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -15
+  lg = log --graph --all --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(yellow)%d%Creset'
+  lgd = log --oneline --graph --pretty='[%ad] %C(bold blue)%cn%Creset: %s %C(yellow)%D%Creset' --date=format-local:'%d.%m.%y'
+  lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -15
 # # Serve local repo. http://coderwall.com/p/eybtga
 #   # Then other can access via `git clone git://#{YOUR_IP_ADDRESS}/
 #   serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git

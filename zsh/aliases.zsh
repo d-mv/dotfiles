@@ -38,6 +38,7 @@ alias gs='git status'
 alias gst='git status -sb'
 alias gl='git log --pretty=format:"%h - %an, %ar : %s"'
 alias gcoms="git log origin/master..HEAD --no-merges --pretty=format:'- %s' "
+alias gpp='git pull && git push'
 alias xf='exa --long --header --git'
 alias xfa='exa -a --long --header --git'
 alias xl='exa -1'
