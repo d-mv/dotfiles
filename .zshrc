@@ -83,7 +83,7 @@ bindkey -v
 
 
 
-# nvm use 12
+nvm use 12
 
 # # autoload -U promptinit; promptinit
 # # prompt pure
