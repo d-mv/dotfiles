@@ -1,3 +1,4 @@
+set rtp+=/usr/local/opt/fzf
 
 """""""""""""""""""""""""""""
 "    FZF floating window    "
