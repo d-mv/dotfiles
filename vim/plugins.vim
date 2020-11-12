@@ -49,7 +49,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typ
 Plug 'sainnhe/forest-night'
 call plug#end()
 
-let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-stylelintplus', 'coc-prettier']
+let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-stylelintplus', 'coc-prettier','coc-tsserver']
 
 " Better display for messages
 " set cmdheight=2
