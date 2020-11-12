@@ -34,6 +34,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'othree/yajs.vim'
 " Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
 " Plug 'tpope/vim-dotenv', { 'for': 'env' }
 " Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
@@ -46,7 +48,12 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typ
 " Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'mhartington/oceanic-next'
+Plug 'tomasr/molokai'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'rakr/vim-one'
+Plug 'sainnhe/sonokai'
 Plug 'sainnhe/forest-night'
+Plug 'mhartington/oceanic-next'
 call plug#end()
 
 let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-stylelintplus', 'coc-prettier','coc-tsserver']
@@ -74,6 +81,8 @@ let g:gitgutter_sign_modified_removed = ''
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
+
+let g:yats_host_keyword = 1
 
 " treesitter
 set foldmethod=expr

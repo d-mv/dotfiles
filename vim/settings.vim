@@ -76,5 +76,4 @@ set encoding=UTF-8
 scriptencoding utf-8
 set termencoding=utf-8
 
-
-" set rtp+=/usr/local/opt/fzf
+set re=0 " turn off old regex engine 
