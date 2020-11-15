@@ -79,7 +79,7 @@ map <C-k> Vd2kp
 map <C-j> Vdp
 
 "  get highlighting group
-" map <C-[> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+" map <C-;> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 " \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 " \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 

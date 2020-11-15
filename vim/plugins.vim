@@ -54,6 +54,9 @@ Plug 'rakr/vim-one'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/forest-night'
 Plug 'mhartington/oceanic-next'
+Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
+
 call plug#end()
 
 let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-stylelintplus', 'coc-prettier','coc-tsserver']

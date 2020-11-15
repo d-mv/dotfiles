@@ -5,6 +5,8 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
 set -g default-terminal "screen-256color"
 
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
 source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/private.zsh
