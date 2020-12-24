@@ -15,6 +15,7 @@ Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
 " << fzf >>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 "
 " << other >>
 Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
@@ -25,13 +26,14 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'RRethy/vim-hexokinase'
 "
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
-Plug 'neovim/nvim-lsp'
+" Plug 'neovim/nvim-lsp'
 
 " Plug 'haorenW1025/completion-nvim'
 " Plug 'haorenW1025/diagnostic-nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'antoinemadec/coc-fzf' 
+Plug 'wellle/tmux-complete.vim' " coc completion from open tmux panes
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'HerringtonDarkholme/yats.vim'
@@ -48,18 +50,43 @@ Plug 'othree/yajs.vim'
 " Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'mhartington/oceanic-next'
-Plug 'tomasr/molokai'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'rakr/vim-one'
-Plug 'sainnhe/sonokai'
+" Plug 'hzchirs/vim-material'
+" Plug 'tomasr/molokai'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'rakr/vim-one'
+" Plug 'sainnhe/sonokai'
 Plug 'sainnhe/forest-night'
-Plug 'mhartington/oceanic-next'
-Plug 'arcticicestudio/nord-vim'
-Plug 'chriskempson/base16-vim'
+" Plug 'mhartington/oceanic-next'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
-let g:coc_global_extensions = ['coc-eslint', 'coc-css', 'coc-html', 'coc-stylelintplus', 'coc-prettier','coc-tsserver']
+let g:coc_global_extensions = [
+          \ 'coc-actions',
+          \ 'coc-css',
+          \ 'coc-cssmodules',
+          \ 'coc-eslint',
+          \ 'coc-git',
+          \ 'coc-html',
+          \ 'coc-jest',
+          \ 'coc-json',
+          \ 'coc-marketplace',
+          \ 'coc-markdownlint',
+          \ 'coc-pairs',
+          \ 'coc-prettier',
+          \ 'coc-react-refactor',
+					\ 'coc-rust-analyzer',
+          \ 'coc-snippets',
+          \ 'coc-spell-checker',
+          \ 'coc-stylelintplus',
+          \ 'coc-svg',
+					\ 'coc-toml',
+          \ 'coc-tsserver',
+          \ 'coc-webpack',
+          \ 'coc-yaml',
+          \ 'coc-yank'
+          \ ]
 
 " Better display for messages
 " set cmdheight=2

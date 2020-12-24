@@ -31,6 +31,15 @@ noremap ˙ <C-w>h
 noremap ∆ <C-w>j
 noremap ˚ <C-w>k
 noremap ¬ <C-w>l
+noremap ¬ <C-w>l
+nmap ≥ :vertical resize +5<CR>
+nmap ≤ :vertical resize -5<CR>
+
+nmap ¯ :res -5<CR>
+nmap ˘ :res +5<CR>
+
+nmap √ :vs<CR>
+nmap † :split<CR>
 
 nmap <C-n> :NextDiagnostic<CR>
 nmap <C-m> :PrevDiagnostic<CR>

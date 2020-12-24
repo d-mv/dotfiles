@@ -29,9 +29,10 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set t_Co=256
 set t_ut= " fixes transparent BG on tmux
 
-colorscheme nord
+" colorscheme vim-material
+" colorscheme nord
 " colorscheme base16-default-dark
-" colorscheme forest-night
+colorscheme forest-night
 " colorscheme sonokai
 " colorscheme one
 " colorscheme onehalfdark

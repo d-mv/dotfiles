@@ -15,7 +15,7 @@ syntax enable
 set autoindent smartindent " Set Proper Tabs
 set autoread " re-read changed files
 set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
-set cc=100 " split line - show column @ 100
+set cc=120 " split line - show column @ 100
 set clipboard=unnamed
 set complete=.,w,b,u,U,t,i,d
 set completeopt=menuone,noinsert
