@@ -285,7 +285,7 @@ select-word-style bash # only alphanumeric chars are considered WORDCHARS
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
 # NOTE: must come after select-word-style.
-source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Note that this will only ensure unique history if we supply a prefix
 # before hitting "up" (ie. we perform a "search"). HIST_FIND_NO_DUPS
@@ -510,3 +510,6 @@ zstyle ':chpwd:*' recent-dirs-default true
 # vim mode
 set -o vi
 bindkey -v
+
+
+eval "$(fnm env)"

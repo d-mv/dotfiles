@@ -1,4 +1,3 @@
-" let g:javascript_filetypes = ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx']
 call plug#begin('~/.config/vim/plugged')
 " ::: FEATURES :::
 " << NERDTree >>
@@ -10,55 +9,32 @@ Plug 'scrooloose/nerdtree'
 " << Git >>
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
-Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
 "
 " << fzf >>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 "
 " << other >>
 Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
 Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
-Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
 Plug 'machakann/vim-highlightedyank'
-Plug 'jiangmiao/auto-pairs'
 Plug 'RRethy/vim-hexokinase'
+Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
 "
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
-" Plug 'neovim/nvim-lsp'
-
-" Plug 'haorenW1025/completion-nvim'
-" Plug 'haorenW1025/diagnostic-nvim'
-" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'neovim/nvim-lspconfig'
+"
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'antoinemadec/coc-fzf' 
-Plug 'wellle/tmux-complete.vim' " coc completion from open tmux panes
-
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'othree/yajs.vim'
-" Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
-" Plug 'tpope/vim-dotenv', { 'for': 'env' }
-" Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
-" Plug 'rust-lang/rust.vim', {'for': 'rs'}
-" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
-" Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
-" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+Plug 'reasonml-editor/vim-reason-plus'
 
 " ::: THEMING :::
-" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'mhartington/oceanic-next'
-" Plug 'hzchirs/vim-material'
-" Plug 'tomasr/molokai'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'rakr/vim-one'
-" Plug 'sainnhe/sonokai'
 Plug 'sainnhe/forest-night'
-" Plug 'mhartington/oceanic-next'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'chriskempson/base16-vim'
+Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'romainl/flattened'
 
 call plug#end()
 
@@ -71,11 +47,7 @@ let g:coc_global_extensions = [
           \ 'coc-html',
           \ 'coc-jest',
           \ 'coc-json',
-          \ 'coc-marketplace',
-          \ 'coc-markdownlint',
-          \ 'coc-pairs',
           \ 'coc-prettier',
-          \ 'coc-react-refactor',
 					\ 'coc-rust-analyzer',
           \ 'coc-snippets',
           \ 'coc-spell-checker',

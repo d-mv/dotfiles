@@ -1,24 +1,67 @@
 call plug#begin('~/.vim/plugged')
 
+" ::: FEATURES :::
+" << NERDTree >>
+Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'ryanoasis/vim-devicons'
+"
+" << Git >>
+Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
-
+Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
+"
+" << fzf >>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'leafgarland/typescript-vim', {'for': ['tsx','ts','typescript','typescriptreact']} "  Typescript syntax files for Vim
-Plug 'peitalin/vim-jsx-typescript', {'for': ['tsx','ts','typescript','typescriptreact']} "  React JSX syntax highlighting for vim and Typescript
-Plug 'Quramy/vim-js-pretty-template' "  highlights JavaScript's Template Strings in other FileType syntax rule 
-Plug 'Quramy/vim-dtsm' "  A Vim plugin to execute TypeScript dtsm command
-Plug 'mhartington/vim-typings' "  search for typings in vim
-
-Plug 'pangloss/vim-javascript' "  Vastly improved Javascript indentation and syntax support in Vim
-
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+"
+" << other >>
+Plug 'tomtom/tcomment_vim' " universal comment vim-plugin that also handles embedded filetypes
+Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
+" Plug 'Yggdroot/indentLine' " A vim plugin to display the indention levels with thin vertical lines
 Plug 'machakann/vim-highlightedyank'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'RRethy/vim-hexokinase'
+"
+" ::: LANGUAGE & FRAMEWORK SUPPORT :::
+" Plug 'neovim/nvim-lsp'
+
+" Plug 'haorenW1025/completion-nvim'
+" Plug 'haorenW1025/diagnostic-nvim'
+" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'antoinemadec/coc-fzf'
+" Plug 'wellle/tmux-complete.vim' " coc completion from open tmux panes
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'othree/yajs.vim'
+" Plug 'tpope/vim-markdown', { 'for': ['md', 'markdown'] } " Better markdown support
+" Plug 'tpope/vim-dotenv', { 'for': 'env' }
+" Plug 'jxnblk/vim-mdx-js', {'for': 'mdx' }
+" Plug 'rust-lang/rust.vim', {'for': 'rs'}
+" Plug 'cespare/vim-toml', { 'for': 'toml' }  " Toml highlight
+" Plug 'tmux-plugins/vim-tmux' "  tmxu.conf editing
+" Plug 'TovarishFin/vim-solidity', {'for': 'sol'} " Solidity support
+
+" ::: THEMING :::
+" Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'mhartington/oceanic-next'
+" Plug 'hzchirs/vim-material'
+" Plug 'tomasr/molokai'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'rakr/vim-one'
+" Plug 'sainnhe/sonokai'
+Plug 'sainnhe/forest-night'
+" Plug 'mhartington/oceanic-next'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'chriskempson/base16-vim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -47,7 +90,7 @@ set autoindent
 set backspace=indent,eol,start  " При нажатии backspace в начале строки, переходит на предыдущую
 set selection=exclusive  " Убирает выделение символа конца строки
 
-" set wildmenu                                
+" set wildmenu
 " set wildmode=longest,list,full
 
 " encoding
@@ -69,7 +112,7 @@ source $HOME/.dotfiles/vim/netrw.vim
 source $HOME/.dotfiles/vim/search.vim
 
 
-colorscheme nord
+colorscheme forest-night
 set background=dark
 
 let color='true'
@@ -96,7 +139,7 @@ let g:oceanic_next_terminal_italic = 1
 set noshowmode " not to show --INSERT--
 
 let g:lightline = {
- 		\ 'colorscheme': 'nord',
+ 		\ 'colorscheme': 'forest-night',
  		\ 'active': {
   		\   'left': [ [ 'mode', 'paste' ],
   		\             [ 'readonly', 'filename', 'modified'],
