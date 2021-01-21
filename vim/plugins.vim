@@ -20,21 +20,28 @@ Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-hexokinase'
 Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
+Plug '9mm/vim-closer'
 "
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
 Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 "
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
-Plug 'reasonml-editor/vim-reason-plus'
+Plug 'rescript-lang/vim-rescript'
+" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'othree/yajs.vim'
+" Plug 'othree/es.next.syntax.vim'
 
 " ::: THEMING :::
 Plug 'sainnhe/forest-night'
 Plug 'tomasr/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'romainl/flattened'
+Plug 'mhartington/oceanic-next'
+Plug 'adrian5/oceanic-next-vim'
+Plug 'glepnir/oceanic-material'
 
 call plug#end()
 
@@ -51,6 +58,7 @@ let g:coc_global_extensions = [
 					\ 'coc-rust-analyzer',
           \ 'coc-snippets',
           \ 'coc-spell-checker',
+					\ 'coc-docthis',
           \ 'coc-stylelintplus',
           \ 'coc-svg',
 					\ 'coc-toml',
