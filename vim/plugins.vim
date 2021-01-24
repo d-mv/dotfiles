@@ -20,11 +20,13 @@ Plug 'tpope/vim-surround' " quoting/parenthesizing made simple
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-hexokinase'
 Plug 'kshenoy/vim-signature'  " plugin to place, toggle and display marks
-Plug '9mm/vim-closer'
+Plug 'Raimondi/delimitMate' "  provides insert mode auto-completion for quotes, parens, brackets, etc.
 "
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'neovim/nvim-lspconfig'
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter'
+endif
+" Plug 'neovim/nvim-lspconfig'
 "
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -45,6 +47,7 @@ Plug 'glepnir/oceanic-material'
 
 call plug#end()
 
+if has('nvim')
 let g:coc_global_extensions = [
           \ 'coc-actions',
           \ 'coc-css',
@@ -67,6 +70,32 @@ let g:coc_global_extensions = [
           \ 'coc-yaml',
           \ 'coc-yank'
           \ ]
+endif
+
+if !has('nvim')
+let g:coc_global_extensions = [
+          \ 'coc-css',
+          \ 'coc-cssmodules',
+          \ 'coc-eslint',
+          \ 'coc-git',
+          \ 'coc-html',
+          \ 'coc-jest',
+          \ 'coc-json',
+          \ 'coc-prettier',
+					\ 'coc-rust-analyzer',
+          \ 'coc-snippets',
+          \ 'coc-spell-checker',
+					\ 'coc-docthis',
+          \ 'coc-stylelintplus',
+          \ 'coc-svg',
+					\ 'coc-toml',
+          \ 'coc-tsserver',
+          \ 'coc-webpack',
+          \ 'coc-yaml',
+          \ 'coc-yank'
+          \ ]
+endif
+
 
 " Better display for messages
 " set cmdheight=2
