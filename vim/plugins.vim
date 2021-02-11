@@ -31,6 +31,9 @@ endif
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'rescript-lang/vim-rescript'
+Plug 'mhinz/vim-mix-format'
+Plug 'elixir-editors/vim-elixir'
+Plug 'jeremyjh/dialyxir'
 " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'othree/yajs.vim'
@@ -53,6 +56,7 @@ let g:coc_global_extensions = [
           \ 'coc-css',
           \ 'coc-cssmodules',
           \ 'coc-eslint',
+					\ 'coc-elixir',
           \ 'coc-git',
           \ 'coc-html',
           \ 'coc-jest',
@@ -122,6 +126,8 @@ let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
 
 let g:yats_host_keyword = 1
+
+let g:mix_format_on_save = 1
 
 " treesitter
 set foldmethod=expr
