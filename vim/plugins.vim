@@ -38,12 +38,12 @@ Plug 'rescript-lang/vim-rescript'
 
 " ::: THEMING :::
 Plug 'sainnhe/forest-night'
-Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
-Plug 'romainl/flattened'
-Plug 'mhartington/oceanic-next'
-Plug 'adrian5/oceanic-next-vim'
-Plug 'glepnir/oceanic-material'
+" Plug 'tomasr/molokai'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'romainl/flattened'
+" Plug 'mhartington/oceanic-next'
+" Plug 'adrian5/oceanic-next-vim'
+" Plug 'glepnir/oceanic-material'
 
 call plug#end()
 

@@ -41,12 +41,12 @@ set t_ut= " fixes transparent BG on tmux
 " colorscheme vim-material
 " colorscheme nord
 " colorscheme base16-default-dark
-" colorscheme forest-night
+colorscheme forest-night
 " colorscheme solarized
 " colorscheme flattened_light
 " colorscheme molokai
 " colorscheme sonokai colorscheme one
 " colorscheme onehalfdark
-colorscheme OceanicNext
+" colorscheme OceanicNext
 " colorscheme oceanicnext
 " colorscheme oceanic_material
