@@ -64,7 +64,8 @@ nnoremap <C-t> :call OpenTerminal()<CR>
 
 map - :NERDTreeFind<CR>
 nmap ,f :NERDTreeFind<CR>
-map <C-b> :NERDTreeToggle<CR>
+" map <C-b> :NERDTreeToggle<CR>
+nnoremap <C-b> :CocCommand explorer<CR>
 
 " close all, except current
 nmap ,bda :bufdo bd<CR>

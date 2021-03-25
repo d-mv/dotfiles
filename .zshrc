@@ -36,6 +36,7 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
+fpath=(~/.daml/zsh $fpath)
 
 # # binding keys
 bindkey -e

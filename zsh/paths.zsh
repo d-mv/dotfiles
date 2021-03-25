@@ -1,12 +1,12 @@
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
-# export PATH="/Users/dmitry/.nvm/versions/node/v12.16.2/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
+export PATH="/Users/dmitry/.daml/bin:$PATH"
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/Android/sdk
+export JAVA_HOME=/usr/local/Cellar/openjdk
+export PATH="/usr/local/Cellar/openjdk/15.0.1/bin:$PATH"
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin

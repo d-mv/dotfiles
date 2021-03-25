@@ -1,14 +1,15 @@
 call plug#begin('~/.config/vim/plugged')
 " ::: FEATURES :::
 " << NERDTree >>
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'ryanoasis/vim-devicons'
 "
 " << Git >>
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 "
 " << fzf >>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -34,6 +35,7 @@ Plug 'rescript-lang/vim-rescript'
 Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jeremyjh/dialyxir'
+Plug 'joegesualdo/jsdoc.vim'
 " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 " Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'othree/yajs.vim'
@@ -41,6 +43,7 @@ Plug 'jeremyjh/dialyxir'
 
 " ::: THEMING :::
 Plug 'sainnhe/forest-night'
+Plug 'tomasiser/vim-code-dark'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'
@@ -97,6 +100,7 @@ let g:coc_global_extensions = [
           \ 'coc-webpack',
           \ 'coc-yaml',
           \ 'coc-yank'
+					\ 'coc-explorer'
           \ ]
 endif
 
@@ -132,3 +136,6 @@ let g:mix_format_on_save = 1
 " treesitter
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+
+" signify
+set updatetime=100

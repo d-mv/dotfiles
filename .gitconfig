@@ -1,6 +1,8 @@
 [user]
 	name = Dmitry Melnikov
 	email = d.dash.mv@gmail.com
+[init]
+	defaultBranch=develop
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
