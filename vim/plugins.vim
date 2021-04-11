@@ -36,10 +36,7 @@ Plug 'mhinz/vim-mix-format'
 Plug 'elixir-editors/vim-elixir'
 Plug 'jeremyjh/dialyxir'
 Plug 'joegesualdo/jsdoc.vim'
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'othree/yajs.vim'
-" Plug 'othree/es.next.syntax.vim'
+Plug 'styled-components/vim-styled-components'
 
 " ::: THEMING :::
 Plug 'sainnhe/forest-night'
