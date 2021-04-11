@@ -61,7 +61,7 @@ set tabstop=2 " the visible width of tabs
 set termencoding=utf-8
 set title " set terminal title
 set ttyfast " faster redrawing
-set updatetime=300
+set updatetime=250
 set wildmenu                                
 set wrap " turn on line wrapping
 set wrapmargin=4 " wrap lines when coming within n characters from side

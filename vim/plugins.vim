@@ -1,15 +1,15 @@
 call plug#begin('~/.config/vim/plugged')
 " ::: FEATURES :::
 " << NERDTree >>
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'ryanoasis/vim-devicons'
 "
 " << Git >>
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
-" Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
+" Plug 'mhinz/vim-signify'
 "
 " << fzf >>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -100,7 +100,7 @@ let g:coc_global_extensions = [
           \ 'coc-webpack',
           \ 'coc-yaml',
           \ 'coc-yank'
-					\ 'coc-explorer'
+					" \ 'coc-explorer'
           \ ]
 endif
 
@@ -124,6 +124,9 @@ let g:gitgutter_sign_modified = ''
 let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = ''
+let g:gitgutter_override_sign_column_highlight = 1
+highlight SignColumn guibg=red
+highlight SignColumn ctermbg=red
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1

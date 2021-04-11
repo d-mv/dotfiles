@@ -41,9 +41,9 @@ nmap ˘ :res +5<CR>
 nmap √ :vs<CR>
 nmap † :split<CR>
 
-nmap <C-n> :NextDiagnostic<CR>
-nmap <C-m> :PrevDiagnostic<CR>
-
+" Jump between hunks
+nmap <C-n> <Plug>(GitGutterNextHunk)  " git next
+nmap <C-m> <Plug>(GitGutterPrevHunk)  " git previous
 
 " Toggle fold at current position.
 nnoremap <Tab> za
@@ -64,8 +64,8 @@ nnoremap <C-t> :call OpenTerminal()<CR>
 
 map - :NERDTreeFind<CR>
 nmap ,f :NERDTreeFind<CR>
-" map <C-b> :NERDTreeToggle<CR>
-nnoremap <C-b> :CocCommand explorer<CR>
+map <C-b> :NERDTreeToggle<CR>
+" nnoremap <C-b> :CocCommand explorer<CR>
 
 " close all, except current
 nmap ,bda :bufdo bd<CR>
