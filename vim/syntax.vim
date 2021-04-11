@@ -53,6 +53,9 @@ hi VertSplit guifg=#F08080
 hi foldBraces gui=bold
 hi typescriptType  gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 
+" highlight SignColumn guibg=red
+" highlight SignColumn ctermbg=red
+"
 match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflicts
 

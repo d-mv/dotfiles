@@ -24,19 +24,21 @@ let g:oceanic_material_background='ocean' "	'medium' use #282c34 color as backgr
 let g:oceanic_material_allow_bold=1 "	1: use bold for certain text	0: not at all
 let g:oceanic_material_allow_italic=1
 
-
-let color='true'
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-
-
-set termguicolors
-
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+if exists( '$TMUX' )
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
 " set t_Co=256
 set t_ut= " fixes transparent BG on tmux
+
+if $TERM_PROGRAM !=# 'Apple_Terminal'
+	let color='true'
+	let &t_ZH="\e[3m"
+	let &t_ZR="\e[23m"
+
+	set termguicolors
+endif
 
 colorscheme codedark
 " colorscheme vim-material

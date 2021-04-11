@@ -9,7 +9,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " << Git >>
 Plug 'tpope/vim-fugitive', { 'on': [ 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' ] }
 Plug 'airblade/vim-gitgutter'
-" Plug 'mhinz/vim-signify'
 "
 " << fzf >>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -28,7 +27,7 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter'
 endif
 " Plug 'neovim/nvim-lspconfig'
-"
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'rescript-lang/vim-rescript'
@@ -39,8 +38,8 @@ Plug 'joegesualdo/jsdoc.vim'
 Plug 'styled-components/vim-styled-components'
 
 " ::: THEMING :::
-Plug 'sainnhe/forest-night'
 Plug 'tomasiser/vim-code-dark'
+" Plug 'sainnhe/forest-night'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'
@@ -51,54 +50,54 @@ Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 if has('nvim')
-let g:coc_global_extensions = [
-          \ 'coc-actions',
-          \ 'coc-css',
-          \ 'coc-cssmodules',
-          \ 'coc-eslint',
-					\ 'coc-elixir',
-          \ 'coc-git',
-          \ 'coc-html',
-          \ 'coc-jest',
-          \ 'coc-json',
-          \ 'coc-prettier',
-					\ 'coc-rust-analyzer',
-          \ 'coc-snippets',
-          \ 'coc-spell-checker',
-					\ 'coc-docthis',
-          \ 'coc-stylelintplus',
-          \ 'coc-svg',
-					\ 'coc-toml',
-          \ 'coc-tsserver',
-          \ 'coc-webpack',
-          \ 'coc-yaml',
-          \ 'coc-yank'
-          \ ]
+	let g:coc_global_extensions = [
+						\ 'coc-actions',
+						\ 'coc-css',
+						\ 'coc-cssmodules',
+						\ 'coc-eslint',
+						\ 'coc-elixir',
+						\ 'coc-git',
+						\ 'coc-html',
+						\ 'coc-jest',
+						\ 'coc-json',
+						\ 'coc-prettier',
+						\ 'coc-rust-analyzer',
+						\ 'coc-snippets',
+						\ 'coc-spell-checker',
+						\ 'coc-docthis',
+						\ 'coc-stylelintplus',
+						\ 'coc-svg',
+						\ 'coc-toml',
+						\ 'coc-tsserver',
+						\ 'coc-webpack',
+						\ 'coc-yaml',
+						\ 'coc-yank'
+						\ ]
 endif
 
 if !has('nvim')
-let g:coc_global_extensions = [
-          \ 'coc-css',
-          \ 'coc-cssmodules',
-          \ 'coc-eslint',
-          \ 'coc-git',
-          \ 'coc-html',
-          \ 'coc-jest',
-          \ 'coc-json',
-          \ 'coc-prettier',
-					\ 'coc-rust-analyzer',
-          \ 'coc-snippets',
-          \ 'coc-spell-checker',
-					\ 'coc-docthis',
-          \ 'coc-stylelintplus',
-          \ 'coc-svg',
-					\ 'coc-toml',
-          \ 'coc-tsserver',
-          \ 'coc-webpack',
-          \ 'coc-yaml',
-          \ 'coc-yank'
-					" \ 'coc-explorer'
-          \ ]
+	let g:coc_global_extensions = [
+						\ 'coc-css',
+						\ 'coc-cssmodules',
+						\ 'coc-eslint',
+						\ 'coc-git',
+						\ 'coc-html',
+						\ 'coc-jest',
+						\ 'coc-json',
+						\ 'coc-prettier',
+						\ 'coc-rust-analyzer',
+						\ 'coc-snippets',
+						\ 'coc-spell-checker',
+						\ 'coc-docthis',
+						\ 'coc-stylelintplus',
+						\ 'coc-svg',
+						\ 'coc-toml',
+						\ 'coc-tsserver',
+						\ 'coc-webpack',
+						\ 'coc-yaml',
+						\ 'coc-yank'
+						" \ 'coc-explorer'
+						\ ]
 endif
 
 
@@ -122,8 +121,6 @@ let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_removed_first_line = ''
 let g:gitgutter_sign_modified_removed = ''
 let g:gitgutter_override_sign_column_highlight = 1
-highlight SignColumn guibg=red
-highlight SignColumn ctermbg=red
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
