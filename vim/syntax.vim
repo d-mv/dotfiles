@@ -46,7 +46,7 @@ hi Fixme guifg=#f542b6 gui=bold
 hi Folded guifg=orange
 hi Search ctermfg=white ctermbg=red guifg=red  guibg=pink
 hi SpellBad guifg=yellow
-hi Todo guifg=#9ac427 gui=bold
+hi Todo guifg=#9ac427 gui=bold ctermfg=yellow
 hi VendorPrefix guifg=#00ffff gui=bold
 hi VendorPrefix guifg=red gui=bold
 hi VertSplit guifg=#F08080
