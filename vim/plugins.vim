@@ -24,7 +24,7 @@ Plug 'Raimondi/delimitMate' "  provides insert mode auto-completion for quotes, 
 "
 " ::: LANGUAGE & FRAMEWORK SUPPORT :::
 if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter'
+  " Plug 'nvim-treesitter/nvim-treesitter'
 endif
 " Plug 'neovim/nvim-lspconfig'
 

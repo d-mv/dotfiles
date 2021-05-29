@@ -65,3 +65,6 @@ set updatetime=250
 set wildmenu                                
 set wrap " turn on line wrapping
 set wrapmargin=4 " wrap lines when coming within n characters from side
+
+
+let g:python3_host_prog='/home/linuxbrew/.linuxbrew/bin/python3'
