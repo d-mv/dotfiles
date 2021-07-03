@@ -18,7 +18,7 @@ set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
 set cc=120 " split line - show column @ 100
 set clipboard=unnamed
 set complete=.,w,b,u,U,t,i,d
-set completeopt=menuone,noinsert
+set completeopt=menuone,noinsert,noselect
 set cursorline
 set diffopt+=vertical,iwhite,internal,algorithm:patience,hiddenoff
 set encoding=UTF-8

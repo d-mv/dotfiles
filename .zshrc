@@ -17,6 +17,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(~/.daml/zsh $fpath)
+fpath=(~/.zsh/completion $fpath)
 
 # # binding keys
 bindkey -e
@@ -40,8 +41,8 @@ fi
 
 
 # Completion
-autoload -U compinit
-compinit -u
+autoload -Uz compinit && compinit -i
+# compinit -u
 
 # ignore case in autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'

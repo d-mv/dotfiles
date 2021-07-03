@@ -27,6 +27,9 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter'
 endif
 " Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'hrsh7th/nvim-compe'
+" Plug 'norcalli/snippets.nvim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
@@ -38,8 +41,8 @@ Plug 'joegesualdo/jsdoc.vim'
 Plug 'styled-components/vim-styled-components'
 
 " ::: THEMING :::
-Plug 'tomasiser/vim-code-dark'
-" Plug 'sainnhe/forest-night'
+" Plug 'tomasiser/vim-code-dark'
+Plug 'sainnhe/everforest'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'
