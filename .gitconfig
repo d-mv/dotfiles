@@ -136,6 +136,7 @@
   stat = !git --no-pager diff --stat
   log-fn = "!f() { git log -L :$1:$2; }; f"
   last = log -1 --oneline
+	prune-dry = git remote prune origin --dry-run
   p = push -u origin HEAD
 #   # Clean merged branches
   sweep = !git branch --merged master | grep -v 'master$' | xargs git branch -d && git remote prune origin

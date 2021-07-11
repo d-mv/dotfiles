@@ -23,6 +23,11 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
 augroup END
 
+augroup daml_ft
+  au!
+  autocmd BufNewFile,BufRead *.daml  set syntax=haskell set ft=daml
+augroup END
+
 autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync{}
 autocmd FileType scss set iskeyword+=-
 autocmd Filetype gitcommit,markdown,note setlocal spell textwidth=72
