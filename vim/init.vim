@@ -7,4 +7,5 @@ source $HOME/.dotfiles/vim/syntax.vim
 source $HOME/.dotfiles/vim/nerdtree.vim
 source $HOME/.dotfiles/vim/au.vim
 " source $HOME/.dotfiles/vim/lsp.vim
+" source $HOME/.dotfiles/vim/auto_complete.vim
 " source $HOME/.dotfiles/vim/netrw.vim
