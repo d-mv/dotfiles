@@ -9,7 +9,8 @@ let g:oceanic_next_terminal_italic = 1
 let g:highlightedyank_highlight_duration = 1000
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_italic = 1
-let g:forest_night_enable_italic = 1
+let g:everforest_enable_italic = 1
+let g:everforest_cursor = 'green'
 let g:spring_night_highlight_terminal = 1
 let g:spring_night_cterm_italic = 1
 let g:sonokai_style = 'maia'
@@ -40,11 +41,11 @@ if $TERM_PROGRAM !=# 'Apple_Terminal'
 	set termguicolors
 endif
 
-colorscheme codedark
+" colorscheme codedark
 " colorscheme vim-material
 " colorscheme nord
 " colorscheme base16-default-dark
-" colorscheme forest-night
+colorscheme everforest
 " colorscheme solarized
 " colorscheme flattened_light
 " colorscheme molokai

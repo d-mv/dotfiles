@@ -38,8 +38,8 @@ Plug 'joegesualdo/jsdoc.vim'
 Plug 'styled-components/vim-styled-components'
 
 " ::: THEMING :::
-Plug 'tomasiser/vim-code-dark'
-" Plug 'sainnhe/forest-night'
+" Plug 'tomasiser/vim-code-dark'
+Plug 'sainnhe/everforest'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'

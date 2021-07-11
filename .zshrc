@@ -13,7 +13,7 @@ source ~/.dotfiles/zsh/path.zsh
 # source ~/.dotfiles/zsh/iterm
 
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(~/.daml/zsh $fpath)
