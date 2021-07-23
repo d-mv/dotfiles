@@ -39,10 +39,12 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'jeremyjh/dialyxir'
 Plug 'joegesualdo/jsdoc.vim'
 Plug 'styled-components/vim-styled-components'
+Plug 'cespare/vim-toml'
 
 " ::: THEMING :::
 " Plug 'tomasiser/vim-code-dark'
-Plug 'sainnhe/everforest'
+" Plug 'sainnhe/everforest'
+Plug 'yanisdb/primer-dark.vim'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'

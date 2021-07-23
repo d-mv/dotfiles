@@ -44,7 +44,8 @@ endif
 " colorscheme vim-material
 " colorscheme nord
 " colorscheme base16-default-dark
-colorscheme everforest
+" colorscheme everforest
+colorscheme primerdark
 " colorscheme solarized
 " colorscheme flattened_light
 " colorscheme molokai
