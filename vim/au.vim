@@ -25,7 +25,8 @@ augroup END
 
 augroup daml_ft
   au!
-  autocmd BufNewFile,BufRead *.daml  set syntax=haskell set ft=daml
+  autocmd BufNewFile,BufRead *.daml  set syntax=haskell 
+	set ft=daml
 augroup END
 
 autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync{}

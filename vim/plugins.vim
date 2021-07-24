@@ -1,4 +1,5 @@
 call plug#begin('~/.config/vim/plugged')
+
 " ::: FEATURES :::
 " << NERDTree >>
 Plug 'scrooloose/nerdtree'
@@ -26,10 +27,6 @@ Plug 'Raimondi/delimitMate' "  provides insert mode auto-completion for quotes, 
 if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter'
 endif
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-lua/completion-nvim'
-" Plug 'hrsh7th/nvim-compe'
-" Plug 'norcalli/snippets.nvim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
