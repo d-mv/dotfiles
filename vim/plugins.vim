@@ -1,3 +1,9 @@
+" check for vim-plug and install if missing
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 call plug#begin('~/.config/vim/plugged')
 
 " ::: FEATURES :::
@@ -39,9 +45,10 @@ Plug 'styled-components/vim-styled-components'
 Plug 'cespare/vim-toml'
 
 " ::: THEMING :::
-" Plug 'tomasiser/vim-code-dark'
+" Plug 'arcticicestudio/nord-vim'
+Plug 'tomasiser/vim-code-dark'
 " Plug 'sainnhe/everforest'
-Plug 'yanisdb/primer-dark.vim'
+" Plug 'yanisdb/primer-dark.vim'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'

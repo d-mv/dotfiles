@@ -30,23 +30,24 @@ if exists( '$TMUX' )
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" set t_Co=256
+if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
 set t_ut= " fixes transparent BG on tmux
 
 if $TERM_PROGRAM !=# 'Apple_Terminal'
 	let color='true'
 	let &t_ZH="\e[3m"
 	let &t_ZR="\e[23m"
-
-	set termguicolors
 endif
 
-" colorscheme codedark
+colorscheme codedark
 " colorscheme vim-material
 " colorscheme nord
 " colorscheme base16-default-dark
 " colorscheme everforest
-colorscheme primerdark
+" colorscheme primerdark
 " colorscheme solarized
 " colorscheme flattened_light
 " colorscheme molokai
