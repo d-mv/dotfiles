@@ -169,3 +169,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 
+[pull]
+	rebase = false

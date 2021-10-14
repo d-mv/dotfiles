@@ -1,5 +1,7 @@
 set background=dark
 
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 let g:onedark_termcolors=16
 let g:onedark_terminal_italics=1
 let g:enable_bold_font = 1
@@ -42,11 +44,13 @@ if $TERM_PROGRAM !=# 'Apple_Terminal'
 	let &t_ZR="\e[23m"
 endif
 
-colorscheme codedark
+" colorscheme codedark
 " colorscheme vim-material
+colorscheme monokai
 " colorscheme nord
 " colorscheme base16-default-dark
 " colorscheme everforest
+" colorscheme onehalfdark
 " colorscheme primerdark
 " colorscheme solarized
 " colorscheme flattened_light

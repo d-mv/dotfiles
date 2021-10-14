@@ -45,8 +45,10 @@ Plug 'styled-components/vim-styled-components'
 Plug 'cespare/vim-toml'
 
 " ::: THEMING :::
+Plug 'crusoexia/vim-monokai'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
-Plug 'tomasiser/vim-code-dark'
+" Plug 'tomasiser/vim-code-dark'
 " Plug 'sainnhe/everforest'
 " Plug 'yanisdb/primer-dark.vim'
 " Plug 'tomasr/molokai'
