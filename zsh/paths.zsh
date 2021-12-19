@@ -5,6 +5,7 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/Users/dmitry/.daml/bin:$PATH"
 export PATH="/Users/dmitry/.rbenv/shims/:$PATH"
+export PATH="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/:$PATH"
 
 export JAVA_HOME=/usr/local/Cellar/openjdk
 export JAVA_HOME=/usr/local/Cellar/openjdk/15.0.2

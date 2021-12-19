@@ -24,6 +24,12 @@ let g:oceanic_material_background='ocean' "	'medium' use #282c34 color as backgr
 let g:oceanic_material_allow_bold=1 "	1: use bold for certain text	0: not at all
 let g:oceanic_material_allow_italic=1
 
+let g:transparent_background=1        " transparent background(Default: false)
+let g:italic_comments=1               " italic comments(Default: true)
+let g:italic_keywords=1               " italic keywords(Default: true)
+let g:italic_functions=1              " italic functions(Default: false)
+let g:italic_variables=1              " italic variables(Default: false)
+
 if exists( '$TMUX' )
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -40,12 +46,14 @@ if $TERM_PROGRAM !=# 'Apple_Terminal'
 	set termguicolors
 endif
 
+colorscheme darkplus
+" colorscheme vim-material
 " colorscheme codedark
 " colorscheme vim-material
 " colorscheme nord
 " colorscheme base16-default-dark
 " colorscheme everforest
-colorscheme primerdark
+" colorscheme primerdark
 " colorscheme solarized
 " colorscheme flattened_light
 " colorscheme molokai

@@ -43,8 +43,11 @@ Plug 'cespare/vim-toml'
 
 " ::: THEMING :::
 " Plug 'tomasiser/vim-code-dark'
+" Plug 'hzchirs/vim-material'
+Plug 'LunarVim/darkplus.nvim'
 " Plug 'sainnhe/everforest'
-Plug 'yanisdb/primer-dark.vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'yanisdb/primer-dark.vim'
 " Plug 'tomasr/molokai'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'romainl/flattened'

@@ -37,6 +37,7 @@
   # pager = less -FRSX
   editor = nvim
   pager = delta
+	excludesFile = $HOME/.gitignore
 
 [delta]
 	plus-color="#012800" 

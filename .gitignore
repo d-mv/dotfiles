@@ -15,6 +15,7 @@ yarn-error.log
 .env*
 yarn.lock
 zsh/private
+.notes
 
 # Ignore application configuration
 /config/application.yml

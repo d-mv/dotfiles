@@ -1,5 +1,8 @@
 filetype plugin indent on
 filetype plugin on
+lang en_US.UTF-8
+scriptencoding utf-8
+syntax enable
 
 " set cmdheight=1 " command bar height
 " set completeopt-=preview
@@ -8,18 +11,17 @@ filetype plugin on
 " set wildmenu " enhanced command line completion
 " set wildmode=list:longest " complete files like a shell
 " set wildmode=longest,list,full
-lang en_US.UTF-8
-scriptencoding utf-8
-syntax enable
-
-set autoindent smartindent " Set Proper Tabs
-set autoread " re-read changed files
-set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
-set cc=120 " split line - show column @ 100
-set clipboard=unnamed
-set complete=.,w,b,u,U,t,i,d
-set completeopt=menuone,noinsert,noselect
-set cursorline
+" change the direction of new splits
+" set splitbelow
+" set splitright
+" set autoindent smartindent " Set Proper Tabs
+" set autoread " re-read changed files
+" set backspace=eol,start,indent     " Allow backspacing over indent, eol, & start
+" set cc=120 " split line - show column @ 100
+" set clipboard=unnamed
+" set complete=.,w,b,u,U,t,i,d
+" set completeopt=menuone,noinsert,noselect
+" set cursorline
 set diffopt+=vertical,iwhite,internal,algorithm:patience,hiddenoff
 set encoding=UTF-8
 set fillchars+=fold:· " split line - for folds
@@ -40,24 +42,24 @@ set nocompatible
 set noerrorbells
 set nofoldenable " don't fold by default
 set noshowmode " not to show --INSERT--
-set number
+" set number
 set re=0 " turn off old regex engine 
-set relativenumber
-set scrolloff=5
+" set relativenumber
+" set scrolloff=5
 set selection=exclusive  " Убирает выделение символа конца строки
 set shell=$SHELL
 set shiftround " round indent to a multiple of 'shiftwidth'
-set shiftwidth=2 " number of spaces to use for indent and unindent
-set shortmess+=c
+" set shiftwidth=2 " number of spaces to use for indent and unindent
+" set shortmess+=c
 set showbreak=↪
 set showcmd " show incomplete commands
 set showmatch " show matching braces
 set signcolumn=yes
-set smartindent
+" set smartindent
 set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set so=7 " set 7 lines to the cursors - when moving vertical
 set softtabstop=2 " edit as if the tabs are 4 characters wide
-set tabstop=2 " the visible width of tabs
+" set tabstop=2 " the visible width of tabs
 set termencoding=utf-8
 set title " set terminal title
 set ttyfast " faster redrawing
