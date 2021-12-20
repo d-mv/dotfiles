@@ -54,6 +54,8 @@ Plug 'hzchirs/vim-material'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'tomasiser/vim-code-dark'
+" Plug 'hzchirs/vim-material'
+Plug 'LunarVim/darkplus.nvim'
 " Plug 'sainnhe/everforest'
 " Plug 'yanisdb/primer-dark.vim'
 " Plug 'tomasr/molokai'
