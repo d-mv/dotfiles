@@ -42,10 +42,15 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'jeremyjh/dialyxir'
 Plug 'joegesualdo/jsdoc.vim'
 Plug 'styled-components/vim-styled-components'
-Plug 'cespare/vim-toml'
+
+" << rust >>
+" Plug 'cespare/vim-toml'
+" Plug 'rust-lang/rust.vim'
 
 " ::: THEMING :::
-Plug 'crusoexia/vim-monokai'
+Plug 'LunarVim/darkplus.nvim'
+Plug 'hzchirs/vim-material'
+" Plug 'crusoexia/vim-monokai'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'tomasiser/vim-code-dark'
@@ -72,18 +77,19 @@ if has('nvim')
 						\ 'coc-jest',
 						\ 'coc-json',
 						\ 'coc-prettier',
-						\ 'coc-rust-analyzer',
 						\ 'coc-snippets',
 						\ 'coc-spell-checker',
 						\ 'coc-docthis',
 						\ 'coc-stylelintplus',
 						\ 'coc-svg',
-						\ 'coc-toml',
 						\ 'coc-tsserver',
 						\ 'coc-webpack',
 						\ 'coc-yaml',
-						\ 'coc-yank'
+						\ 'coc-yank',
+						\ 'coc-rust-analyzer',
+						\ 'coc-toml',
 						\ ]
+
 endif
 
 if !has('nvim')
@@ -96,19 +102,20 @@ if !has('nvim')
 						\ 'coc-jest',
 						\ 'coc-json',
 						\ 'coc-prettier',
-						\ 'coc-rust-analyzer',
 						\ 'coc-snippets',
 						\ 'coc-spell-checker',
 						\ 'coc-docthis',
 						\ 'coc-stylelintplus',
 						\ 'coc-svg',
-						\ 'coc-toml',
 						\ 'coc-tsserver',
 						\ 'coc-webpack',
 						\ 'coc-yaml',
-						\ 'coc-yank'
-						" \ 'coc-explorer'
+						\ 'coc-yank',
+						\ 'coc-toml',
+						\ 'coc-rust-analyzer',
 						\ ]
+
+						" \ 'coc-explorer'
 endif
 
 

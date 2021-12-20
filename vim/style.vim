@@ -44,9 +44,11 @@ if $TERM_PROGRAM !=# 'Apple_Terminal'
 	let &t_ZR="\e[23m"
 endif
 
+colorscheme darkplus
+" colorscheme vim-material
 " colorscheme codedark
 " colorscheme vim-material
-colorscheme monokai
+" colorscheme monokai
 " colorscheme nord
 " colorscheme base16-default-dark
 " colorscheme everforest
