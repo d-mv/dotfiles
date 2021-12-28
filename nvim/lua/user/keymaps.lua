@@ -1,17 +1,20 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = "/"
-vim.g.maplocalleader = "/"
+-- vim.g.mapleader = "/"
+-- vim.g.maplocalleader = "/"
 
-keymap("n", ",f", ":NERDTreeFind<CR>", opts)
-keymap("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
+keymap("n", ",f", ":NvimTreeFindFile<CR>", opts)
+keymap("n", ",r", ":NvimTreeRefresh<CR>", opts)
+keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+
+keymap("n", ",bl", ":Gitsigns blame_line<CR>", opts)
+keymap("n", ",df", ":Gitsigns diffthis<CR>", opts)
+
 keymap("n", "<C-k>", "Vd2kp", opts)
 keymap("n", "<C-j>", "Vdp", opts)
 
@@ -21,15 +24,43 @@ keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", op
 keymap("n", "<C-l>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 
--- use <tab> for trigger completion and navigate to the next complete item
-vim.cmd [[
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+-- snippets
+keymap("n", ",lg", ":-1read $HOME/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i", opts)
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+
+vim.cmd [[
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! W w
+command! Ga !git add .
 ]]
+
+-- use alt+hjkl to move between split/vsplit panels
+keymap("n", "˙", "<C-w>h", opts)
+keymap("n", "∆", "<C-w>j", opts)
+keymap("n", "˚", "<C-w>k", opts)
+keymap("n", "¬", "<C-w>l", opts)
+keymap("n", "≥", ":vertical resize +5<CR>", opts)
+keymap("n", "≤", ":vertical resize -5<CR>", opts)
+
+keymap("n", "¯ ", ":res -5<CR>", opts)
+keymap("n", "˘", ":res +5<CR>", opts)
+
+keymap("n", "√", ":vs<CR>", opts)
+keymap("n", "†", ":split<CR>", opts)
+
+-- Jump between hunks
+keymap ("n", "<C-n>", "<Plug>(GitGutterNextHunk)", opts)  -- git next
+keymap ("n", "<C-m>", "<Plug>(GitGutterPrevHunk)", opts)  -- git previous
+
+-- close all, except current
+keymap ("n", ",bda",  ":bufdo bd<CR>", opts)
+
+keymap ("n", "<C-k>", "Vd2kp", opts)
+keymap ("n", "<C-j>", "Vdp", opts)
+
+-- turn off keys
+keymap ("n", "<Up>", "<NOP>", opts)
+keymap ("n", "<Down>", "<NOP>", opts)
+keymap ("n", "<Left>", "<NOP>", opts)
+keymap ("n", "<Right>", "<NOP>", opts)
