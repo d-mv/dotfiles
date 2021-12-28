@@ -1,17 +1,10 @@
--- set mps+=(:) -- show matching brackes
--- set mps+=<:> -- show matching brackes
--- set mps+=[:] -- show matching brackes
--- set mps+={:} -- show matching brackes
--- guifont = "monospace:h17"               -- the font used in graphical neovim applications
--- ignorecase = true                       -- ignore case in search patterns
--- mouse = "a"                             -- allow the mouse to be used in neovim
 local options = {
 autoindent = true,
 autoread = true,
 backspace = {"eol", "start", "indent"},
 backup = false,                          -- creates a backup file
 clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+cmdheight = 1,                           -- more space in the neovim command line for displaying messages
 colorcolumn = "120",
 complete = {".","w","b","u","U","t","i","d"},
 completeopt = { "menuone", "noselect", "noinsert" }, -- mostly just for cmp
@@ -27,6 +20,7 @@ foldmethod = "syntax", -- fold based on indent
 foldnestmax = 10, --deepest fold is 10 levels
 hidden = true, -- switch between buffers without error
 hlsearch = true,                         -- highlight all matches on previous search pattern
+ignorecase = true,
 laststatus = 2, -- show the status line all the time
 linebreak = true, -- set soft wrapping
 mat = 2, -- how many tenths of a second to blink
@@ -80,6 +74,11 @@ end
 vim.opt.diffopt:append "vertical,iwhite,internal,algorithm:patience,hiddenoff"
 vim.opt.fillchars:append "fold:·" -- split line - for folds
 vim.opt.shortmess:append "c"
+
+vim.opt.mps:append "(:)" -- show matching brackes
+vim.opt.mps:append "<:>" -- show matching brackes
+vim.opt.mps:append "[:]" -- show matching brackes
+vim.opt.mps:append "{:}" -- show matching brackes
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
