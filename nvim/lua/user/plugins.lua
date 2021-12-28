@@ -51,10 +51,8 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- syntax
   use { "p00f/nvim-ts-rainbow" }
@@ -71,55 +69,38 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+  -- explorer
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+
+  use "lukas-reineke/indent-blankline.nvim"
+  use "nvim-lualine/lualine.nvim"
+  use "lewis6991/impatient.nvim"
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use "folke/which-key.nvim" -- displays a popup with possible keybindings of the command you started typing
+  use "moll/vim-bbye"
 
 
-  use "scrooloose/nerdtree"
+
+  -- use "scrooloose/nerdtree"
   -- use "tiagofumo/vim-nerdtree-syntax-highlight"
-  use { "tpope/vim-fugitive", cmd = { 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' } }
-  use "airblade/vim-gitgutter"
+  -- use { "tpope/vim-fugitive", cmd = { 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' } }
+  -- use "airblade/vim-gitgutter"
   use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
   use 'tpope/vim-surround' -- quoting/parenthesizing made simple
   use 'machakann/vim-highlightedyank'
   -- use 'RRethy/vim-hexokinase'
   -- use 'kshenoy/vim-signature'  -- plugin to place, toggle and display marks
   -- use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
-  -- use { 'neoclide/coc.nvim', branch = 'release' }
-  -- use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production', ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html' } }
-  -- use 'joegesualdo/jsdoc.vim'
-  -- use 'styled-components/vim-styled-components'
-  -- use 'cespare/vim-toml'
-  --
-  -- vim.g.coc_global_extensions = {
-	-- 					 'coc-actions',
-	-- 					 'coc-css',
-	-- 					 'coc-cssmodules',
-	-- 					 'coc-eslint',
-	-- 					 'coc-elixir',
-	-- 					 'coc-git',
-	-- 					 'coc-html',
-	-- 					 'coc-jest',
-	-- 					 'coc-json',
-	-- 					 'coc-prettier',
-	-- 					 'coc-rust-analyzer',
-	-- 					 'coc-snippets',
-	-- 					 'coc-spell-checker',
-	-- 					 'coc-docthis',
-	-- 					 'coc-stylelintplus',
-	-- 					 'coc-svg',
-	-- 					 'coc-toml',
-	-- 					 'coc-tsserver',
-	-- 					 'coc-webpack',
-	-- 					 'coc-yaml',
-	-- 					 'coc-yank'
-	-- 					 }
-
-  -- vim.g.indentLine_char = '│'
-  -- vim.g.rustfmt_autosave = 1
   -- vim.g.Hexokinase_highlighters = {'backgroundfull'}
 
   -- Automatically set up your configuration after cloning packer.nvim

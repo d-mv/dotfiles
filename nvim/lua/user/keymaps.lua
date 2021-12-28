@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -10,8 +8,13 @@ keymap("", "<Space>", "<Nop>", opts)
 -- vim.g.mapleader = "/"
 -- vim.g.maplocalleader = "/"
 
-keymap("n", ",f", ":NERDTreeFind<CR>", opts)
-keymap("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
+keymap("n", ",f", ":NvimTreeFindFile<CR>", opts)
+keymap("n", ",r", ":NvimTreeRefresh<CR>", opts)
+keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+
+keymap("n", ",bl", ":Gitsigns blame_line<CR>", opts)
+keymap("n", ",df", ":Gitsigns diffthis<CR>", opts)
+
 keymap("n", "<C-k>", "Vd2kp", opts)
 keymap("n", "<C-j>", "Vdp", opts)
 
@@ -29,8 +32,6 @@ vim.cmd [[
 command! Q q " Bind :Q to :q
 command! Qall qall
 command! W w
-command! Gb Gblame
-command! Gd Gdiff
 command! Ga !git add .
 ]]
 
@@ -55,8 +56,8 @@ keymap ("n", "<C-m>", "<Plug>(GitGutterPrevHunk)", opts)  -- git previous
 -- close all, except current
 keymap ("n", ",bda",  ":bufdo bd<CR>", opts)
 
-keymap ("n", "<C-k>", "Vd2kp", opts) 
-keymap ("n", "<C-j>", "Vdp", opts) 
+keymap ("n", "<C-k>", "Vd2kp", opts)
+keymap ("n", "<C-j>", "Vdp", opts)
 
 -- turn off keys
 keymap ("n", "<Up>", "<NOP>", opts)
