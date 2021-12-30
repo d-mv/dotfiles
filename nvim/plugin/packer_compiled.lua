@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/LunarVim/darkplus.nvim"
   },
+  delimitMate = {
+    loaded = true,
+    path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/delimitMate",
+    url = "https://github.com/Raimondi/delimitMate"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/friendly-snippets",

@@ -100,7 +100,7 @@ return packer.startup(function(use)
   use 'machakann/vim-highlightedyank'
   -- use 'RRethy/vim-hexokinase'
   -- use 'kshenoy/vim-signature'  -- plugin to place, toggle and display marks
-  -- use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
+  use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
   -- vim.g.Hexokinase_highlighters = {'backgroundfull'}
 
   -- Automatically set up your configuration after cloning packer.nvim
