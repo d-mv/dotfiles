@@ -43,6 +43,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- colorscheme
   use "LunarVim/darkplus.nvim"
@@ -100,7 +101,7 @@ return packer.startup(function(use)
   use 'machakann/vim-highlightedyank'
   -- use 'RRethy/vim-hexokinase'
   -- use 'kshenoy/vim-signature'  -- plugin to place, toggle and display marks
-  -- use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
+  use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
   -- vim.g.Hexokinase_highlighters = {'backgroundfull'}
 
   -- Automatically set up your configuration after cloning packer.nvim

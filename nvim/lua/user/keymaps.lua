@@ -22,7 +22,6 @@ keymap("n", "<C-j>", "Vdp", opts)
 keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<C-l>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 
 -- snippets
 keymap("n", ",lg", ":-1read $HOME/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i", opts)
