@@ -56,7 +56,7 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- syntax
-  use { "p00f/nvim-ts-rainbow" }
+  use "p00f/nvim-ts-rainbow"
 
  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -91,17 +91,17 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
 
 
+  use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
+  use 'tpope/vim-surround' -- quoting/parenthesizing made simple
+  use 'machakann/vim-highlightedyank'
+  use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
 
   -- use "scrooloose/nerdtree"
   -- use "tiagofumo/vim-nerdtree-syntax-highlight"
   -- use { "tpope/vim-fugitive", cmd = { 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' } }
   -- use "airblade/vim-gitgutter"
-  use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
-  use 'tpope/vim-surround' -- quoting/parenthesizing made simple
-  use 'machakann/vim-highlightedyank'
   -- use 'RRethy/vim-hexokinase'
   -- use 'kshenoy/vim-signature'  -- plugin to place, toggle and display marks
-  use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
   -- vim.g.Hexokinase_highlighters = {'backgroundfull'}
 
   -- Automatically set up your configuration after cloning packer.nvim
