@@ -44,6 +44,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "numToStr/Comment.nvim" -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
   -- colorscheme
   use "LunarVim/darkplus.nvim"
@@ -91,11 +92,11 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
 
 
-  use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
   use 'tpope/vim-surround' -- quoting/parenthesizing made simple
   use 'machakann/vim-highlightedyank'
   use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
 
+  -- use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
   -- use "scrooloose/nerdtree"
   -- use "tiagofumo/vim-nerdtree-syntax-highlight"
   -- use { "tpope/vim-fugitive", cmd = { 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' } }

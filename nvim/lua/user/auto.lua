@@ -1,7 +1,9 @@
 -- vim.cmd [[ autocmd BufWritePre <buffer> <cmd>EslintFixAll<CR> ]]
+-- autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx :EslintFixAll
+-- autocmd BufWritePre * :Format
 vim.cmd [[
 augroup _lsp
-  autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx :EslintFixAll
+    autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx :EslintFixAll
 augroup end
 
 augroup _general_settings

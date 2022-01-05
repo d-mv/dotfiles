@@ -13,11 +13,21 @@ local completion = null_ls.builtins.completion
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
+		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		completion.spell,
+		diagnostics.editorconfig_checker,
 		diagnostics.eslint,
-        completion.spell,
-    -- diagnostics.flake8
+		diagnostics.jsonlint,
+		diagnostics.markdownlint,
+		diagnostics.shellcheck,
+		diagnostics.stylelint,
+		diagnostics.tsc,
+		formatting.eslint,
+		formatting.markdownlint,
+		formatting.rustfmt,
+		formatting.rustfmt,
+		formatting.stylelint,
+		formatting.stylua,
+		formatting.terraform_fmt,
 	},
 })
