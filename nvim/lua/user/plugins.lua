@@ -107,21 +107,23 @@ return packer.startup(function(use)
   use 'tpope/vim-surround' -- quoting/parenthesizing made simple
   use 'machakann/vim-highlightedyank'
   use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
+  use 'RRethy/vim-hexokinase'
 
   -- use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
   -- use "scrooloose/nerdtree"
   -- use "tiagofumo/vim-nerdtree-syntax-highlight"
   -- use { "tpope/vim-fugitive", cmd = { 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' } }
   -- use "airblade/vim-gitgutter"
-  -- use 'RRethy/vim-hexokinase'
   -- use 'kshenoy/vim-signature'  -- plugin to place, toggle and display marks
-  -- vim.g.Hexokinase_highlighters = {'backgroundfull'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
+
+  vim.g.Hexokinase_highlighters = {'backgroundfull'}
+
 end)
 
 

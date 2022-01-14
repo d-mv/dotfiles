@@ -24,7 +24,7 @@ keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", op
 keymap("n", "<C-l>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 
 -- snippets
-keymap("n", ",lg", ":-1read $HOME/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i", opts)
+keymap("n", ",lg", ":-1read $HOME/.dotfiles/nvim/snippets/console_import.tsx<CR>1jf)i", opts)
 
 -- keymap("n", ",r", "<cmd>lua require'lspactions'.rename()<CR>", opts)
 
