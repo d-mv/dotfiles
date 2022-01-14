@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "petertriho/lspactions" -- handlers for required lsp actions 
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -84,6 +85,17 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
   use "lukas-reineke/indent-blankline.nvim"
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
