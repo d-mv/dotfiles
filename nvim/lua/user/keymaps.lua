@@ -4,9 +4,11 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+-- keymap("", "<Space>", "<Nop>", opts)
 -- vim.g.mapleader = "/"
 -- vim.g.maplocalleader = "/"
+
+keymap("n", "<C-d>", ":Bdelete<CR>", opts)
 
 keymap("n", ",f", ":NvimTreeFindFile<CR>", opts)
 keymap("n", ",r", ":NvimTreeRefresh<CR>", opts)
@@ -23,17 +25,21 @@ keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", o
 keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<C-l>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 
+-- Bufferline
+keymap("n", "b]", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "b[", ":BufferLineCyclePrev<CR>", opts)
+
 -- snippets
 keymap("n", ",lg", ":-1read $HOME/.dotfiles/nvim/snippets/console_import.tsx<CR>1jf)i", opts)
 
 -- keymap("n", ",r", "<cmd>lua require'lspactions'.rename()<CR>", opts)
 
-vim.cmd [[
+vim.cmd([[
 command! Q q " Bind :Q to :q
 command! Qall qall
 command! W w
 command! Ga !git add .
-]]
+]])
 
 -- use alt+hjkl to move between split/vsplit panels
 keymap("n", "˙", "<C-w>h", opts)
@@ -50,17 +56,17 @@ keymap("n", "√", ":vs<CR>", opts)
 keymap("n", "†", ":split<CR>", opts)
 
 -- Jump between hunks
-keymap ("n", "<C-n>", "<Plug>(GitGutterNextHunk)", opts)  -- git next
-keymap ("n", "<C-m>", "<Plug>(GitGutterPrevHunk)", opts)  -- git previous
+keymap("n", "<C-n>", "<Plug>(GitGutterNextHunk)", opts) -- git next
+keymap("n", "<C-m>", "<Plug>(GitGutterPrevHunk)", opts) -- git previous
 
 -- close all, except current
-keymap ("n", ",bda",  ":bufdo bd<CR>", opts)
+keymap("n", ",bda", ":bufdo bd<CR>", opts)
 
-keymap ("n", "<C-k>", "Vd2kp", opts)
-keymap ("n", "<C-j>", "Vdp", opts)
+keymap("n", "<C-k>", "Vd2kp", opts)
+keymap("n", "<C-j>", "Vdp", opts)
 
 -- turn off keys
-keymap ("n", "<Up>", "<NOP>", opts)
-keymap ("n", "<Down>", "<NOP>", opts)
-keymap ("n", "<Left>", "<NOP>", opts)
-keymap ("n", "<Right>", "<NOP>", opts)
+keymap("n", "<Up>", "<NOP>", opts)
+keymap("n", "<Down>", "<NOP>", opts)
+keymap("n", "<Left>", "<NOP>", opts)
+keymap("n", "<Right>", "<NOP>", opts)
