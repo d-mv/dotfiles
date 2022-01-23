@@ -86,7 +86,7 @@ _G.packer_plugins = {
   },
   ["bufferline.nvim"] = {
     loaded = true,
-    path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["cmp-buffer"] = {
