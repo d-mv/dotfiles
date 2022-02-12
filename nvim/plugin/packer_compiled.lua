@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -143,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  lspactions = {
-    loaded = true,
-    path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/lspactions",
-    url = "https://github.com/petertriho/lspactions"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -254,11 +244,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["which-key.nvim"] = {
-    loaded = true,
-    path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/which-key.nvim",
-    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
