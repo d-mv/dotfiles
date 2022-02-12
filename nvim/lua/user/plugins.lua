@@ -46,7 +46,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
-  use "akinsho/bufferline.nvim"
+  -- use "akinsho/bufferline.nvim"
 
   -- colorscheme
   use "LunarVim/darkplus.nvim"
@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "petertriho/lspactions" -- handlers for required lsp actions
+  -- use "petertriho/lspactions" -- handlers for required lsp actions
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -102,7 +102,7 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim" -- displays a popup with possible keybindings of the command you started typing
+  -- use "folke/which-key.nvim" -- displays a popup with possible keybindings of the command you started typing
   use "moll/vim-bbye"
 
 
