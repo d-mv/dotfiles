@@ -100,3 +100,7 @@ function jump() {
     fi
   fi
 }
+
+kill-by-port() 
+{ kill "$(lsof -i ":$1" | tail -n 1 | awk '{ print $2 }')";
+ }
