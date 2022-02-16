@@ -50,6 +50,8 @@ return packer.startup(function(use)
 
   -- colorscheme
   use "LunarVim/darkplus.nvim"
+  use "mhartington/oceanic-next"
+  use "sainnhe/everforest"
 
 -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -74,7 +76,6 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "petertriho/lspactions" -- handlers for required lsp actions
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -102,21 +103,14 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  -- use "folke/which-key.nvim" -- displays a popup with possible keybindings of the command you started typing
   use "moll/vim-bbye"
-
 
   use 'tpope/vim-surround' -- quoting/parenthesizing made simple
   use 'machakann/vim-highlightedyank'
   use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
   use 'RRethy/vim-hexokinase'
 
-  -- use 'tomtom/tcomment_vim' -- universal comment vim-plugin that also handles embedded filetypes
-  -- use "scrooloose/nerdtree"
-  -- use "tiagofumo/vim-nerdtree-syntax-highlight"
-  -- use { "tpope/vim-fugitive", cmd = { 'Gstatus', 'Gblame', 'Gdiff', 'Gdiffsplit', 'Gbrowse' } }
-  -- use "airblade/vim-gitgutter"
-  -- use 'kshenoy/vim-signature'  -- plugin to place, toggle and display marks
+  use "airblade/vim-gitgutter"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

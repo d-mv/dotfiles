@@ -13,7 +13,7 @@ source ~/.dotfiles/zsh/path.zsh
 # source ~/.dotfiles/zsh/iterm
 
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(~/.daml/zsh $fpath)
@@ -27,7 +27,6 @@ bindkey "\e\e[C" forward-word
 # vim mode
 set -o vi
 bindkey -v
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
