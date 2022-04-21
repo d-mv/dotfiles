@@ -1,8 +1,8 @@
 vim.cmd [[
 try
-  " colorscheme darkplus
+  colorscheme darkplus
   " colorscheme OceanicNext
-  colorscheme everforest
+  " colorscheme everforest
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
