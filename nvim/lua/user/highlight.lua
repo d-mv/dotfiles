@@ -49,3 +49,12 @@ else
     let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 endif
 ]]
+
+-- Indent line highlighting
+vim.opt.list = true
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
