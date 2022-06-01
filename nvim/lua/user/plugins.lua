@@ -52,8 +52,9 @@ return packer.startup(function(use)
   use "LunarVim/darkplus.nvim"
   use "mhartington/oceanic-next"
   use "sainnhe/everforest"
+  use "Mofiqul/dracula.nvim"
 
--- Telescope
+  -- Telescope
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
@@ -63,7 +64,7 @@ return packer.startup(function(use)
   -- syntax
   use "p00f/nvim-ts-rainbow"
 
- -- cmp plugins
+  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -82,8 +83,16 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- explorer
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  -- use "kyazdani42/nvim-web-devicons"
+  -- use "kyazdani42/nvim-tree.lua"
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -109,6 +118,7 @@ return packer.startup(function(use)
   use 'machakann/vim-highlightedyank'
   use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
   use 'RRethy/vim-hexokinase'
+  use 'tpope/vim-abolish' -- easily search for, substitute, and abbreviate multiple variants of a word
 
   use "airblade/vim-gitgutter"
 
@@ -118,8 +128,6 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 
-  vim.g.Hexokinase_highlighters = {'backgroundfull'}
+  vim.g.Hexokinase_highlighters = { 'backgroundfull' }
 
 end)
-
-

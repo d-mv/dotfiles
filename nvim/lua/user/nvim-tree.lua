@@ -1,6 +1,23 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
+vim.g.nvim_tree_special_files = {
+  -- ["Cargo.toml"] = true,
+  -- ["readme.md"] = true,
+  -- ["README.md"] = true,
+  -- ["Makefile"] = true,
+  -- ["package.json"] = true,
+  -- ["package-lock.json"] = true
+}
+
 vim.g.nvim_tree_icons = {
+
+  symlink_arrow = " ➛ ",
+  show = {
+    file = true,
+    folder = true,
+    folder_arrow = true,
+    git = true,
+  },
   default = "",
   symlink = "",
   git = {
@@ -109,4 +126,23 @@ nvim_tree.setup {
   --   folder_arrows = 1,
   --   tree_width = 30,
   -- },
+
+
+
+  -- group_empty = false,
+  -- add_trailing = false,
+  -- highlight_git = false,
+  -- highlight_opened_files = "none",
+  -- root_folder_modifier = ":~",
+  renderer = {
+    icons = { webdev_colors = true },
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+  }
 }
