@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
+  ["nord-vim"] = {
+    loaded = true,
+    path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/nord-vim",
+    url = "https://github.com/arcticicestudio/nord-vim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/dmelnikov/.local/share/nvim/site/pack/packer/start/null-ls.nvim",

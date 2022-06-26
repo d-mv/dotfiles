@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "mhartington/oceanic-next"
   use "sainnhe/everforest"
   use "Mofiqul/dracula.nvim"
+  use "arcticicestudio/nord-vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
