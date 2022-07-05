@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/delimitMate",
     url = "https://github.com/Raimondi/delimitMate"
   },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   everforest = {
     loaded = true,
     path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/everforest",
@@ -234,6 +239,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
+  },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/Users/dmitry/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
   },
   ["vim-bbye"] = {
     loaded = true,

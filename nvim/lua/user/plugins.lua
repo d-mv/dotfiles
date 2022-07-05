@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use "LunarVim/darkplus.nvim"
   use "mhartington/oceanic-next"
   use "sainnhe/everforest"
+  use "Mofiqul/dracula.nvim"
 
 -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -109,6 +110,7 @@ return packer.startup(function(use)
   use 'machakann/vim-highlightedyank'
   use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
   use 'RRethy/vim-hexokinase'
+  use 'tpope/vim-abolish' -- easily search for, substitute, and abbreviate multiple variants of a word
 
   use "airblade/vim-gitgutter"
 
