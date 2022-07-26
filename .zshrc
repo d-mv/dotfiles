@@ -12,6 +12,8 @@ source ~/.dotfiles/zsh/functions.zsh
 source ~/.dotfiles/zsh/path.zsh
 # source ~/.dotfiles/zsh/iterm
 
+# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
