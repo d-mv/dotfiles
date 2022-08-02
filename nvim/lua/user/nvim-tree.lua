@@ -127,22 +127,28 @@ nvim_tree.setup {
   --   tree_width = 30,
   -- },
 
-
-
-  -- group_empty = false,
-  -- add_trailing = false,
-  -- highlight_git = false,
-  -- highlight_opened_files = "none",
-  -- root_folder_modifier = ":~",
   renderer = {
-    icons = { webdev_colors = true },
-    indent_markers = {
-      enable = true,
-      icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = "  ",
-      },
-    },
+    icons = {
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          unstaged = "",
+          staged = "S",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "",
+          untracked = "U",
+          ignored = "◌",
+        },
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+        },
+      }
+    }
   }
 }

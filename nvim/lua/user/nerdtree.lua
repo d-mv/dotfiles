@@ -1,6 +1,6 @@
 -- settings
 vim.g.NERDTreeWinPos = 'right'
-vim.g.NERDTreeWinSize = 40 
+vim.g.NERDTreeWinSize = 40
 vim.g.NERDTreeChDirMode = 1
 vim.g.NERDTreeDirArrows = 1
 vim.g.NERDTreeShowHidden = 1
@@ -47,26 +47,26 @@ vim.g.NERDTreeHighlightFoldersFllName = 1 -- highlights the folder name
 --     \ }
 
 -- colors
-local brown = "905532"
-local aqua =  "3AFFDB"
-local blue = "689FB6"
-local darkBlue = '000444'
-local purple = "834F79"
-local lightPurple = "834F79"
-local red = "AE403F"
-local beige = "F5C06F"
-local yellow = "F09F17"
-local orange = "D4843E"
-local darkOrange = "F16529"
-local pink = "CB6F6F"
-local salmon = "EE6E73"
-local green = "8FAA54"
-local lightGreen = "31B53E"
-local white = "FFFFFF"
-local rspec_red = 'FE405F'
+-- local brown = "905532"
+-- local aqua =  "3AFFDB"
+-- local blue = "689FB6"
+-- local darkBlue = '000444'
+-- local purple = "834F79"
+-- local lightPurple = "834F79"
+-- local red = "AE403F"
+-- local beige = "F5C06F"
+-- local yellow = "F09F17"
+-- local orange = "D4843E"
+-- local darkOrange = "F16529"
+-- local pink = "CB6F6F"
+-- local salmon = "EE6E73"
+-- local green = "8FAA54"
+-- local lightGreen = "31B53E"
+-- local white = "FFFFFF"
+-- local rspec_red = 'FE405F'
 -- local gitignore = 'F54D27'
-local type_script = '398AD7'
-local react = '08B6CE'
+-- local type_script = '398AD7'
+-- local react = '08B6CE'
 
 -- what to highlight
 vim.cmd "let g:NERDTreeExactMatchHighlightColor = {}" -- this line is needed to avoid error
