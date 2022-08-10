@@ -8,6 +8,11 @@ local keymap = vim.api.nvim_set_keymap
 -- vim.g.mapleader = "/"
 -- vim.g.maplocalleader = "/"
 
+
+keymap("n", ",ri", ":.-1read ~/.dotfiles/nvim/snippets/react_import.tsx<CR>o<CR>", opts)
+keymap("n", ",rf", ":.-1read ~/.dotfiles/nvim/snippets/react_function.tsx<CR>2jfCs", opts)
+
+
 keymap("n", "<C-d>", ":Bdelete<CR>", opts)
 
 keymap("n", ",f", ":NvimTreeFindFile<CR>", opts)

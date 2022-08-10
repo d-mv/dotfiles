@@ -1,25 +1,42 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
--- vim.g.nvim_tree_icons = {
---   default = "",
---   symlink = "",
---   git = {
---     unstaged = "",
---     staged = "S",
---     unmerged = "",
---     renamed = "➜",
---     deleted = "",
---     untracked = "U",
---     ignored = "◌",
---   },
---   folder = {
---     default = "",
---     open = "",
---     empty = "",
---     empty_open = "",
---     symlink = "",
---   },
--- }
+vim.g.nvim_tree_special_files = {
+  -- ["Cargo.toml"] = true,
+  -- ["readme.md"] = true,
+  -- ["README.md"] = true,
+  -- ["Makefile"] = true,
+  -- ["package.json"] = true,
+  -- ["package-lock.json"] = true
+}
+
+vim.g.nvim_tree_icons = {
+
+  symlink_arrow = " ➛ ",
+  show = {
+    file = true,
+    folder = true,
+    folder_arrow = true,
+    git = true,
+  },
+  default = "",
+  symlink = "",
+  git = {
+    unstaged = "",
+    staged = "S",
+    unmerged = "",
+    renamed = "➜",
+    deleted = "",
+    untracked = "U",
+    ignored = "◌",
+  },
+  folder = {
+    default = "",
+    open = "",
+    empty = "",
+    empty_open = "",
+    symlink = "",
+  },
+}
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
