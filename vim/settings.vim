@@ -11,7 +11,8 @@ set complete=.,w,b,u,U,t,i,d
 set ignorecase smartcase
 set number " = true, -- set numbered lines
 set relativenumber " = true, -- set relative numbered lines
-set completeopt=menu,menuone,noselect,noinsert,preview " }, -- mostly just for cmp
+set completeopt=menu,menuone,preview " }, -- mostly just for cmp
+" set completeopt=menu,menuone,noselect,noinsert,preview " }, -- mostly just for cmp
 set conceallevel=0 ", -- so that `` is visible in markdown files
 set cursorline "= true, -- highlight the current line
 set encoding=utf-8

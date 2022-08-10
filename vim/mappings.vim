@@ -72,7 +72,7 @@ inoremap <silent><expr> <Tab>
 
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-
+inoremap <expr> <CR> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 nmap <silent> b] :BufferLineCycleNext<CR>
 nmap <silent> b[ :BufferLineCyclePrev<CR>
@@ -129,3 +129,5 @@ command! Qall qall
 command! W w
 command! Wqa wqa
 command! Ga !git add .
+
+

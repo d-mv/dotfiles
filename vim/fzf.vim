@@ -25,7 +25,8 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
-nmap <silent> <C-p> :Files<CR>
+nmap <silent> <C-p> :GFiles<CR>
+nmap <silent> <C-a> :Files<CR>
 nmap <silent> <C-l> :Buffer<CR>
 nmap <silent> <C-f> :Rg<CR>
 
