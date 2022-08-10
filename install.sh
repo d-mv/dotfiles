@@ -5,3 +5,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/nvim/ftdetect ~/.vim/ftdetect
+
+brew install bat git-delta ripgrep the_silver_searcher exa fd dust fnm
+
+vim -c PlugInstall
