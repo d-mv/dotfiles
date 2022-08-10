@@ -16,6 +16,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 
+Plug 'machakann/vim-highlightedyank'
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -27,11 +32,16 @@ Plug 'prettier/vim-prettier', {
 call plug#end()
 
 " settings
+"
+colorscheme nord
+"
+set noundofile " no undo file
 set autoindent
 set autoread 
 set backspace=indent,eol,start
 set nobackup nowritebackup
-set clipboard=unnamedplus ", -- allows neovim to access the system clipboard
+" set clipboard=unnamedplus ", -- allows neovim to access the system clipboard
+set clipboard=unnamed
 set colorcolumn=120
 set complete=.,w,b,u,U,t,i,d
 set ignorecase smartcase
@@ -51,7 +61,7 @@ set showcmd " = true, -- show incomplete commands
 set showmatch " = true, -- show matching braces
 set noshowmode " =false, -- we don't need to see things like -- INSERT -- anymore
 set sidescrolloff=8
-set signcolumn " = "yes", -- always show the sign column, otherwise it would shift the text each time
+" set signcolumn " = "yes", -- always show the sign column, otherwise it would shift the text each time
 set smartcase " = true, -- smart case
 set smartindent " = true, -- make indenting smarter again
 set smarttab " = true, -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
@@ -72,7 +82,7 @@ set wrap " = true, -- turn on line wrapping
 set wrapmargin=4 ", -- wrap lines when coming within n characters from side
 set hlsearch " = true, -- highlight all matches on previous search pattern
 set ignorecase " = true,
-set laststatus " = 2, -- show the status line all the time
+" set laststatus " = 2, -- show the status line all the time
 set linebreak " = true, -- set soft wrapping
 set mat=2 ", -- how many tenths of a second to blink
 set numberwidth=4 ", -- set number column width to 2 {default 4}
@@ -96,3 +106,122 @@ augroup dynamic_smartcase
     autocmd CmdLineEnter : set nosmartcase
     autocmd CmdLineLeave : set smartcase
 augroup END
+
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" coc-nvim
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Run the Code Lens action on the current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" lightline
+set laststatus=2
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+" set incommand=nosplit " live update
+set incsearch " is about: showing the matches while typing the pattern
+
+" highlightedyank
+let g:highlightedyank_highlight_duration = 100
