@@ -10,14 +10,13 @@ source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/private.zsh
 source ~/.dotfiles/zsh/functions.zsh
 source ~/.dotfiles/zsh/path.zsh
-source ~/.dotfiles/local_export.zsh
 # source ~/.dotfiles/zsh/iterm
 
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(~/.daml/zsh $fpath)
