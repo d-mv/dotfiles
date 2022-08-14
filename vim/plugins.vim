@@ -14,6 +14,11 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
+" Plug 'jparise/vim-graphql'
+Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
+
+Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
+" Plug 'frazrepo/vim-rainbow' " Rainbow brackets for Vim
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -31,6 +36,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-css',
   \ 'coc-json',
+  \ 'coc-html'
   \ ]
 
 " prettier
@@ -39,3 +45,9 @@ let g:prettier#autoformat_require_pragma = 0
 
 " highlightedyank
 let g:highlightedyank_highlight_duration = 100
+
+" auto-pairs
+let g:AutoPairsFlyMode = 1
+
+" indentLine
+let g:indentLine_char_list = ['│']
