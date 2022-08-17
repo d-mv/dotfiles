@@ -36,12 +36,6 @@ set splitbelow " = true, -- force all horizontal splits to go below current wind
 set splitright " = true, -- force all vertical splits to go to the right of current window
 set noswapfile " = false, -- creates a swapfile
 set tabstop=2 ", -- insert 2 spaces for a tab
-<<<<<<< HEAD
-" set termguicolors " = true, -- set term gui colors (most terminals support this)
-||||||| cfeffc7
-set termguicolors " = true, -- set term gui colors (most terminals support this)
-=======
->>>>>>> 6672865e9f9d852378fdc80e1618cdf7028ee9c6
 set timeoutlen=1000 ", -- time to wait for a mapped sequence to complete (in milliseconds)
 set title " = true, -- set terminal title
 set ttyfast " = true, -- faster redrawing

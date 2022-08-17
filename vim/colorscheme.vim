@@ -1,6 +1,7 @@
-" colorscheme nord
+colorscheme nord
 " colorscheme base16
-colorscheme onehalfdark
+" colorscheme onehalfdark
+
 " lightline
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 
@@ -10,11 +11,13 @@ colorscheme onehalfdark
       " \ 'colorscheme': 'onehalfdark',
 let g:lightline = {
       \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
-      \ },
-      \ 'component': {
-      \   'helloworld': 'Hello, world!'
-      \ },
       \ }
+
+
+      " \ 'active': {
+      " \   'left': [ [ 'mode', 'paste' ],
+      " \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
+      " \ },
+      " \ 'component': {
+      " \   'helloworld': 'Hello, world!'
+      " \ },
