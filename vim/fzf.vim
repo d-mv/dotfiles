@@ -29,6 +29,7 @@ nmap <silent> <C-p> :GFiles<CR>
 nmap <silent> <C-a> :Files<CR>
 nmap <silent> <C-l> :Buffer<CR>
 nmap <silent> <C-f> :Rg<CR>
+nmap <silent> <S-f> :Ag<CR>
 
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.dotfiles/nvim/preview.sh {}']}, <bang>0)

@@ -36,12 +36,12 @@ set splitbelow " = true, -- force all horizontal splits to go below current wind
 set splitright " = true, -- force all vertical splits to go to the right of current window
 set noswapfile " = false, -- creates a swapfile
 set tabstop=2 ", -- insert 2 spaces for a tab
-set termguicolors " = true, -- set term gui colors (most terminals support this)
+" set termguicolors " = true, -- set term gui colors (most terminals support this)
 set timeoutlen=1000 ", -- time to wait for a mapped sequence to complete (in milliseconds)
 set title " = true, -- set terminal title
 set ttyfast " = true, -- faster redrawing
 " set undofile " = true, -- enable persistent undo
-set updatetime=300 ", -- faster completion (4000ms default)
+set updatetime=100 ", -- faster completion (4000ms default)
 set wildmenu " = true,
 set wrap " = true, -- turn on line wrapping
 set wrapmargin=4 ", -- wrap lines when coming within n characters from side
@@ -82,9 +82,17 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 " lightline
 set laststatus=2
+set statusline=%F%m%r%h%w%=\ %4Y\ %4{&ff}\ %4l,%v\ %4p%%
 
 " set incommand=nosplit " live update
 set incsearch " is about: showing the matches while typing the pattern
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
