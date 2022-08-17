@@ -8,6 +8,7 @@ export PATH="$HOME/.rbenv/shims/:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/Users/dmelnikov/bin:$PATH"
 
 export JAVA_HOME=/usr/local/opt/openjdk
 

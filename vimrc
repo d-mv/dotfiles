@@ -4,6 +4,7 @@ source ~/.dotfiles/vim/colorscheme.vim
 source ~/.dotfiles/vim/mappings.vim
 source ~/.dotfiles/vim/nerdtree.vim
 source ~/.dotfiles/vim/fzf.vim
+source ~/.dotfiles/vim/highlight.vim
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')

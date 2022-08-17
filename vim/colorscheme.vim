@@ -4,11 +4,12 @@ colorscheme onehalfdark
 " lightline
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 
+
 " let base16colorspace=256  " Access colors present in 256 colorspace
 
-      " \ 'colorscheme': 'nord',
+      " \ 'colorscheme': 'onehalfdark',
 let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
+      \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified', 'helloworld' ] ]
