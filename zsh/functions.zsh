@@ -8,7 +8,6 @@ function node-project {
   git commit -m "Initial commit"
 }
 
-
 # fd is like cd, but fuzzy
 fd() {
   local dir
@@ -18,7 +17,8 @@ fd() {
 
 
 gsw() {
-  git switch "$@"
+  # git switch "$@"
+  get switch $(git branch | fzf)
   }
 
 gcp() {
