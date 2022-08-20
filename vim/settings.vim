@@ -1,76 +1,44 @@
-set noundofile " no undo file
+set nocompatible
+syntax on
+filetype plugin on
+" finding files
 set autoindent
 set autoread
-set backspace=indent,eol,start
-set nobackup nowritebackup
-" set clipboard=unnamedplus ", -- allows neovim to access the system clipboard
+set backspace=2 " allow backspace over everything
 set clipboard=unnamed
-set textwidth=120
 set colorcolumn=+0
 set complete=.,w,b,u,U,t,i,d
-set ignorecase smartcase
-set number " = true, -- set numbered lines
-set relativenumber " = true, -- set relative numbered lines
-set completeopt=menu,menuone,preview " }, -- mostly just for cmp
-" set completeopt=menu,menuone,noselect,noinsert,preview " }, -- mostly just for cmp
-set conceallevel=0 ", -- so that `` is visible in markdown files
-set cursorline "= true, -- highlight the current line
+set completeopt=menu,menuone,preview,popup " mostly just for cmp
+set conceallevel=0 ", so that `` is visible in markdown files
+set cursorline " highlight the current line
 set encoding=utf-8
-set re=0 ", -- turn off old regex engine
-set scrolloff=5 ", -- is one of my fav
-set selection=exclusive ", -- don't select next line symbol
-set shiftround " = true, -- round indent to a multiple of 'shiftwidth'
-set shiftwidth=2 ", -- the number of spaces inserted for each indentation
+set hidden " switch between buffers without error
+set ignorecase smartcase
+set number " set numbered lines
+set path+=** " tab completion for all file-lated tasks
+set re=0 ", turn off old regex engine
+set relativenumber " set relative numbered lines
+set scrolloff=5 "
+set selection=exclusive " don't select next line symbol
+set shiftround " round indent to a multiple of 'shiftwidth'
+set shiftwidth=2 " the number of spaces inserted for each indentation
 set showbreak=↪
-set showcmd " = true, -- show incomplete commands
-set showmatch " = true, -- show matching braces
-set noshowmode " =false, -- we don't need to see things like -- INSERT -- anymore
+set showcmd " show incomplete commands
+set showmatch " show matching braces
 set sidescrolloff=8
-" set signcolumn " = "yes", -- always show the sign column, otherwise it would shift the text each time
-set smartcase " = true, -- smart case
-set smartindent " = true, -- make indenting smarter again
-set smarttab " = true, -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
-set so=7 ", -- set 7 lines to the cursors - when moving vertical
-set softtabstop=2 ", -- edit as if the tabs are 4 characters wide
-set splitbelow " = true, -- force all horizontal splits to go below current window
-set splitright " = true, -- force all vertical splits to go to the right of current window
-set noswapfile " = false, -- creates a swapfile
-set tabstop=2 ", -- insert 2 spaces for a tab
-set timeoutlen=1000 ", -- time to wait for a mapped sequence to complete (in milliseconds)
-set title " = true, -- set terminal title
-set ttyfast " = true, -- faster redrawing
-" set undofile " = true, -- enable persistent undo
-set updatetime=100 ", -- faster completion (4000ms default)
-set wildmenu " = true,
-set wrap " = true, -- turn on line wrapping
-set wrapmargin=4 ", -- wrap lines when coming within n characters from side
-set hlsearch " = true, -- highlight all matches on previous search pattern
-set ignorecase " = true,
-" set laststatus " = 2, -- show the status line all the time
-set linebreak " = true, -- set soft wrapping
-set mat=2 ", -- how many tenths of a second to blink
-set numberwidth=4 ", -- set number column width to 2 {default 4}
-set pumheight=20 ", -- pop up menu height
-set cmdheight=1 ", -- more space in the neovim command line for displaying messages
-set expandtab " = true, -- convert tabs to spaces
-set fileencoding=utf-8 ", -- the encoding written to a file
-set fillchars=vert:┃ ", -- split line - for vsplits
-set foldlevel=1
-set foldlevelstart=99
-set foldmethod=syntax ", -- fold based on indent
-set foldnestmax=10 ", --deepest fold is 10 levels
-set hidden "= true, -- switch between buffers without error
-set shell=$SHELL
-set showtabline=1 ", -- always show tabs
-  " writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  "
-" assumes set ignorecase smartcase
-augroup dynamic_smartcase
-    autocmd!
-    autocmd CmdLineEnter : set nosmartcase
-    autocmd CmdLineLeave : set smartcase
-augroup END
+set textwidth=100
+set wildmenu " display all matching files
+" set noshowmode " we don't need to see things like -- INSERT -- anymore
+" undo, swap
+set noundofile " no undo file
+set nobackup nowritebackup
+set noswapfile
 
+
+" status line
+set laststatus=2
+set statusline=%F%m%r%h%w%=\ %4Y\ %4{&ff}\ %4l,%v\ %4p%%
+" cursor
 set ttimeout
 set ttimeoutlen=1
 set ttyfast
@@ -78,22 +46,72 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" lightline
-set laststatus=2
-set statusline=%F%m%r%h%w%=\ %4Y\ %4{&ff}\ %4l,%v\ %4p%%
+" netrw
+let g:netrw_banner=0 " disable banner
+let g:netrw_browser_split=4 " open in prior window
+let g:netrw_altv=1 " open splits to the right
+let g:netrw_liststyle=3 " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
-" set incommand=nosplit " live update
-set incsearch " is about: showing the matches while typing the pattern
+" key mapping
+map Q gq " don't use Ex mode, use Q for formatting
+nmap <silent><leader>l :ls<CR>
+" nmap <silent><C-b> :edit .<CR> " open netrw
+nmap <C-l> :b<Space>
+nmap <C-p> :find<Space>
+" use alt+hjkl to move between split/vsplit panels
+nmap <silent> ˙ <C-w>h
+nmap <silent> ∆ <C-w>j
+nmap <silent> ˚ <C-w>k
+nmap <silent> ¬ <C-w>l
+" resize
+nmap <silent> ≥ :vertical resize +5<CR>
+nmap <silent> ≤ :vertical resize -5<CR>
+nmap <silent> ¯  :res -5<CR>
+nmap <silent> ˘ :res +5<CR>
+nmap <silent> √ :vs<CR>
+nmap <silent> † :split<CR>
+" surround
+vmap <silent><leader>" c"<Esc>pi<Right>"<Esc><Right>
+vmap <silent><leader>' c'<Esc>pi<Right>'<Esc><Right>
+vmap <silent><leader>( c(<Esc>pi<Right>)<Esc><Right>
+vmap <silent><leader>[ c[<Esc>pi<Right>]<Esc><Right>
+vmap <silent><leader>{ c{<Esc>pi<Right>}<Esc><Right>
+vmap <silent><leader>` c`<Esc>pi<Right>`<Esc><Right><Right>
+vmap <silent><leader>( c(<Esc>pi<Right>)<Esc><Right>
+vmap <silent><leader>( c(<Esc>pi<Right>)<Esc><Right>
+" disable
+nmap <silent> <Up> <NOP>
+nmap <silent> <Down> <NOP>
+nmap <silent> <Left> <NOP>
+nmap <silent> <Right> <NOP>
+" bind errored combinations
+command! Q q " Bind :Q to :q
+command! Qall qall
+command! W w
+command! Wqa wqa
+" call terminal commands
+command! Ga !git add .
+" file management
+nmap <silent> ,bda :bufdo bd<CR> " -- close all, except current
+" movements
+nmap <silent> <C-k> Vd2kp " move line up
+nmap <silent> <C-j> Vdp " move line down
+" snippets
+nmap <silent> ,lg :-1read $HOME/.dotfiles/nvim/snippets/console_import.tsx<CR>1jf)i
+nmap <silent> ,rf :.-1read ~/.dotfiles/nvim/snippets/react_function.tsx<CR>2jfCs
 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors " true, -- set term gui colors (most terminals support this)
-endif
 
-set signcolumn=yes
+
+
+
+nmap <silent> <C-d> :Bdelete<CR>
+nmap <silent> ,f :NERDTreeFind<CR>
+nmap <silent> ,r :NERDTreeRefresh<CR>
+nmap <silent> <C-b> :NERDTreeToggle<CR>
+nmap <silent> ,bl :Git blame<CR>
+nmap <silent> ,gf :Gvdiffsplit<CR>
+
+

@@ -1,6 +1,8 @@
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
