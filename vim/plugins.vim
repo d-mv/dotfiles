@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-surround'
 
 " Plug 'tpope/vim-fugitive'
@@ -9,14 +9,14 @@ Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
-Plug 'LunarVim/darkplus.nvim'
-Plug 'mhartington/oceanic-next'
-Plug 'sainnhe/everforest'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'arcticicestudio/nord-vim'
-Plug 'chriskempson/base16-vim'
+" Plug 'LunarVim/darkplus.nvim'
+" Plug 'mhartington/oceanic-next'
+" Plug 'sainnhe/everforest'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'chriskempson/base16-vim'
 
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -30,9 +30,9 @@ Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lin
 " Plug 'jparise/vim-graphql'
 Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 
-Plug 'Raimondi/delimitMate' "  provides insert mode auto-completion for quotes, parens, brackets, etc.
+" Plug 'Raimondi/delimitMate' "  provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'RRethy/vim-hexokinase'
-Plug 'tpope/vim-abolish' " easily search for, substitute, and abbreviate multiple variants of a word
+" Plug 'tpope/vim-abolish' " easily search for, substitute, and abbreviate multiple variants of a word
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -61,7 +61,7 @@ let g:prettier#autoformat_require_pragma = 0
 let g:highlightedyank_highlight_duration = 100
 
 " auto-pairs
-let g:AutoPairsFlyMode = 1
+" let g:AutoPairsFlyMode = 1
 
 " indentLine
 let g:indentLine_char_list = ['│']
