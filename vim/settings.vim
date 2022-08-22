@@ -215,8 +215,8 @@ function! ShowDocumentation()
   endif
 endfunction
 nmap <leader>rn <Plug>(coc-rename)
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 nmap <C-i> <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>cl  <Plug>(coc-codelens-action)
@@ -256,6 +256,14 @@ nmap <silent> <C-b> :NERDTreeToggle<CR>
 nmap <silent> ,bl :Git blame<CR>
 nmap <silent> ,gf :Gvdiffsplit<CR>
 
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors " true, -- set term gui colors (most terminals support this)
+endif
+
 source ~/.dotfiles/vim/plugins.vim
 source ~/.dotfiles/vim/nerdtree.vim
 
+colorscheme nord

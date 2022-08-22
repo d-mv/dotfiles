@@ -16,10 +16,10 @@ fd() {
 }
 
 
-gsw() {
-  # git switch "$@"
-  get switch $(git branch | fzf)
-  }
+# gsw() {
+#   # git switch "$@"
+#   get switch $(git branch | fzf)
+#   }
 
 gcp() {
   git commit -m "$1" && git push
