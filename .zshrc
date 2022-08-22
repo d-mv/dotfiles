@@ -2,8 +2,7 @@ export EDITOR=nvim
 export REACT_EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
-
-set -g default-terminal "screen-256color"
+export TERM=screen-256color-bce
 
 source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
@@ -15,8 +14,8 @@ source ~/.dotfiles/zsh/path.zsh
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 # source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(~/.daml/zsh $fpath)
