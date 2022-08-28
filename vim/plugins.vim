@@ -9,14 +9,18 @@ Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
-" Plug 'LunarVim/darkplus.nvim'
-" Plug 'mhartington/oceanic-next'
-" Plug 'sainnhe/everforest'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'chriskempson/base16-vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'mhartington/oceanic-next'
+Plug 'sainnhe/everforest'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 
-" Plug 'itchyny/lightline.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'rickharris/vim-monokai'
+
+Plug 'itchyny/lightline.vim'
 
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -50,7 +54,8 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-css',
   \ 'coc-json',
-  \ 'coc-html'
+  \ 'coc-html',
+  \ 'coc-metals'
   \ ]
 
 " prettier

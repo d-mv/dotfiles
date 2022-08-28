@@ -19,8 +19,8 @@ set foldlevelstart=99
 set foldmethod=syntax ", -- fold based on indent
 set foldnestmax=10 ", --deepest fold is 10 levels
 set hidden " switch between buffers without error
-set hlsearch " = true, -- highlight all matches on previous search pattern
-set ignorecase " = true,
+set hlsearch " highlight all matches on previous search pattern
+set incsearch
 set ignorecase smartcase
 set linebreak " = true, -- set soft wrapping
 set mat=2 ", -- how many tenths of a second to blink
@@ -63,7 +63,7 @@ set nobackup nowritebackup
 set noswapfile
 " status line
 set laststatus=2 " show the status line all the time
-set statusline=%F%m%r%h%w%=\ %4Y\ %4{&ff}\ %4l,%v\ %4p%%
+" set statusline=%F%m%r%h%w%=\ %4Y\ %4{&ff}\ %4l,%v\ %4p%%
 " cursor
 set ttimeout
 set ttimeoutlen=1
@@ -145,8 +145,10 @@ hi Fixme guibg=#f542b6 guifg=#444444 gui=bold
 hi Tod guibg=#9ac427 guifg=#444444 gui=bold ctermfg=yellow
 hi Note guibg=#f542b6 gui=bold
 hi Optimize guifg=#9ac427 gui=bold ctermfg=yellow
+
 match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflicts
+
 augroup myNote
   autocmd!
   autocmd Syntax * syntax match myNote /\v\_.<(NOTE)\s/ containedin=.*Comment
@@ -215,8 +217,8 @@ function! ShowDocumentation()
   endif
 endfunction
 nmap <leader>rn <Plug>(coc-rename)
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 nmap <C-i> <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 nmap <leader>cl  <Plug>(coc-codelens-action)
@@ -256,6 +258,32 @@ nmap <silent> <C-b> :NERDTreeToggle<CR>
 nmap <silent> ,bl :Git blame<CR>
 nmap <silent> ,gf :Gvdiffsplit<CR>
 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors " true, -- set term gui colors (most terminals support this)
+endif
+
+augroup dynamic_smartcase
+    autocmd!
+    autocmd CmdLineEnter : set nosmartcase
+    autocmd CmdLineLeave : set smartcase
+augroup END
+
 source ~/.dotfiles/vim/plugins.vim
 source ~/.dotfiles/vim/nerdtree.vim
 
+" If you don't like many colors and prefer the conservative style of the standard Visual Studio
+" let g:codedark_conservative=1
+" Activates italicized comments (make sure your terminal supports italics)
+let g:codedark_italics=1
+" Make the background transparent
+let g:codedark_transparent=1
+" If you have vim-airline, you can also enable the provided theme
+" let g:airline_theme = 'codedark'
+
+colorscheme monokai_pro
+
+let g:lightline = {
+      \ 'colorscheme': 'monokai_pro',
+      \ }

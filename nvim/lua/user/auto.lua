@@ -31,4 +31,9 @@ augroup _general_settings
     autocmd VimResized * tabdo wincmd =
   augroup end
 
+  augroup dynamic_smartcase
+    autocmd!
+    autocmd CmdLineEnter : set nosmartcase
+    autocmd CmdLineLeave : set smartcase
+  augroup END
 ]]
