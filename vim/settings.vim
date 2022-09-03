@@ -7,7 +7,7 @@ set clipboard=unnamed
 set cmdheight=1 ", -- more space in the neovim command line for displaying messages
 set colorcolumn=+0
 set complete=.,w,b,u,U,t,i,d
-set completeopt=menu,menuone,preview,popup " mostly just for cmp
+set completeopt=longest,menuone,preview " mostly just for cmp
 set conceallevel=0 ", so that `` is visible in markdown files
 set cursorline " highlight the current line
 set encoding=utf-8
