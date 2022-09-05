@@ -7,11 +7,11 @@ Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
-" Plug 'LunarVim/darkplus.nvim'
+Plug 'tomasiser/vim-code-dark'
 " Plug 'mhartington/oceanic-next'
 " Plug 'sainnhe/everforest'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
 
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -22,7 +22,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
 Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 Plug 'RRethy/vim-hexokinase'
-
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 

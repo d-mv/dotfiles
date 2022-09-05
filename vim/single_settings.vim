@@ -270,15 +270,107 @@ augroup dynamic_smartcase
     autocmd CmdLineLeave : set smartcase
 augroup END
 
-source ~/.dotfiles/vim/plugins.vim
-source ~/.dotfiles/vim/nerdtree.vim
+call plug#begin('/etc/vim/plugged')
+Plug 'tpope/vim-surround'
 
-" if you don't like many colors and prefer the conservative style of the standard Visual Studio
-" let g:codedark_conservative=1
-" Activates italicized comments (make sure your terminal supports italics)
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+
+Plug 'machakann/vim-highlightedyank'
+
+Plug 'tomasiser/vim-code-dark'
+
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'peitalin/vim-jsx-typescript'
+
+Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
+Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
+Plug 'RRethy/vim-hexokinase'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+call plug#end()
+
+" coc-nvim
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-prettier',
+  \ 'coc-css',
+  \ 'coc-json',
+  \ 'coc-html'
+  \ ]
+let g:prettier#autoformat_config_present = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:highlightedyank_highlight_duration = 100
+let g:indentLine_char_list = ['│']
+let g:Hexokinase_highlighters = ['backgroundfull']
+
+let g:NERDTreeWinPos = 'right'
+let g:NERDTreeWinSize = 40
+let g:NERDTreeChDirMode = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeHighlightCursorline = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:WebDevIconsConcealNerdtreeBrackets = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFllName = 1 " highlights the folder name
+let g:NERDTreeIgnore = {"^\~$[[dir]]", "^\.git$[[dir]]","^\.o$[[file]]", "^\.pyc$[[file]]", "^\.DS_Store$[[file]]"}
+
+let g:brown = "905532"
+let g:aqua =  "3AFFDB"
+let g:blue = "689FB6"
+let g:darkBlue = '000444'
+let g:purple = "834F79"
+let g:lightPurple = "834F79"
+let g:red = "AE403F"
+let g:beige = "F5C06F"
+let g:yellow = "F09F17"
+let g:orange = "D4843E"
+let g:darkOrange = "F16529"
+let g:pink = "CB6F6F"
+let g:salmon = "EE6E73"
+let g:green = "8FAA54"
+let g:lightGreen = "31B53E"
+let g:white = "FFFFFF"
+let g:rspec_red = 'FE405F'
+let g:gitignore = 'F54D27'
+let g:react = '08B6CE'
+let g:type_script = '398AD7'
+
+let g:NERDTreeExactMatchHighlightColor = {} " -- this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = 'F54D27' " -- sets the color for .gitignore files
+
+let g:NERDTreeExtensionHighlightColor = {} " -- this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['ts'] = '398AD7'
+let g:NERDTreeExtensionHighlightColor['tsx'] = '08B6CE'
+let g:NERDTreeExtensionHighlightColor['jsx'] = '08B6CE'
+let g:NERDTreePatternMatchHighlightColor = {} " -- this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor[".*_spec\.rb$"] = rspec_red
+let g:NERDTreeExtensionHighlightColor = {} " -- this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['ts'] = type_script
+let g:NERDTreeExtensionHighlightColor['tsx'] = react
+let g:NERDTreeExtensionHighlightColor['jsx'] = react
+
 let g:codedark_italics=1
-" Make the background transparent
-" let g:codedark_transparent=1
 
 let g:lightline = {
       \ 'colorscheme': 'codedark',
