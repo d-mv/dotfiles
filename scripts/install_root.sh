@@ -1,8 +1,7 @@
 # install required
 echo Updating and installing packages
 apt-get update
-apt-get install -y unzip locales-all git curl wget silversearcher-ag make build-essential
-software-properties-common ruby
+apt-get install -y unzip locales-all git curl wget silversearcher-ag make build-essential software-properties-common ruby
 
 URL_BREW='https://raw.githubusercontent.com/Homebrew/install/master/install'
 
