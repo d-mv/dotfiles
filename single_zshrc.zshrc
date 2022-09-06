@@ -145,7 +145,7 @@ setopt MENU_COMPLETE           # auto-insert first possible ambiguous completion
 
 # Plug-ins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
-source /home/linuxbrew/.linuxbrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /etc/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # https://superuser.com/a/1494647/322531
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 source /etc/zsh/fsh/fast-syntax-highlighting.plugin.zsh

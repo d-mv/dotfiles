@@ -13,22 +13,25 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo Installing applications
 brew install gcc go neovim tmux fzf exa bat fnm ripgrep zsh
 eval "$(fnm env --shell=bash)"
+./home/linuxbrew/.linuxbrew/opt/fzf/install
 echo Installing plugin manager for nvim
 curl -fLo /etc/xdg/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo Installing zsh-suggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions /etc/zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search /etc/zsh/zsh-history-substring-search
 echo Installing fasy-syntax-highlighting
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /etc/zsh/fsh
 echo Installing tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # link configs
-echo Linking config files
+echo ">> Linking config files"
 mkdir -p /root/.config/nvim && ln /etc/dotfiles/configs/coc-settings.json /root/.config/nvim/coc-settings.json
 ln /etc/dotfiles/vim/single_settings.vim /etc/xdg/nvim/sysinit.vim
 ln /etc/dotfiles/tmux.conf ~/.tmux.conf
 ln /etc/dotfiles/single_zshrc.zshrc ~/.zshrc
-
+echo ">> Linking apps"
+ln /home/linuxbrew/.linuxbrew/Cellar/zsh/5.9/bin/zsh /bin/zsh
 # setup
 echo Install and use node
 fnm install 16

@@ -371,6 +371,8 @@ let g:NERDTreeExtensionHighlightColor['ts'] = type_script
 let g:NERDTreeExtensionHighlightColor['tsx'] = react
 let g:NERDTreeExtensionHighlightColor['jsx'] = react
 
+set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+
 let g:codedark_italics=1
 
 let g:lightline = {
