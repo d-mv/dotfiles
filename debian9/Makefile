@@ -17,6 +17,11 @@ start:
 	docker start debian9
 	docker attach debian9
 
+
+.PHONY: start-only
+start-only:
+	docker start debian9
+
 .PHONY: rebuild-n-start
 rebuild-n-start:
 	make build

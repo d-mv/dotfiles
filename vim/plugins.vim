@@ -13,6 +13,7 @@ Plug 'tomasiser/vim-code-dark'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
 
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 

@@ -90,8 +90,8 @@ nmap <silent> ∆ <C-w>j
 nmap <silent> ˚ <C-w>k
 nmap <silent> ¬ <C-w>l
 " resize
-nmap <silent> ≥ :vertical resize +5<CR>
-nmap <silent> ≤ :vertical resize -5<CR>
+nmap <silent> ≥ :vertical resize +5<CR> " alt+.
+nmap <silent> ≤ :vertical resize -5<CR> " alt+,
 nmap <silent> ¯  :res -5<CR>
 nmap <silent> ˘ :res +5<CR>
 nmap <silent> √ :vs<CR>
@@ -281,6 +281,7 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'tomasiser/vim-code-dark'
 
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -333,7 +334,7 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
 let g:NERDTreeHighlightFoldersFllName = 1 " highlights the folder name
-let g:NERDTreeIgnore = {"^\~$[[dir]]", "^\.git$[[dir]]","^\.o$[[file]]", "^\.pyc$[[file]]", "^\.DS_Store$[[file]]"}
+" let g:NERDTreeIgnore = {"^\~$[[dir]]", "^\.git$[[dir]]","^\.o$[[file]]", "^\.pyc$[[file]]", "^\.DS_Store$[[file]]"}
 
 let g:brown = "905532"
 let g:aqua =  "3AFFDB"
