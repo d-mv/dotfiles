@@ -1,4 +1,3 @@
-cat << EOT>>~/.zshrc
 export EDITOR=nvim
 export REACT_EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -153,5 +152,3 @@ source /etc/zsh/fsh/fast-syntax-highlighting.plugin.zsh
 HISTCMD_LOCAL=0
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-EOT

@@ -11,6 +11,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 autoload -Uz vcs_info
+
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 precmd() { print -rP "%F{240}%~" }
