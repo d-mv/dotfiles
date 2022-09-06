@@ -123,8 +123,8 @@ nmap <silent> ,bda :bufdo bd<CR> " -- close all, except current
 nmap <silent> <C-k> Vd2kp " move line up
 nmap <silent> <C-j> Vdp " move line down
 " snippets
-nmap <silent> ,lg :-1read $HOME/.dotfiles/nvim/snippets/console_import.tsx<CR>1jf)i
-nmap <silent> ,rf :.-1read ~/.dotfiles/nvim/snippets/react_function.tsx<CR>2jfCs
+nmap <silent> ,lg :-1read /etc/dotfiles/vim/snippets/console_import.tsx<CR>1jf)i
+nmap <silent> ,rf :.-1read /etc/dotfiles/vim/snippets/react_function.tsx<CR>2jfCs
 " highlight & syntax
 hi Comment gui=italic guifg=#808b96
 hi Cursor guibg=white guifg=black
@@ -198,7 +198,7 @@ nmap <silent> <C-l> :Buffer<CR>
 nmap <silent> <C-f> :Rg<CR>
 nmap <silent> <leader>f :Ag<CR>
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '~/.dotfiles/nvim/preview.sh {}']}, <bang>0)
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '/etc/dotfiles/nvim/preview.sh {}']}, <bang>0)
 " coc
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)

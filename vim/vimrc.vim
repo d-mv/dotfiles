@@ -123,8 +123,8 @@ nmap <silent> ,bda :bufdo bd<CR> " -- close all, except current
 nmap <silent> <C-k> Vd2kp " move line up
 nmap <silent> <C-j> Vdp " move line down
 " snippets
-nmap <silent> ,lg :-1read $HOME/.dotfiles/nvim/snippets/console_import.tsx<CR>1jf)i
-nmap <silent> ,rf :.-1read ~/.dotfiles/nvim/snippets/react_function.tsx<CR>2jfCs
+nmap <silent> ,lg :-1read $HOME/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i
+nmap <silent> ,rf :.-1read ~/.dotfiles/vim/snippets/react_function.tsx<CR>2jfCs
 " highlight & syntax
 hi Comment gui=italic guifg=#808b96
 hi Cursor guibg=white guifg=black
@@ -269,6 +269,9 @@ augroup dynamic_smartcase
     autocmd CmdLineEnter : set nosmartcase
     autocmd CmdLineLeave : set smartcase
 augroup END
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 source ~/.dotfiles/vim/plugins.vim
 source ~/.dotfiles/vim/nerdtree.vim

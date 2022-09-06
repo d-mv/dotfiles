@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin('~/vim/plugged')
 Plug 'tpope/vim-surround'
 
 Plug 'airblade/vim-gitgutter'

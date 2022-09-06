@@ -1,7 +1,7 @@
 .PHONY: build
 build:
-	docker rm -f dotfiles >> echo
-	docker rmi -f dotfiles >> echo
+	docker rm -f dotfiles >> /dev/null
+	docker rmi -f dotfiles >> /dev/null
 	docker build -t dotfiles .
 
 .PHONY: build-no-cache

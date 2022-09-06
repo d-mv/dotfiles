@@ -40,8 +40,8 @@
 	excludesFile = $HOME/.gitignore
 
 [delta]
-	plus-color="#012800" 
-	minus-color="#340001" 
+	plus-color="#012800"
+	minus-color="#340001"
 	theme='Monokai Extended'
 	features = side-by-side line-numbers decorations
   whitespace-error-style = 22 reverse
@@ -162,7 +162,7 @@
   mergeoptions = --no-edit
 
 [commit]
-	template = ~/.dotfiles/.gitmessage.txt
+	template = ~/.dotfiles/git/.gitmessage.txt
 
 [filter "lfs"]
 	required = true

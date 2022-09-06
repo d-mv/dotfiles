@@ -11,15 +11,12 @@ source ~/.dotfiles/zsh/functions.zsh
 source ~/.dotfiles/zsh/path.zsh
 # source ~/.dotfiles/zsh/iterm
 
-# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-# source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 fpath=(~/.daml/zsh $fpath)
 fpath=(~/.zsh/completion $fpath)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # # binding keys
 bindkey -e
@@ -30,7 +27,6 @@ bindkey "\e\e[C" forward-word
 set -o vi
 bindkey -v
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ "$(uname)" = "Darwin" ]; then
   # Set 60 fps key repeat rate
@@ -40,10 +36,8 @@ if [ "$(uname)" = "Darwin" ]; then
   fi
 fi
 
-
 # Completion
 autoload -Uz compinit && compinit -i
-# compinit -u
 
 # ignore case in autocompletion
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
@@ -68,11 +62,10 @@ setopt MENU_COMPLETE           # auto-insert first possible ambiguous completion
 
 # Plug-ins
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 # https://superuser.com/a/1494647/322531
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
 HISTCMD_LOCAL=0
 
 eval "$(fnm env)"
-# eval "$(starship init zsh)"

@@ -71,7 +71,7 @@ alias d9='cd -9'
 alias gsw='git switch $(git branch | fzf)'
 
 
-kill-by-port() 
+kill-by-port()
 { kill "$(lsof -i ":$1" | tail -n 1 | awk '{ print $2 }')";
  }
 
@@ -84,9 +84,9 @@ fd() {
 
 function zle-line-init zle-keymap-select {
     case ${KEYMAP} in
-        (vicmd)      PROMPT='%(?.%F{green}v.%F{red}?%?)%f ::   ' ;;
-        (main|viins) PROMPT='%(?.%F{green}>.%F{red}?%?)%f ::   ' ;;
-        (*)          PROMPT='%(?.%F{green}>.%F{red}?%?)%f ::   ' ;;
+        (vicmd)      PROMPT='%(?.%F{green}v.%F{red}?%?)%f :: ' ;;
+        (main|viins) PROMPT='%(?.%F{green}>.%F{red}?%?)%f :: ' ;;
+        (*)          PROMPT='%(?.%F{green}>.%F{red}?%?)%f :: ' ;;
     esac
     zle reset-prompt
 }
