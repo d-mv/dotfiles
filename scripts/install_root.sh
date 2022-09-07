@@ -11,7 +11,7 @@ if [ $? -eq 0 ]; then echo 'done'; else echo 'NG'; fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo installing applications
-brew install gcc go neovim tmux fzf exa bat fnm ripgrep zsh ranger
+brew install gcc go neovim tmux fzf exa bat fnm ripgrep zsh ranger viu
 eval "$(fnm env --shell=bash)"
 echo "installing plugin manager for nvim"
 curl -fLo /etc/xdg/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
