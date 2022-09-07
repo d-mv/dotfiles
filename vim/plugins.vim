@@ -1,6 +1,6 @@
 call plug#begin('~/vim/plugged')
 Plug 'tpope/vim-surround'
-
+Plug 'sakshamgupta05/vim-todo-highlight'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -47,3 +47,25 @@ let g:prettier#autoformat_require_pragma = 0
 let g:highlightedyank_highlight_duration = 100
 let g:indentLine_char_list = ['│']
 let g:Hexokinase_highlighters = ['backgroundfull']
+let g:todo_highlight_config = {
+      \ 'TODO': {
+      \   'gui_fg_color': '#444444',
+      \   'gui_bg_color': '#9ac427',
+      \   'cterm_fg_color': 'white',
+      \   'cterm_bg_color': '214'
+      \ },
+      \ 'FIXME': {
+      \   'gui_fg_color': '#ffffff',
+      \   'gui_bg_color': '#f542b6',
+      \   'cterm_fg_color': 'white',
+      \   'cterm_bg_color': '204'
+      \ },
+      \   'REVIEW': {},
+      \   'NOTE': {
+      \     'gui_fg_color': '#ffffff',
+      \     'gui_bg_color': '#ffbd2a',
+      \     'cterm_fg_color': 'white',
+      \     'cterm_bg_color': '214'
+      \   },
+      \   'OPTIMIZE': {},
+      \ }
