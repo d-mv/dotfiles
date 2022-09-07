@@ -84,9 +84,9 @@ fd() {
 
 function zle-line-init zle-keymap-select {
     case ${KEYMAP} in
-        (vicmd)      PROMPT='%(?.%F{green}v.%F{red}?%?)%f :: ' ;;
-        (main|viins) PROMPT='%(?.%F{green}>.%F{red}?%?)%f :: ' ;;
-        (*)          PROMPT='%(?.%F{green}>.%F{red}?%?)%f :: ' ;;
+        (vicmd)      PROMPT='%(?.%F{green}v.%F{red}?%?)%f ::   ' ;;
+        (main|viins) PROMPT='%(?.%F{green}>.%F{red}?%?)%f ::   ' ;;
+        (*)          PROMPT='%(?.%F{green}>.%F{red}?%?)%f ::   ' ;;
     esac
     zle reset-prompt
 }
