@@ -15,7 +15,7 @@ echo done
 
 echo ">> installing and linking tmux config and plugins"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-ln /etc/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 echo ">> installing and linking vim/nvim configs and plugins:"
 echo '>> installing plugin manager for vim'

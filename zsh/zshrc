@@ -3,6 +3,7 @@ export REACT_EDITOR=nvim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
 export TERM=screen-256color-bce
+export BABEL_ENV=development
 
 source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
