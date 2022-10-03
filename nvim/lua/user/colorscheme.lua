@@ -1,7 +1,8 @@
 vim.cmd [[
 try
   " colorscheme dracula
-  colorscheme nord
+  " colorscheme nord
+  colorscheme codedark
   " colorscheme darkplus
   " colorscheme OceanicNext
   " colorscheme everforest
@@ -26,3 +27,6 @@ vim.g.dracula_show_end_of_buffer = true
 vim.g.dracula_transparent_bg = true
 vim.g.dracula_lualine_bg_color = "#44475a"
 vim.g.dracula_italic_comment = true
+
+vim.g.codedark_italics=1
+
