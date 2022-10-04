@@ -50,6 +50,7 @@ return packer.startup(function(use)
 
   -- colorscheme
   use "LunarVim/darkplus.nvim"
+  use "tomasiser/vim-code-dark"
   use "mhartington/oceanic-next"
   use "sainnhe/everforest"
   use "Mofiqul/dracula.nvim"
