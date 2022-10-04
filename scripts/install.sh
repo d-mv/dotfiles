@@ -22,7 +22,7 @@ echo '>> installing plugin manager for vim'
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ">> installing plugin manager for nvim"
-curl -fLo /etc/xdg/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo -n '>> linking...'
 rm ~/.vimrc >>/dev/null
 ln -s ~/.dotfiles/vim/vimrc.vim ~/.vimrc
