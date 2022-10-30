@@ -5,8 +5,7 @@ apt-get install -y unzip locales-all git curl wget silversearcher-ag make build-
 
 
 echo -n '>> installing brew...'
-URL_BREW='https://raw.githubusercontent.com/Homebrew/install/master/install'
-echo | /usr/bin/ruby -e "$(curl -fsSL $URL_BREW)" > /dev/null
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
 if [ $? -eq 0 ]; then echo 'done'; else echo 'NG'; fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
