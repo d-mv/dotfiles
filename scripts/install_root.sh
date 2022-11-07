@@ -25,9 +25,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo -n ">> linking nvim config..."
 mkdir -p /root/.config/nvim
-ln /etc/dotfiles/vim/coc-settings.json /root/.config/nvim/coc-settings.json
+ln /etc/dotfiles/vim/single_settings.vim ~/.config/nvim/init.vim
+ln /etc/dotfiles/vim/coc-settings.json ~/.config/nvim/coc-settings.json
 # TODO: change to $HOME
-ln /etc/dotfiles/vim/single_settings.vim /etc/xdg/nvim/sysinit.vim
+# ln /etc/dotfiles/vim/single_settings.vim /etc/xdg/nvim/sysinit.vim
 echo done
 echo ">> linking tmux config..."
 ln /etc/dotfiles/tmux/tmux.conf ~/.tmux.conf
