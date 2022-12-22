@@ -4,6 +4,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
 export TERM=screen-256color-bce
 export BABEL_ENV=development
+export DOTFILES=$HOME/.dotfiles
 
 source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
@@ -70,3 +71,8 @@ source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
 HISTCMD_LOCAL=0
 
 eval "$(fnm env)"
+
+# pnpm
+export PNPM_HOME="/Users/dmelnikov/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

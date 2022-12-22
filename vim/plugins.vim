@@ -7,9 +7,9 @@ Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
-Plug 'tomasiser/vim-code-dark'
+" Plug 'tomasiser/vim-code-dark'
 " Plug 'mhartington/oceanic-next'
-" Plug 'sainnhe/everforest'
+Plug 'sainnhe/everforest'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
 
@@ -26,6 +26,7 @@ Plug 'RRethy/vim-hexokinase'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tybenz/vimdeck'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --frozen-lockfile --production',
@@ -40,7 +41,9 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-css',
   \ 'coc-json',
-  \ 'coc-html'
+  \ 'coc-html',
+  \ 'coc-markdownlint',
+  \ 'coc-markdown-preview-enhanced'
   \ ]
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0

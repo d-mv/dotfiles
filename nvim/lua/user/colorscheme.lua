@@ -1,17 +1,3 @@
-vim.cmd [[
-try
-  " colorscheme dracula
-  " colorscheme nord
-  colorscheme codedark
-  " colorscheme darkplus
-  " colorscheme OceanicNext
-  " colorscheme everforest
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
-
 vim.g.enable_bold_font = 1
 vim.g.enable_italic_font = 1
 vim.g.transparent_background=1        -- transparent background(Default: false)
@@ -30,3 +16,17 @@ vim.g.dracula_italic_comment = true
 
 vim.g.codedark_italics=1
 
+
+vim.cmd [[
+try
+  " colorscheme dracula
+  " colorscheme nord
+  colorscheme codedark
+  " colorscheme darkplus
+  " colorscheme OceanicNext
+  " colorscheme everforest
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+  set background=dark
+endtry
+]]
