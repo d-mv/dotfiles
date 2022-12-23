@@ -17,6 +17,7 @@ yarn.lock
 zsh/private
 .notes
 local_export.zsh
+nvim/plugin/packer_compiled.lua
 
 # Ignore application configuration
 /config/application.yml

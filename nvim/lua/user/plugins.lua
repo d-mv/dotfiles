@@ -41,8 +41,8 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  --[[ use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim ]]
+  --[[ use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins ]]
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
   use "Mofiqul/dracula.nvim"
   use "arcticicestudio/nord-vim"
+  use "cocopon/iceberg.vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -92,9 +93,6 @@ return packer.startup(function(use)
   -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- explorer
-  --[[ use "kyazdani42/nvim-web-devicons" ]]
-  -- use "kyazdani42/nvim-tree.lua"
-
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -109,8 +107,9 @@ return packer.startup(function(use)
     config = function()
       require('gitsigns').setup()
     end
+    , tag = 'release'
   }
-  --[[ use "airblade/vim-gitgutter" ]]
+  use "airblade/vim-gitgutter"
 
   use {
     "folke/todo-comments.nvim",
@@ -124,10 +123,11 @@ return packer.startup(function(use)
     end
   }
   use "lukas-reineke/indent-blankline.nvim"
-  use "nvim-lualine/lualine.nvim"
-  use "lewis6991/impatient.nvim"
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "moll/vim-bbye"
+  --[[ use "nvim-lualine/lualine.nvim" ]]
+  --[[ use "lewis6991/impatient.nvim" ]]
+  --[[ use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight ]]
+  --[[ use "moll/vim-bbye" ]]
+  --[[ use "tybenz/vimdeck" ]]
 
   use 'tpope/vim-surround' -- quoting/parenthesizing made simple
   use 'machakann/vim-highlightedyank'
@@ -135,8 +135,7 @@ return packer.startup(function(use)
   --[[ use 'RRethy/vim-hexokinase' ]]
   use "NvChad/nvim-colorizer.lua" -- high-performance color highlighter
   use "nvim-colortils/colortils.nvim"
-  use 'tpope/vim-abolish' -- easily search for, substitute, and abbreviate multiple variants of a word
-
+  -- use 'tpope/vim-abolish' -- easily search for, substitute, and abbreviate multiple variants of a word
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -20,13 +20,15 @@ vim.cmd [[
 
   let g:everforest_background = 'hard'
   let g:everforest_better_performance = 1
+  let g:everforest_disable_italic_comment=1
+
 try
   " colorscheme dracula
-  colorscheme nord
+  " colorscheme nord
   " colorscheme codedark
   " colorscheme darkplus
   " colorscheme OceanicNext
-  " colorscheme everforest
+  colorscheme everforest
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

@@ -5,8 +5,7 @@ apt-get install -y unzip locales-all git curl wget silversearcher-ag make build-
 
 
 echo -n '>> installing brew...'
-URL_BREW='https://raw.githubusercontent.com/Homebrew/install/master/install'
-echo | /usr/bin/ruby -e "$(curl -fsSL $URL_BREW)" > /dev/null
+echo | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
 if [ $? -eq 0 ]; then echo 'done'; else echo 'NG'; fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
@@ -26,9 +25,10 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo -n ">> linking nvim config..."
 mkdir -p /root/.config/nvim
-ln /etc/dotfiles/vim/coc-settings.json /root/.config/nvim/coc-settings.json
+ln /etc/dotfiles/vim/single_settings.vim ~/.config/nvim/init.vim
+ln /etc/dotfiles/vim/coc-settings.json ~/.config/nvim/coc-settings.json
 # TODO: change to $HOME
-ln /etc/dotfiles/vim/single_settings.vim /etc/xdg/nvim/sysinit.vim
+# ln /etc/dotfiles/vim/single_settings.vim /etc/xdg/nvim/sysinit.vim
 echo done
 echo ">> linking tmux config..."
 ln /etc/dotfiles/tmux/tmux.conf ~/.tmux.conf

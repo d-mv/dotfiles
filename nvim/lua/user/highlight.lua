@@ -1,5 +1,18 @@
 vim.cmd [[
 
+" DiagnosticUnderlineError
+"     Used to underline "Error" diagnostics.
+"                                                 hl-DiagnosticUnderlineWarn
+" DiagnosticUnderlineWarn
+"     Used to underline "Warn" diagnostics.
+"                                                 hl-DiagnosticUnderlineInfo
+" DiagnosticUnderlineInfo
+"     Used to underline "Info" diagnostics.
+"                                                 hl-DiagnosticUnderlineHint
+" DiagnosticUnderlineHint
+"     Used to underline "Hint" diagnostics.
+hi DiagnosticUnderlineWarn guifg=red
+hi DiagnosticError guifg=red
 hi Comment gui=italic
 hi Cursor guibg=white guifg=black
 " hi Fixme guifg=#f542b6 gui=bold
