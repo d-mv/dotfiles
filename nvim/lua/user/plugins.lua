@@ -61,18 +61,22 @@ return packer.startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- syntax
   use "p00f/nvim-ts-rainbow"
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- setting the commentstring based on the cursor location in a file
+  use "windwp/nvim-ts-autotag" -- use treesitter to autoclose and autorename html tag
+  use "nvim-treesitter/nvim-treesitter-textobjects" -- syntax aware text-objects, select, move, swap, and peek support
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  --[[ use "saadparwaiz1/cmp_luasnip" -- snippet completions ]]
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
+  use "zbirenbaum/copilot-cmp"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -80,12 +84,15 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
+  use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- renders diagnostics using virtual lines on top of the real line of code
+
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  --[[ use "L3MON4D3/LuaSnip" --snippet engine ]]
   -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- explorer
-  -- use "kyazdani42/nvim-web-devicons"
+  --[[ use "kyazdani42/nvim-web-devicons" ]]
   -- use "kyazdani42/nvim-tree.lua"
 
   use {
@@ -97,7 +104,13 @@ return packer.startup(function(use)
   }
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+  --[[ use "airblade/vim-gitgutter" ]]
 
   use {
     "folke/todo-comments.nvim",
@@ -119,10 +132,11 @@ return packer.startup(function(use)
   use 'tpope/vim-surround' -- quoting/parenthesizing made simple
   use 'machakann/vim-highlightedyank'
   use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
-  use 'RRethy/vim-hexokinase'
+  --[[ use 'RRethy/vim-hexokinase' ]]
+  use "NvChad/nvim-colorizer.lua" -- high-performance color highlighter
+  use "nvim-colortils/colortils.nvim"
   use 'tpope/vim-abolish' -- easily search for, substitute, and abbreviate multiple variants of a word
 
-  use "airblade/vim-gitgutter"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

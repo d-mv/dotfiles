@@ -1,5 +1,5 @@
 alias cargo-watch="systemfd --no-pid -s http::8001 -- cargo watch -x run"
-alias ip="curl ipinfo.io/ip"
+# alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias adog='git log --all --decorate --oneline --graph'

@@ -280,7 +280,7 @@ let g:codedark_italics=1
 " let g:codedark_transparent=1
 
 let g:lightline = {
-      \ 'colorscheme': 'codedark',
+      \ 'colorscheme': 'everforest',
       \ }
 
-colorscheme codedark
+colorscheme everforest

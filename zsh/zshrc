@@ -10,6 +10,7 @@ source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/private.zsh
 source ~/.dotfiles/zsh/functions.zsh
 source ~/.dotfiles/zsh/path.zsh
+# source ~/.dotfiles/local_export.zsh
 # source ~/.dotfiles/zsh/iterm
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -20,9 +21,9 @@ fpath=(~/.zsh/completion $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # # binding keys
-bindkey -e
-bindkey "\e\e[D" backward-word
-bindkey "\e\e[C" forward-word
+# bindkey -e
+# bindkey "\e\e[D" backward-word
+# bindkey "\e\e[C" forward-word
 
 # vim mode
 set -o vi

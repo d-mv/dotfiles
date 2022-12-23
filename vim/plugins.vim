@@ -7,9 +7,9 @@ Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
-Plug 'tomasiser/vim-code-dark'
+" Plug 'tomasiser/vim-code-dark'
 " Plug 'mhartington/oceanic-next'
-" Plug 'sainnhe/everforest'
+Plug 'sainnhe/everforest'
 " Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'arcticicestudio/nord-vim'
 

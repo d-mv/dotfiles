@@ -9,8 +9,10 @@ local keymap = vim.api.nvim_set_keymap
 -- vim.g.maplocalleader = "/"
 
 
-keymap("n", ",ri", ":.-1read ~/.dotfiles/nvim/snippets/react_import.tsx<CR>o<CR>", opts)
-keymap("n", ",rf", ":.-1read ~/.dotfiles/nvim/snippets/react_function.tsx<CR>2jfCs", opts)
+-- snippets
+keymap("n", ",lg", ":-1read ~/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i", opts)
+keymap("n", ",ri", ":.-1read ~/.dotfiles/vim/snippets/react_import.tsx<CR>o<CR>", opts)
+keymap("n", ",rf", ":.-1read ~/.dotfiles/vim/snippets/react_function.tsx<CR>2jfCs", opts)
 
 
 keymap("n", "<C-d>", ":Bdelete<CR>", opts)
@@ -19,6 +21,7 @@ keymap("n", ",f", ":NvimTreeFindFile<CR>", opts)
 keymap("n", ",r", ":NvimTreeRefresh<CR>", opts)
 keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
 
+--[[ keymap("n", ",bl", ":Gitsigns toggle_current_line_blame<CR>", opts) ]]
 keymap("n", ",bl", ":Gitsigns blame_line<CR>", opts)
 keymap("n", ",df", ":Gitsigns diffthis<CR>", opts)
 
@@ -34,8 +37,6 @@ keymap("n", "<C-l>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts
 keymap("n", "b]", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "b[", ":BufferLineCyclePrev<CR>", opts)
 
--- snippets
-keymap("n", ",lg", ":-1read $HOME/.dotfiles/nvim/snippets/console_import.tsx<CR>1jf)i", opts)
 
 -- keymap("n", ",r", "<cmd>lua require'lspactions'.rename()<CR>", opts)
 
