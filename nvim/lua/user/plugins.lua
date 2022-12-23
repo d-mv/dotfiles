@@ -49,13 +49,13 @@ return packer.startup(function(use)
   -- use "akinsho/bufferline.nvim"
 
   -- colorscheme
-  use "LunarVim/darkplus.nvim"
-  use "tomasiser/vim-code-dark"
-  use "mhartington/oceanic-next"
+  --[[ use "LunarVim/darkplus.nvim" ]]
+  --[[ use "tomasiser/vim-code-dark" ]]
+  --[[ use "mhartington/oceanic-next" ]]
   use "sainnhe/everforest"
-  use "Mofiqul/dracula.nvim"
-  use "arcticicestudio/nord-vim"
-  use "cocopon/iceberg.vim"
+  --[[ use "Mofiqul/dracula.nvim" ]]
+  --[[ use "arcticicestudio/nord-vim" ]]
+  --[[ use "cocopon/iceberg.vim" ]]
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -93,12 +93,22 @@ return packer.startup(function(use)
   -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- explorer
+  --[[ use { ]]
+  --[[   'kyazdani42/nvim-tree.lua', ]]
+  --[[   requires = { ]]
+  --[[     'kyazdani42/nvim-web-devicons', -- optional, for file icon ]]
+  --[[   }, ]]
+  --[[   tag = 'nightly' -- optional, updated every week. (see issue #1193) ]]
+  --[[ } ]]
+
   use {
-    'kyazdani42/nvim-tree.lua',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
   }
 
   -- Git
@@ -107,9 +117,10 @@ return packer.startup(function(use)
     config = function()
       require('gitsigns').setup()
     end
-    , tag = 'release'
+    ,
+    branch = 'main'
   }
-  use "airblade/vim-gitgutter"
+  --[[ use "airblade/vim-gitgutter" ]]
 
   use {
     "folke/todo-comments.nvim",

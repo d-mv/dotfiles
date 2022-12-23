@@ -17,9 +17,11 @@ keymap("n", ",rf", ":.-1read ~/.dotfiles/vim/snippets/react_function.tsx<CR>2jfC
 
 keymap("n", "<C-d>", ":Bdelete<CR>", opts)
 
-keymap("n", ",f", ":NvimTreeFindFile<CR>", opts)
+keymap("n", ",f", ":Neotree filesystem reveal right<CR>", opts)
+--[[ keymap("n", ",f", ":NvimTreeFindFile<CR>", opts) ]]
 keymap("n", ",r", ":NvimTreeRefresh<CR>", opts)
-keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<C-b>", ":Neotree toggle<CR>", opts)
+--[[ keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts) ]]
 
 --[[ keymap("n", ",bl", ":Gitsigns toggle_current_line_blame<CR>", opts) ]]
 keymap("n", ",bl", ":Gitsigns blame_line<CR>", opts)
