@@ -53,6 +53,7 @@ return packer.startup(function(use)
   --[[ use "tomasiser/vim-code-dark" ]]
   --[[ use "mhartington/oceanic-next" ]]
   use "sainnhe/everforest"
+  use "rebelot/kanagawa.nvim"
   --[[ use "Mofiqul/dracula.nvim" ]]
   --[[ use "arcticicestudio/nord-vim" ]]
   --[[ use "cocopon/iceberg.vim" ]]
@@ -134,7 +135,7 @@ return packer.startup(function(use)
     end
   }
   use "lukas-reineke/indent-blankline.nvim"
-  --[[ use "nvim-lualine/lualine.nvim" ]]
+  use "nvim-lualine/lualine.nvim"
   --[[ use "lewis6991/impatient.nvim" ]]
   --[[ use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight ]]
   --[[ use "moll/vim-bbye" ]]
