@@ -41,8 +41,8 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  --[[ use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim ]]
-  --[[ use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins ]]
+  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
@@ -52,7 +52,7 @@ return packer.startup(function(use)
   --[[ use "LunarVim/darkplus.nvim" ]]
   --[[ use "tomasiser/vim-code-dark" ]]
   --[[ use "mhartington/oceanic-next" ]]
-  use "sainnhe/everforest"
+  --[[ use "sainnhe/everforest" ]]
   use "rebelot/kanagawa.nvim"
   --[[ use "Mofiqul/dracula.nvim" ]]
   --[[ use "arcticicestudio/nord-vim" ]]
@@ -75,7 +75,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  --[[ use "saadparwaiz1/cmp_luasnip" -- snippet completions ]]
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "zbirenbaum/copilot-cmp"
@@ -90,7 +90,7 @@ return packer.startup(function(use)
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- renders diagnostics using virtual lines on top of the real line of code
 
   -- snippets
-  --[[ use "L3MON4D3/LuaSnip" --snippet engine ]]
+  use "L3MON4D3/LuaSnip" --snippet engine
   -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- explorer
@@ -136,8 +136,8 @@ return packer.startup(function(use)
   }
   use "lukas-reineke/indent-blankline.nvim"
   use "nvim-lualine/lualine.nvim"
-  --[[ use "lewis6991/impatient.nvim" ]]
-  --[[ use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight ]]
+  use "lewis6991/impatient.nvim" -- speed up loading Lua modules in Neovim to improve startup time
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   --[[ use "moll/vim-bbye" ]]
   --[[ use "tybenz/vimdeck" ]]
 

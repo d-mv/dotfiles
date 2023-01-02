@@ -6,6 +6,8 @@ end
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 neotree.setup({
+  use_libuv_file_watcher = true,
+follow_current_file=true,
   close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "rounded",
   enable_git_status = true,
