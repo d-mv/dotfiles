@@ -41,5 +41,5 @@
   "prettier.singleQuote": true,
   "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
-  "typescript.referencesCodeLens.showOnAllFunctions": true
+  "typescript.referencesCodeLens.showOnAllFunctions": false
 }

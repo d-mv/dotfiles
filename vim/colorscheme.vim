@@ -1,4 +1,5 @@
-colorscheme nord
+colorscheme OceanicNext
+" colorscheme nord
 " colorscheme base16
 " colorscheme onehalfdark
 

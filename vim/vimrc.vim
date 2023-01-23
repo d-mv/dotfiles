@@ -308,4 +308,5 @@ let g:lightline = {
 " everforest
 let g:everforest_disable_italic_comment=1
 
-colorscheme everforest
+" colorscheme codedark
+colorscheme base16-oceanicnext
