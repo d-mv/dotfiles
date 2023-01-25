@@ -58,7 +58,8 @@ try
   " colorscheme darkplus
   " colorscheme OceanicNext
   " colorscheme everforest
-  colorscheme kanagawa
+    colorscheme OceanicNext
+  " colorscheme kanagawa
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

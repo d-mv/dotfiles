@@ -6,8 +6,9 @@ end
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 neotree.setup({
+  position = "right",
   use_libuv_file_watcher = true,
-follow_current_file=true,
+  follow_current_file=true,
   close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "rounded",
   enable_git_status = true,
@@ -74,7 +75,7 @@ follow_current_file=true,
     },
   },
   window = {
-    position = "left",
+    position = "right",
     width = 40,
     mapping_options = {
       noremap = true,
@@ -87,6 +88,7 @@ follow_current_file=true,
       },
       ["<2-LeftMouse>"] = "open",
       ["<cr>"] = "open",
+      ["o"] = "open",
       ["<esc>"] = "revert_preview",
       ["P"] = { "toggle_preview", config = { use_float = true } },
       ["S"] = "open_split",

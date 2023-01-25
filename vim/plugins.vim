@@ -1,36 +1,38 @@
 call plug#begin('~/vim/plugged')
 Plug 'tpope/vim-surround'
-Plug 'sakshamgupta05/vim-todo-highlight'
-Plug 'airblade/vim-gitgutter'
+" Plug 'sakshamgupta05/vim-todo-highlight'
+" Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
-" Plug 'tomasiser/vim-code-dark'
-" Plug 'mhartington/oceanic-next'
+Plug 'chriskempson/base16-vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'mhartington/oceanic-next'
 Plug 'sainnhe/everforest'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'arcticicestudio/nord-vim'
+" Plug 'rebelot/kanagawa.nvim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
 
-Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
+" Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
 Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
 Plug 'RRethy/vim-hexokinase'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'tybenz/vimdeck'
+" Plug 'tybenz/vimdeck'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'markdown', 'yaml', 'html'] }
 
 call plug#end()
 

@@ -49,6 +49,7 @@ return packer.startup(function(use)
   -- use "akinsho/bufferline.nvim"
 
   -- colorscheme
+  use 'mhartington/oceanic-next'
   --[[ use "LunarVim/darkplus.nvim" ]]
   --[[ use "tomasiser/vim-code-dark" ]]
   --[[ use "mhartington/oceanic-next" ]]
@@ -75,10 +76,10 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  --[[ use "saadparwaiz1/cmp_luasnip" -- snippet completions ]]
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-emoji"
-  use "zbirenbaum/copilot-cmp"
+  --[[ use "hrsh7th/cmp-emoji" ]]
+  --[[ use "zbirenbaum/copilot-cmp" ]]
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -86,11 +87,12 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
+  use "github/copilot.vim" -- github copilot
   use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
   use "https://git.sr.ht/~whynothugo/lsp_lines.nvim" -- renders diagnostics using virtual lines on top of the real line of code
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  --[[ use "L3MON4D3/LuaSnip" --snippet engine ]]
   -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- explorer
@@ -135,7 +137,14 @@ return packer.startup(function(use)
     end
   }
   use "lukas-reineke/indent-blankline.nvim"
+
   use "nvim-lualine/lualine.nvim"
+  --[[ use "rebelot/heirline.nvim" ]]
+  use {
+      "SmiteshP/nvim-navic",
+      requires = "neovim/nvim-lspconfig"
+  }
+
   use "lewis6991/impatient.nvim" -- speed up loading Lua modules in Neovim to improve startup time
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   --[[ use "moll/vim-bbye" ]]
