@@ -7,7 +7,9 @@ vim.g.italic_functions = 1 -- italic functions(Default: false)
 vim.g.italic_variables = 1 -- italic variables(Default: false)
 vim.g.oceanic_next_terminal_bold = 1
 vim.g.oceanic_next_terminal_italic = 1
--- vim.g.everforest_background = 'hard'
+vim.g.everforest_background = 'hard'
+vim.g.everforest_better_performance = 1
+vim.g.everforest_disable_italic_comment=1
 
 vim.g.dracula_show_end_of_buffer = true
 vim.g.dracula_transparent_bg = true
@@ -46,22 +48,10 @@ vim.opt.fillchars:append({
 })
 
 vim.cmd [[
-
-  let g:everforest_background = 'hard'
-  let g:everforest_better_performance = 1
-  let g:everforest_disable_italic_comment=1
-
-try
-  " colorscheme dracula
-  " colorscheme nord
-  " colorscheme codedark
-  " colorscheme darkplus
-  " colorscheme OceanicNext
-  " colorscheme everforest
-    colorscheme OceanicNext
-  " colorscheme kanagawa
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
+  try
+    colorscheme kanagawa
+  catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme default
+    set background=dark
+  endtry
 ]]
