@@ -20,7 +20,7 @@ require "user.impatient"
 --[[ require "user.indentline" ]]
 require("user.lsp.handlers").setup()
 require "user.keymaps"
---[[ require "user.nvim-tree" ]]
+-- require "user.nvim-tree"
 --[[ require "user.telescope" ]]
 --[[ require "user.gitsigns" ]]
 
