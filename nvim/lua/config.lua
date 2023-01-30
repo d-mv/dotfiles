@@ -104,7 +104,7 @@ return packer.startup(function(use)
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
     -- syntax
-    use "p00f/nvim-ts-rainbow"
+    -- use "p00f/nvim-ts-rainbow"
     use "JoosepAlviste/nvim-ts-context-commentstring" -- setting the commentstring based on the cursor location in a file
     use "windwp/nvim-ts-autotag" -- use treesitter to autoclose and autorename html tag
     use "nvim-treesitter/nvim-treesitter-textobjects" -- syntax aware text-objects, select, move, swap, and peek support
@@ -137,4 +137,12 @@ augroup end
 
     lsp.setup()
     require('Comment').setup()
+    require("neo-tree").setup({
+        window = {
+            position = "right",
+            width = 40,
+            mapping_options = {noremap = true, nowait = true},
+            mappings = {["o"] = "open"}
+        }
+    })
 end)
