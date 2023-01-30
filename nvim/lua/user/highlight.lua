@@ -24,19 +24,6 @@ hi typescriptType  gui=underline guifg=#b0ed0c   ctermfg=green cterm=underline
 match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflicts
 
-"augroup myTodo
-"  autocmd!
-"  autocmd Syntax * syntax match myTodo /\v\_.<(TODO|HELP).*/hs=s+1 containedin=.*Comment
-"augroup END
-
-"augroup myFixme
-"  autocmd!
-"  autocmd Syntax * syntax match myFixme /\v\_.<(FIXME).*/hs=s+1 containedin=.*Comment
-"augroup END
-
-" highlight link myTodo Todo
-" highlight link myFixme Fixme
-
 " Changing the shape of cursor
 "  1 -> blinking block
 "  2 -> solid block

@@ -82,19 +82,16 @@ return packer.startup(function(use)
         config = function() require('gitsigns').setup() end,
         branch = 'main'
     }
-    --[[ use "airblade/vim-gitgutter" ]]
 
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
     }
+    use {
+      "folke/trouble.nvim",
+      requires = "nvim-tree/nvim-web-devicons",
+    }
+
     use "github/copilot.vim" -- github copilot
     use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -104,7 +101,6 @@ return packer.startup(function(use)
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
     -- syntax
-    -- use "p00f/nvim-ts-rainbow"
     use "JoosepAlviste/nvim-ts-context-commentstring" -- setting the commentstring based on the cursor location in a file
     use "windwp/nvim-ts-autotag" -- use treesitter to autoclose and autorename html tag
     use "nvim-treesitter/nvim-treesitter-textobjects" -- syntax aware text-objects, select, move, swap, and peek support
@@ -112,19 +108,16 @@ return packer.startup(function(use)
     use 'tpope/vim-surround' -- quoting/parenthesizing made simple
     use 'machakann/vim-highlightedyank'
     use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
-    --[[ use 'RRethy/vim-hexokinase' ]]
     use "NvChad/nvim-colorizer.lua" -- high-performance color highlighter
-    -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
     vim.opt.termguicolors = true
     -- vim.cmd('colorscheme tokyonight')
     vim.cmd('colorscheme kanagawa')
 
     vim.cmd [[
-augroup _lsp
-    autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx :EslintFixAll
-augroup end
-
+      augroup _lsp
+        autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx :EslintFixAll
+      augroup end
      ]]
 
     -- Learn the keybindings, see :help lsp-zero-keybindings
@@ -138,11 +131,13 @@ augroup end
     lsp.setup()
     require('Comment').setup()
     require("neo-tree").setup({
-        window = {
-            position = "right",
-            width = 40,
-            mapping_options = {noremap = true, nowait = true},
-            mappings = {["o"] = "open"}
-        }
+      window = {
+        position = "right",
+        width = 40,
+        mapping_options = {noremap = true, nowait = true},
+        mappings = {["o"] = "open"}
+      }
     })
+    require("todo-comments").setup()
+    require("trouble").setup()
 end)
