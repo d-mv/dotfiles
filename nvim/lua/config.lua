@@ -82,19 +82,8 @@ return packer.startup(function(use)
         config = function() require('gitsigns').setup() end,
         branch = 'main'
     }
-    --[[ use "airblade/vim-gitgutter" ]]
 
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-        config = function()
-            require("todo-comments").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
+    use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     use "github/copilot.vim" -- github copilot
     use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -145,4 +134,5 @@ augroup end
             mappings = {["o"] = "open"}
         }
     })
+    require("todo-comments").setup({})
 end)
