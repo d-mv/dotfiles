@@ -4,6 +4,7 @@ require "options"
 --[[ require "user.plugins" ]]
 --[[ require "user.options" ]]
 require "user.treesitter"
+require "user.lsp.handlers"
 --[[ require "user.lsp" ]]
 --[[ require "user.lsp.null-ls" ]]
 --[[ require "user.lualine" ]]
