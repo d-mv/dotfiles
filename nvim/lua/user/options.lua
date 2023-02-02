@@ -16,6 +16,7 @@ local options = {
   fillchars = "vert:┃", -- split line - for vsplits
   foldnestmax = 10, --deepest fold is 10 levels
   foldmethod = "expr",
+  foldlevel = 99,
   foldexpr = "nvim_treesitter#foldexpr()",
   hidden = true, -- switch between buffers without error
   hlsearch = true, -- highlight all matches on previous search pattern
