@@ -43,7 +43,7 @@ return packer.startup(function(use)
     use "lewis6991/impatient.nvim" -- speed up loading Lua modules in Neovim to improve startup time
 
     -- Colorscheme
-    -- use {'folke/tokyonight.nvim'}
+    use 'folke/tokyonight.nvim'
     use "rebelot/kanagawa.nvim"
 
     use {
