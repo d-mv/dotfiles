@@ -9,13 +9,16 @@ local keymap = vim.api.nvim_set_keymap
 -- vim.g.maplocalleader = "/"
 
 
+keymap("n", "<C-d>", "y2kp", opts)
+
+
 -- snippets
 keymap("n", ",lg", ":-1read ~/.dotfiles/vim/snippets/console_import.tsx<CR>1jf)i", opts)
 keymap("n", ",ri", ":.-1read ~/.dotfiles/vim/snippets/react_import.tsx<CR>o<CR>", opts)
 keymap("n", ",rf", ":.-1read ~/.dotfiles/vim/snippets/react_function.tsx<CR>2jfCs", opts)
 
 
-keymap("n", "<C-d>", ":Bdelete<CR>", opts)
+-- keymap("n", "<C-d>", ":Bdelete<CR>", opts)
 
 keymap("n", ",f", ":Neotree filesystem reveal right<CR>", opts)
 --[[ keymap("n", ",f", ":NvimTreeFindFile<CR>", opts) ]]
