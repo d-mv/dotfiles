@@ -85,7 +85,7 @@ return packer.startup(function(use)
     use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
     use {"folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons"}
 
-    use "github/copilot.vim" -- github copilot
+    -- use "github/copilot.vim" -- github copilot
     use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
