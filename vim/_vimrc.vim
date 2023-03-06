@@ -10,7 +10,7 @@ set cmdheight=1 ", more space in the neovim command line for displaying messages
 set colorcolumn=+0
 set complete=.,w,b,u,U,t,i,d
 set completeopt=menu,menuone,preview " mostly just for cmp
-set conceallevel=0 ", so that `` is visible in markdown files
+ set conceallevel=0 ", so that `` is visible in markdown files
 set cursorline " highlight the current line
 set encoding=utf-8
 set expandtab " = true, convert tabs to spaces
@@ -49,7 +49,7 @@ set smarttab " = true, tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
 set so=7 ", set 7 lines to the cursors - when moving vertical
 set softtabstop=2 ", edit as if the tabs are 4 characters wide
 set splitbelow " = true, force all horizontal splits to go below current window
-set splitright " = true, force all vertical splits to go to the right of current window
+ set splitright " = true, force all vertical splits to go to the right of current window
 set tabstop=2 ", insert 2 spaces for a tab
 set textwidth=100
 set timeoutlen=1000 ", time to wait for a mapped sequence to complete (in milliseconds)
@@ -175,26 +175,86 @@ else
     let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 endif
 
+" fzf
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+" let g:fzf_preview_window = []
+let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_tags_command = 'ctags -R'
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
+
+" fzf-specific maps
+nmap <silent> <C-p> :GFiles<CR>
+nmap <silent> <C-a> :Files<CR>
+nmap <silent> <C-l> :Buffer<CR>
+nmap <silent> <C-f> :Rg<CR>
+nmap <silent> <leader>f :Ag<CR>
+
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', '$DOTFILES/nvim/preview.sh {}']}, <bang>0)
 
-
+" coc
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+nmap <leader>rn <Plug>(coc-rename)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
+nmap <C-i> <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>cl  <Plug>(coc-codelens-action)
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
-
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <expr> <CR> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
+nmap <silent> b] :BufferLineCycleNext<CR>
+nmap <silent> b[ :BufferLineCyclePrev<CR>
+nmap <silent> <C-d> :Bdelete<CR>
+nmap <silent> ,f :NERDTreeFind<CR>
+nmap <silent> ,r :NERDTreeRefresh<CR>
+nmap <silent> <C-b> :NERDTreeToggle<CR>
+nmap <silent> ,bl :Git blame<CR>
+nmap <silent> ,gf :Gvdiffsplit<CR>
 
-" if exists('+termguicolors')
-"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"   set termguicolors " true, -- set term gui colors (most terminals support this)
-" endif
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors " true, -- set term gui colors (most terminals support this)
+endif
 
 " assumes set ignorecase smartcase
 augroup dynamic_smartcase
@@ -202,6 +262,9 @@ augroup dynamic_smartcase
     autocmd CmdLineEnter : set nosmartcase
     autocmd CmdLineLeave : set smartcase
 augroup END
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
@@ -226,3 +289,24 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
+" external configs
+source $DOTFILES/vim/nerdtree.vim
+source $DOTFILES/vim/plugins.vim
+
+" codedark
+" if you don't like many colors and prefer the conservative style of the standard Visual Studio
+" let g:codedark_conservative=1
+" Activates italicized comments (make sure your terminal supports italics)
+" let g:codedark_italics=1
+" Make the background transparent
+let g:codedark_transparent=1
+
+let g:lightline = {
+      \ 'colorscheme': 'everforest',
+      \ }
+
+" everforest
+let g:everforest_disable_italic_comment=1
+
+" colorscheme codedark
+colorscheme base16-oceanicnext

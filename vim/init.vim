@@ -1,1 +1,0 @@
-/Users/dmitry/.dotfiles/vim/vimrc.vim
