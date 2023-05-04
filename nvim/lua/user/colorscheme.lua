@@ -88,8 +88,8 @@ vim.opt.fillchars:append({
 
 vim.cmd [[
   try
-    " colorscheme kanagawa
-    colorscheme tokyonight-storm
+    colorscheme kanagawa
+    " colorscheme tokyonight-storm
   catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme default
     set background=dark

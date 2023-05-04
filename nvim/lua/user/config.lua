@@ -43,7 +43,7 @@ return packer.startup(function(use)
     use "lewis6991/impatient.nvim" -- speed up loading Lua modules in Neovim to improve startup time
 
     -- Colorscheme
-    use 'folke/tokyonight.nvim'
+    -- use 'folke/tokyonight.nvim'
     use "rebelot/kanagawa.nvim"
 
     use {
@@ -58,11 +58,11 @@ return packer.startup(function(use)
             {'hrsh7th/cmp-nvim-lsp'}, -- Required
             {'hrsh7th/cmp-buffer'}, -- Optional
             {'hrsh7th/cmp-path'}, -- Optional
-            {'saadparwaiz1/cmp_luasnip'}, -- Optional
+            -- {'saadparwaiz1/cmp_luasnip'}, -- Optional
             {'hrsh7th/cmp-nvim-lua'}, -- Optional
             -- Snippets
-            {'L3MON4D3/LuaSnip'}, -- Required
-            {'rafamadriz/friendly-snippets'} -- Optional
+            -- {'L3MON4D3/LuaSnip'}, -- Required
+            -- {'rafamadriz/friendly-snippets'} -- Optional
         }
     }
 
@@ -86,7 +86,7 @@ return packer.startup(function(use)
     use {"folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons"}
 
     -- use "github/copilot.vim" -- github copilot
-    use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
+    -- use "RRethy/vim-illuminate" -- automatically highlighting other uses of the word under the cursor
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
@@ -96,12 +96,12 @@ return packer.startup(function(use)
     -- syntax
     use "JoosepAlviste/nvim-ts-context-commentstring" -- setting the commentstring based on the cursor location in a file
     use "windwp/nvim-ts-autotag" -- use treesitter to autoclose and autorename html tag
-    use "nvim-treesitter/nvim-treesitter-textobjects" -- syntax aware text-objects, select, move, swap, and peek support
+    -- use "nvim-treesitter/nvim-treesitter-textobjects" -- syntax aware text-objects, select, move, swap, and peek support
 
     use 'tpope/vim-surround' -- quoting/parenthesizing made simple
     use 'machakann/vim-highlightedyank'
     use 'Raimondi/delimitMate' --  provides insert mode auto-completion for quotes, parens, brackets, etc.
-    use "NvChad/nvim-colorizer.lua" -- high-performance color highlighter
+    -- use "NvChad/nvim-colorizer.lua" -- high-performance color highlighter
 
     vim.opt.termguicolors = true
 
