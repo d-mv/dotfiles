@@ -78,17 +78,52 @@ let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " netrw
+" https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
+
 let g:netrw_banner=0 " disable banner
 let g:netrw_browser_split=4 " open in prior window
 let g:netrw_altv=1 " open splits to the right
 let g:netrw_liststyle=3 " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_keepdir = 0 " keep the current directory and the browsing directory synced
+let g:netrw_winsize = 30
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' " hide dotfiles on load
+let g:netrw_localcopydircmd = 'cp -r'
+
+nmap <C-0> :Vexplore! %:p:h<CR>
+nmap <C-b> :Vexplore!<CR>
+
+hi! link netrwMarkFile Search " highlight marked files same way as search
+
+
+" remap netrw buttons
+function! NetrwMapping()
+"  nmap <buffer> H u
+"  nmap <buffer> h -^
+"  nmap <buffer> l <CR>
+"
+"  nmap <buffer> . gh
+"  nmap <buffer> P <C-w>z
+"
+"  nmap <buffer> L <CR>:Lexplore<CR>
+"  nmap <buffer> <Leader>dd :Lexplore<CR>
+endfunction
+
+
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
+
+" enf-of netrw
+
 
 " key mapping
 nmap <silent><leader>s :set hls<CR>
 map Q gq " don't use Ex mode, use Q for formatting
 nmap <silent><leader>l :ls<CR>
+
 
 " nmap <silent><C-b> :edit .<CR> " open netrw
 nmap <C-l> :b<Space>
