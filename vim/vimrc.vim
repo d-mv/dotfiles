@@ -77,6 +77,57 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+
+" coc
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+nmap <leader>rn <Plug>(coc-rename)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
+nmap <C-i> <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>cl  <Plug>(coc-codelens-action)
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <expr> <CR> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+command! -nargs=0 Format :call CocActionAsync('format')
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+
+
 " netrw
 " https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
 
@@ -91,8 +142,12 @@ let g:netrw_winsize = 30
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' " hide dotfiles on load
 let g:netrw_localcopydircmd = 'cp -r'
 
-nmap <C-0> :Vexplore! %:p:h<CR>
 nmap <C-b> :Vexplore!<CR>
+" nmap <silent><C-b> :edit .<CR> " open netrw
+nmap <C-l> :b<Space>
+nmap <C-p> :find<Space>
+nmap ,f :Vexplore! %:p:h<CR>
+" nmap <C-0> :Vexplore! %:p:h<CR>
 
 hi! link netrwMarkFile Search " highlight marked files same way as search
 
@@ -125,9 +180,6 @@ map Q gq " don't use Ex mode, use Q for formatting
 nmap <silent><leader>l :ls<CR>
 
 
-" nmap <silent><C-b> :edit .<CR> " open netrw
-nmap <C-l> :b<Space>
-nmap <C-p> :find<Space>
 
 " use alt+hjkl to move between split/vsplit panels
 nmap <silent> ˙ <C-w>h
@@ -261,3 +313,4 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
+source $DOTFILES/vim/plugins.vim

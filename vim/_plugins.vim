@@ -1,22 +1,30 @@
 call plug#begin('~/vim/plugged')
+Plug 'tpope/vim-surround'
 " Plug 'sakshamgupta05/vim-todo-highlight'
 " Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-fugitive'
-" Plug 'preservim/nerdtree'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 
 Plug 'machakann/vim-highlightedyank'
 
+Plug 'chriskempson/base16-vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'mhartington/oceanic-next'
+Plug 'sainnhe/everforest'
+" Plug 'rebelot/kanagawa.nvim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'arcticicestudio/nord-vim'
+
+Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'rust-lang/rust.vim'
 
 " Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
 Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
-" Plug 'RRethy/vim-hexokinase'
+Plug 'RRethy/vim-hexokinase'
 " Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -37,8 +45,7 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-html',
   \ 'coc-markdownlint',
-  \ 'coc-markdown-preview-enhanced',
-  \ 'coc-rust-analyzer'
+  \ 'coc-markdown-preview-enhanced'
   \ ]
 let g:prettier#autoformat_config_present = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -67,5 +74,3 @@ let g:todo_highlight_config = {
       \   },
       \   'OPTIMIZE': {},
       \ }
-
-let g:rustfmt_autosave = 1
