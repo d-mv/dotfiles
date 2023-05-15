@@ -60,6 +60,8 @@ set wrap " = true, turn on line wrapping
 set wrapmargin=4 ", wrap lines when coming within n characters from side
 set noshowmode " we don't need to see things like INSERT anymore
 
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim','javascript','bash', 'typescript']
+
 " undo, swap
 set noundofile " no undo file
 set nobackup nowritebackup
@@ -125,8 +127,6 @@ inoremap <expr> <CR> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 command! -nargs=0 Format :call CocActionAsync('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
-
-
 
 " netrw
 " https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
