@@ -7,6 +7,8 @@ echo ">> installing plugin: fast-syntax-highlighting"
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/fsh
 echo -n ">> linking..."
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/.dotfiles/alacritty.yml ~/.alacritty.yml
 echo done
 echo -n '>> linking git configs...'
 ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
