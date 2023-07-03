@@ -74,6 +74,6 @@ HISTCMD_LOCAL=0
 eval "$(fnm env)"
 
 # pnpm
-export PNPM_HOME="/Users/dmelnikov/Library/pnpm"
+export PNPM_HOME="/Users/dmitry/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end

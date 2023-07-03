@@ -1,0 +1,7 @@
+require "user.plugins"
+require "user.telescope"
+require "user.keymaps"
+require "user.colorscheme"
+require "user.blankline"
+require "user.lsp"
+require "user.treesitter"
