@@ -10,14 +10,14 @@ source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/private.zsh
 source ~/.dotfiles/zsh/functions.zsh
-source ~/.dotfiles/zsh/path.zsh
+# source ~/.dotfiles/zsh/path.zsh
 # source ~/.dotfiles/local_export.zsh
 # source ~/.dotfiles/zsh/iterm
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
-fpath=(~/.daml/zsh $fpath)
+# fpath=(~/.daml/zsh $fpath)
 fpath=(~/.zsh/completion $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -77,3 +77,6 @@ eval "$(fnm env)"
 export PNPM_HOME="/Users/dmelnikov/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+eval "$(starship init zsh)"
+
