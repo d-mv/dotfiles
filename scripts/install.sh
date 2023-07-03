@@ -27,11 +27,10 @@ echo ">> installing plugin manager for nvim"
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo -n '>> linking...'
 rm ~/.vimrc >>/dev/null
-ln -s ~/.dotfiles/vim/vimrc.vim ~/.vimrc
+ln -s ~/.dotfiles/vim/init.vim ~/.vimrc
 rm ~/.config/nvim/init.vim >>/dev/null
-ln -s ~/.dotfiles/vim/vimrc.vim ~/.config/nvim/init.vim
-rm ~/.vim/coc-settings.json >>/dev/null
-ln -s ~/.dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
+ln -s ~/.dotfiles/vim ~/.config/.vim
+ln -s ~/.dotfiles/nvim ~/.config/nvim
 echo done
 
 echo -n '>> linking ranger config...'

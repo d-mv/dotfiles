@@ -147,6 +147,8 @@ nmap <C-b> :Vexplore!<CR>
 nmap <C-l> :b<Space>
 nmap <C-p> :find<Space>
 nmap ,f :Vexplore! %:p:h<CR>
+nmap <C-]> :tabnext<CR>
+nmap <C-[> :tabprevious<CR>
 " nmap <C-0> :Vexplore! %:p:h<CR>
 
 hi! link netrwMarkFile Search " highlight marked files same way as search
@@ -277,11 +279,11 @@ function! CheckBackspace() abort
 endfunction
 
 
-" if exists('+termguicolors')
-"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"   set termguicolors " true, -- set term gui colors (most terminals support this)
-" endif
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors " true, -- set term gui colors (most terminals support this)
+endif
 
 " assumes set ignorecase smartcase
 augroup dynamic_smartcase
@@ -313,4 +315,4 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-source $DOTFILES/vim/plugins.vim
+source $DOTFILES/vim/plugs.vim

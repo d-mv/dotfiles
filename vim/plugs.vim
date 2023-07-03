@@ -1,9 +1,10 @@
-call plug#begin('~/vim/plugged')
-" Plug 'sakshamgupta05/vim-todo-highlight'
-" Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-fugitive'
-" Plug 'preservim/nerdtree'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -14,13 +15,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'rust-lang/rust.vim'
 
-" Plug 'Yggdroot/indentLine' " display the indention levels with thin vertical lines
 Plug 'jiangmiao/auto-pairs' " insert or delete brackets, parens, quotes in pair
-" Plug 'RRethy/vim-hexokinase'
-" Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'tybenz/vimdeck'
+
+Plug 'sainnhe/everforest'
+Plug 'tomasiser/vim-code-dark'
+Plug 'chriskempson/base16-vim'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install --frozen-lockfile --production',
@@ -69,3 +70,12 @@ let g:todo_highlight_config = {
       \ }
 
 let g:rustfmt_autosave = 1
+
+" codedark
+" if you don't like many colors and prefer the conservative style of the standard Visual Studio
+" let g:codedark_conservative=1
+" Activates italicized comments (make sure your terminal supports italics)
+let g:codedark_italics=1
+" Make the background transparent
+" colorscheme codedark
+colorscheme base16-oceanicnext
