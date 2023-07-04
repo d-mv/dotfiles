@@ -1,9 +1,10 @@
 .DS_Store
 **/*.log
-**/private
-**/local_export
+**/private.*
+**/local_export.*
 **/autoload
 **/vim/plugged
 **/.netrwhist
 nvim/plugin
+nvim/lazy-lock.*
 .metals
