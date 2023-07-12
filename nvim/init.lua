@@ -82,16 +82,22 @@ require('lazy').setup({
     }, {
         -- Theme inspired by Atom
         'navarasu/onedark.nvim',
-        priority = 1000,
-        config = function() vim.cmd.colorscheme 'onedark' end
+        priority = 1000
     }, {
+        -- Theme inspired by Atom
+        'sainnhe/edge',
+        priority = 1000,
+        config = function() end
+    },  {
+    'sainnhe/everforest'},
+    {'altercation/vim-colors-solarized'}, {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
         -- See `:help lualine.txt`
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'onedark',
+                -- theme = 'onedark',
                 component_separators = '|',
                 section_separators = ''
             }
@@ -194,6 +200,14 @@ vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles,
                {desc = '[?] Find recently opened files'})
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers,
                {desc = '[ ] Find existing buffers'})
+
+vim.keymap.set("n", "<C-p>", require('telescope.builtin').git_files)
+vim.keymap.set("n", "<C-f>", require("telescope.builtin").find_files)
+-- keymap("n", "<leader>sh", require("telescope.builtin").help_tags, opts)
+vim.keymap.set("n", "<leader>f", require("telescope.builtin").grep_string)
+vim.keymap.set("n", "ƒ", require("telescope.builtin").live_grep)
+vim.keymap.set("n", "<leader>d", require("telescope.builtin").diagnostics, opts)
+
 vim.keymap.set('n', '<leader>/', function()
     -- You can pass additional configuration to telescope to change theme, layout, etc.
     require('telescope.builtin').current_buffer_fuzzy_find(require(
@@ -285,8 +299,13 @@ local on_attach = function(_, bufnr)
         vim.keymap.set('n', keys, func, {buffer = bufnr, desc = desc})
     end
 
+    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+    vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+
     nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-    nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+    nmap('<C-i>', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
     nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
     nmap('gr', require('telescope.builtin').lsp_references,
@@ -390,3 +409,12 @@ cmp.setup {
     },
     sources = {{name = 'nvim_lsp'}, {name = 'luasnip'}}
 }
+
+vim.cmd([[
+let g:edge_enable_italic=1
+let g:edge_style='aura'
+let g:edge_better_performance=1
+let background='light'
+let g:solarized_italic=1
+colorscheme everforest
+]])
