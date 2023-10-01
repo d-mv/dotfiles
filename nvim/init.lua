@@ -79,17 +79,25 @@ require('lazy').setup({
                                {buffer = bufnr, desc = '[P]review [H]unk'})
             end
         }
-    }, {
-        -- Theme inspired by Atom
-        'navarasu/onedark.nvim',
-        priority = 1000
-    }, {
-        -- Theme inspired by Atom
-        'sainnhe/edge',
-        priority = 1000,
-        config = function() end
-    },  {
-    'sainnhe/everforest'},
+    },
+
+    -- {
+    --     -- Theme inspired by Atom
+    --     'navarasu/onedark.nvim',
+    --     priority = 1000
+    -- }, {
+    --     -- Theme inspired by Atom
+    --     'sainnhe/edge',
+    --     priority = 1000,
+    --     config = function() end
+    -- },  {
+    -- 'sainnhe/everforest'},
+    {"lalitmee/cobalt2.nvim",
+    -- event = { "ColorSchemePre" }, -- if you want to lazy load
+    dependencies = { "tjdevries/colorbuddy.nvim" },
+    init = function()
+        require("colorbuddy").colorscheme("cobalt2")
+    end,},
     {'altercation/vim-colors-solarized'}, {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
@@ -411,10 +419,10 @@ cmp.setup {
 }
 
 vim.cmd([[
-let g:edge_enable_italic=1
-let g:edge_style='aura'
-let g:edge_better_performance=1
-let background='light'
-let g:solarized_italic=1
-colorscheme everforest
+ let g:edge_enable_italic=1
+ let g:edge_style='aura'
+ let g:edge_better_performance=1
+ " let background='light'
+ let g:solarized_italic=1
+colorscheme cobalt2
 ]])
