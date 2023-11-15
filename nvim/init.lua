@@ -79,9 +79,7 @@ require('lazy').setup({
                                {buffer = bufnr, desc = '[P]review [H]unk'})
             end
         }
-    },
-
-    -- {
+    }, -- {
     --     -- Theme inspired by Atom
     --     'navarasu/onedark.nvim',
     --     priority = 1000
@@ -90,15 +88,13 @@ require('lazy').setup({
     --     'sainnhe/edge',
     --     priority = 1000,
     --     config = function() end
-    -- },  {
-    -- 'sainnhe/everforest'},
-    {"lalitmee/cobalt2.nvim",
-    -- event = { "ColorSchemePre" }, -- if you want to lazy load
-    dependencies = { "tjdevries/colorbuddy.nvim" },
-    init = function()
-        require("colorbuddy").colorscheme("cobalt2")
-    end,},
-    {'altercation/vim-colors-solarized'}, {
+    -- },
+    {'sainnhe/everforest'}, {
+        "lalitmee/cobalt2.nvim",
+        -- event = { "ColorSchemePre" }, -- if you want to lazy load
+        dependencies = {"tjdevries/colorbuddy.nvim"},
+        init = function() require("colorbuddy").colorscheme("cobalt2") end
+    }, {'altercation/vim-colors-solarized'}, {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
         -- See `:help lualine.txt`
@@ -115,7 +111,12 @@ require('lazy').setup({
         'lukas-reineke/indent-blankline.nvim',
         -- Enable `lukas-reineke/indent-blankline.nvim`
         -- See `:help indent_blankline.txt`
-        opts = {char = '│', show_trailing_blankline_indent = false}
+        main = "ibl",
+        opts = {
+            indent = {highlight = highlight, char = '│'},
+            whitespace = {highlight = highlight, remove_blankline_trail = false},
+            scope = {enabled = false}
+        }
     }, -- "gc" to comment visual regions/lines
     {'numToStr/Comment.nvim', opts = {}}, -- Fuzzy Finder (files, lsp, etc)
     {
@@ -424,5 +425,5 @@ vim.cmd([[
  let g:edge_better_performance=1
  " let background='light'
  let g:solarized_italic=1
-colorscheme cobalt2
+colorscheme everforest
 ]])

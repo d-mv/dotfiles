@@ -5,8 +5,8 @@ export GREP_OPTIONS='--color=always'
 export TERM=screen-256color-bce
 
 export GOPATH=$HOME/work
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export PATH=/root/.fnm:$PATH
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+# export PATH=/root/.fnm:$PATH
 
 
 
