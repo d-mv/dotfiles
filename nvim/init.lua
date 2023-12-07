@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
     -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth', "hrsh7th/cmp-nvim-lsp", 'L3MON4D3/LuaSnip', {
+    'tpope/vim-sleuth', "hrsh7th/cmp-nvim-lsp",  {
         "nvim-neo-tree/neo-tree.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -46,14 +46,11 @@ require('lazy').setup({
         -- Autocompletion
         'hrsh7th/nvim-cmp',
         dependencies = {
-            -- Snippet Engine & its associated nvim-cmp source
-            'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
 
             -- Adds LSP completion capabilities
             'hrsh7th/cmp-nvim-lsp'
 
-        }, -- Useful plugin to show you pending keybinds.
-        {'folke/which-key.nvim', opts = {}}
+        },
     }, {
         -- Adds git releated signs to the gutter, as well as utilities for managing changes
         'lewis6991/gitsigns.nvim',
@@ -133,6 +130,16 @@ require('lazy').setup({
         build = 'make',
         cond = function() return vim.fn.executable 'make' == 1 end
     }, {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    }, {
+
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
         dependencies = {'nvim-treesitter/nvim-treesitter-textobjects'},
@@ -378,46 +385,6 @@ mason_lspconfig.setup_handlers {
     end
 }
 
--- [[ Configure nvim-cmp ]]
--- See `:help cmp`
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
-
-cmp.setup {
-    snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
-    mapping = cmp.mapping.preset.insert {
-        ['<C-n>'] = cmp.mapping.select_next_item(),
-        ['<C-p>'] = cmp.mapping.select_prev_item(),
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete {},
-        ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true
-        },
-        ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_locally_jumpable() then
-                luasnip.expand_or_jump()
-            else
-                fallback()
-            end
-        end, {'i', 's'}),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, {'i', 's'})
-    },
-    sources = {{name = 'nvim_lsp'}, {name = 'luasnip'}}
-}
 
 vim.cmd([[
  let g:edge_enable_italic=1

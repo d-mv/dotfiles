@@ -23,8 +23,8 @@ keymap("n", ",f", ":Neotree filesystem reveal<CR>", opts)
 -- keymap("n", ",f", ":Neotree filesystem reveal right<CR>", opts)
 --[[ keymap("n", ",f", ":NvimTreeFindFile<CR>", opts) ]]
 keymap("n", ",r", ":NvimTreeRefresh<CR>", opts)
--- keymap("n", "<C-b>", ":Neotree toggle right<CR>", opts)
-keymap("n", "<C-b>", ":NeoTreeFloatToggle<CR>", opts)
+keymap("n", "<C-b>", ":Neotree toggle right<CR>", opts)
+-- keymap("n", "<C-b>", ":NeoTreeFloatToggle<CR>", opts)
 --[[ keymap("n", "<C-b>", ":NvimTreeToggle<CR>", opts) ]]
 
 --[[ keymap("n", ",bl", ":Gitsigns toggle_current_line_blame<CR>", opts) ]]
