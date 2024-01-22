@@ -8,6 +8,7 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/f
 echo -n ">> linking..."
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/.dotfiles/wezterm ~/.config/wezterm
 ln -s ~/.dotfiles/alacritty.yml ~/.alacritty.yml
 echo done
 echo -n '>> linking git configs...'
