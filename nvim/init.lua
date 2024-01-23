@@ -31,5 +31,6 @@ spec "user.surround"
 spec "user.eyeliner"
 spec "user.lab"
 spec "user.trouble"
+-- spec "user.noice"
 
 require "user.lazy"

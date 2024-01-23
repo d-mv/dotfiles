@@ -33,6 +33,28 @@ keymap("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", opts)
 keymap("n", "<leader>t","<cmd>Trouble<cr>", opts)
 keymap("n", "<leader>", "<cmd>TodoTrouble<cr>", opts)
 
+-- lsp
+keymap("n", "<c-i>","<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+keymap("n", "<c-]>","<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
+keymap("n", "<c-[>","<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+--   ["<leader>lh"] = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
+  --   ["<leader>lf"] = {
+  --     "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+  --     "Format",
+  --   },
+  --   ["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
+  --   ["<leader>ll"] = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+  --   ["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+  --   ["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+  -- }
+
+  -- wk.register {
+  --   ["<leader>la"] = {
+  --     name = "LSP",
+  --     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action", mode = "v" },
+  --   },
+  -- }
+
 -- telescope
 keymap("n", "<c-l>", ":Telescope find_files<CR>", opts)
 keymap("n","<c-p>","<cmd>Telescope oldfiles<cr>", opts)

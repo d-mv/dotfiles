@@ -68,12 +68,12 @@ function M.config()
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif check_backspace() then
-          -- fallback()
-          require("neotab").tabout()
+        -- elseif check_backspace() then
+        --   fallback()
+        --   require("neotab").tabout()
         else
-          require("neotab").tabout()
-          -- fallback()
+        --   require("neotab").tabout()
+          fallback()
         end
       end, {
         "i",
