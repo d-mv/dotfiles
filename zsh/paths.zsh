@@ -22,4 +22,5 @@
 # export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 # export LDFLAGS="-L/usr/local/opt/zlib/lib"
 # export CPPFLAGS="-I/usr/local/opt/zlib/include"
-# source $HOME/.cargo/env
+source $HOME/.cargo/env
+export PATH="$HOME/.fnm:$PATH"
