@@ -1,25 +1,25 @@
-export EDITOR=nvim
-export REACT_EDITOR=nvim
+export EDITOR=vim
+export REACT_EDITOR=vim
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export GREP_OPTIONS='--color=always'
 export TERM=screen-256color-bce
-
-export GOPATH=$HOME/work
-# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-# export PATH=/root/.fnm:$PATH
-
-
 
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias adog='git log --all --decorate --oneline --graph'
+alias vi='vim'
+alias v='vim --clean'
 alias nv='nvim'
 alias nvc='nvim --clean'
 alias rn='ranger'
 alias tmux_remote='tmux new -s remote -n home'
 alias tr='tmux a -t remote'
-alias nri='npm run ios' # for React Native
+alias vimswaps='cd ~/.local/share/nvim/swap'
+alias w='curl wttr.in/Porto'
+alias search='ddgr'
+alias news='curl getnews.tech'
+alias nri='npm run ios'     # for React Native
 alias nra='npm run android' # for React Native
 alias yt='yarn test'
 alias yss='yarn storybook:start'
@@ -52,11 +52,9 @@ alias gst='git status -sb'
 alias gl='git log --pretty=format:"%h - %an, %ar : %s"'
 alias gcoms="git log origin/master..HEAD --no-merges --pretty=format:'- %s' "
 alias gpp='git pull && git push'
-alias xf='exa --long --header --git'
-alias xfa='exa -a --long --header --git'
-alias xl='exa -1'
-alias xla='exa -1a'
-alias xg='exa --grid'
+alias ls='ls -1'
+alias xl='ls -ahFy1 --color=auto'
+alias xla='ls -ahFy1l --color=auto'
 alias ..='cd ..'
 alias killtouch='killall ControlStrip'
 alias d1='cd -'
@@ -69,7 +67,8 @@ alias d7='cd -7'
 alias d8='cd -8'
 alias d9='cd -9'
 alias gsw='git switch $(git branch | fzf)'
-
+alias tpg='cd /code/playgrounds/ts'
+alias kod='cd /code'
 
 kill-by-port()
 { kill "$(lsof -i ":$1" | tail -n 1 | awk '{ print $2 }')";
@@ -118,7 +117,6 @@ set -o vi
 bindkey -v
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-eval "$(fnm env --shell=bash)"
 
 autoload -Uz compinit && compinit -i
 
@@ -151,4 +149,3 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 source /etc/zsh/fsh/fast-syntax-highlighting.plugin.zsh
 HISTCMD_LOCAL=0
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
