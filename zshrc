@@ -149,3 +149,4 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 source /etc/zsh/fsh/fast-syntax-highlighting.plugin.zsh
 HISTCMD_LOCAL=0
 
+eval "$(brew shellenv)"
