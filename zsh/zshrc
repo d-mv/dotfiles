@@ -6,18 +6,18 @@ export TERM=screen-256color-bce
 export BABEL_ENV=development
 export DOTFILES=$HOME/.dotfiles
 
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
 source ~/.dotfiles/zsh/paths.zsh
 source ~/.dotfiles/zsh/aliases.zsh
-source ~/.dotfiles/zsh/private.zsh
 source ~/.dotfiles/zsh/functions.zsh
 # source ~/.dotfiles/zsh/path.zsh
-# source ~/.dotfiles/local_export.zsh
 # source ~/.dotfiles/zsh/iterm
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
-# fpath=(~/.daml/zsh $fpath)
 fpath=(~/.zsh/completion $fpath)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -71,5 +71,5 @@ source ~/.zsh/fsh/fast-syntax-highlighting.plugin.zsh
 HISTCMD_LOCAL=0
 
 eval "$(fnm env --shell zsh)"
-
 eval "$(starship init zsh)"
+# source $(brew --prefix)/opt/spaceship/spaceship.zsh

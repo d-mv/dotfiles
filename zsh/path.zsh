@@ -14,12 +14,10 @@ autoload -Uz vcs_info
 
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-precmd() { print -rP "%F{240}%~" }
-# precmd() { print -rP "%n @ %~" }
+precmd() { print -rP "%~" }
 setopt prompt_subst
 
 RPROMPT=\$vcs_info_msg_0_
-# zstyle ':vcs_info:git:*' formats '§ %F{240}%b'
-zstyle ':vcs_info:git:*' formats '%F{240} %b'
+zstyle ':vcs_info:git:*' formats '%F{220} %b'
 zstyle ':vcs_info:*' enable git
 

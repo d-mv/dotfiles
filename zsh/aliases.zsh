@@ -1,21 +1,20 @@
 alias cargo-watch="systemfd --no-pid -s http::8001 -- cargo watch -x run"
-# alias ip="curl ipinfo.io/ip"
+alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias adog='git log --all --decorate --oneline --graph'
 alias vi='vim'
+alias pra='/Applications/Pragtical.app/Contents/MacOS/pragtical .'
 alias v='vim --clean'
 alias nv='nvim'
 alias nvc='nvim --clean'
 alias rn='ranger'
 alias tmux_remote='tmux new -s remote -n home'
 alias tr='tmux a -t remote'
-# alias code='/usr/local/bin/code .'
 alias vimswaps='cd ~/.local/share/nvim/swap'
-# alias code='/Applications/Code\ -\ Insiders.app/Contents/Resources/app/bin/code .'
 alias code='/Applications/Code.app/Contents/Resources/app/bin/code .'
-
-# alias zed='/Applications/Zed.app/Contents/MacOS/zed .'
+alias notes='/Applications/Code.app/Contents/Resources/app/bin/code ~/.notes'
+alias zed='/Applications/Zed.app/Contents/MacOS/zed .'
 alias w='curl wttr.in/Porto'
 alias search='ddgr'
 alias news='curl getnews.tech'
