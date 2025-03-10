@@ -76,5 +76,3 @@ alias rts='cd ~/code/rts'
 alias ei='cd ~/code/ei-nucleus'
 alias gsw='git switch $(git branch | fzf)'
 alias kod='cd ~/code'
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
