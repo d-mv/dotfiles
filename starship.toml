@@ -126,6 +126,7 @@ symbol = "fnl "
 symbol = "fossil "
 
 [gcloud]
+disabled = true
 symbol = "gcp "
 
 [golang]

@@ -1,5 +1,6 @@
 {
 	"files.watcherExclude": {
 		"**/target": true
-	}
+	},
+	"codeQL.createQuery.qlPackLocation": "/Users/dmelnikov/.dotfiles"
 }
