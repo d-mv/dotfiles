@@ -3,6 +3,8 @@ if status is-interactive
 end
 fish_vi_key_bindings
 
+set fish_greeting ""
+
 alias cargo-watch="systemfd --no-pid -s http::8001 -- cargo watch -x run"
 alias ip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
@@ -24,8 +26,6 @@ alias zed='/Applications/Zed.app/Contents/MacOS/zed .'
 alias w='curl wttr.in/Porto'
 alias search='ddgr'
 alias news='curl getnews.tech'
-alias nri='npm run ios'     # for React Native
-alias nra='npm run android' # for React Native
 alias yt='yarn test'
 alias yss='yarn storybook:start'
 alias ys='yarn start'
@@ -47,6 +47,7 @@ alias nl='npm run lint'
 alias nss='npm run storybook'
 alias nt='npm run test'
 alias nc='nl && nt && nb'
+alias nri='rm -rf node_modules/ && rm package-lock.json && npm i'
 alias gits='git switch $(git branch | fzf)'
 alias gitm='git merge $(git branch | fzf)'
 alias gitpo='git push origin $(git branch | fzf)'
