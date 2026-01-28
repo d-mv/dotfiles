@@ -46,7 +46,14 @@ config.font = wezterm.font_with_fallback({
 	-- { family = "Car/tograph CF", weight = "Regular" },
 	-- { family = "MonoLisa", weight = "Regular" },
 	-- { family = "Berkeley Mono", weight = "Regular" },
+	-- { family = "psudoFont Liga Mono", weight = "Regular" },
+	-- { family = "Paper Mono", weight = "Regular" },
 	{ family = "FiraCode Nerd Font", weight = "Regular" },
+	-- { family = "Terminess Nerd Font", weight = "Regular" },
+	-- { family = "SauceCodePro Nerd Font Mono", weight = "Regular" },
+	-- { family = "CommitMono Nerd Font Mono", weight = "Regular" },
+	-- { family = "Dank Mono", weight = "Regular" },
+	-- { family = "PragmataPro Mono Liga", weight = "Regular" },
 	-- {family = "FantasqueSansM Nerd Font", weight = "Regular"},
 	{ family = "Apple Color Emoji" },
 })
@@ -57,7 +64,7 @@ config.disable_default_key_bindings = true
 config.enable_scroll_bar = false
 config.enable_tab_bar = true
 config.font_size = 16
-config.cell_width = 0.95
+config.cell_width = 1
 config.front_end = "WebGpu"
 config.hide_tab_bar_if_only_one_tab = false
 config.initial_cols = 80
@@ -79,14 +86,14 @@ config.window_padding = { left = 30, right = 30, top = 30, bottom = 30 }
 -- config.color_scheme = 'Materia (base16)'
 -- config.color_scheme = 'Borland'
 -- config.color_scheme = 'kanagawabones'
--- config.color_scheme = 'Everforest Dark (Gogh)'
+config.color_scheme = "Everforest Dark (Gogh)"
 -- config.color_scheme = 'Everforest Light Soft (Gogh)'
 -- config.color_scheme = 'Everforest Light Hard (Gogh)'
 -- config.color_scheme = 'Kasugano (terminal.sexy)'
 -- config.color_scheme = 'Kanagawa (Gogh)'
 -- config.color_scheme = "OneDark (base16)"
 -- config.color_scheme = "OneDark"
-config.color_scheme = "Orphanage"
+-- config.color_scheme = "Orphanage"
 
 config.color_schemes = {
 	["Orphanage"] = {
@@ -165,26 +172,29 @@ config.color_schemes = {
 
 config.colors = {
 	tab_bar = {
-		active_tab = { bg_color = "#1f3a45", fg_color = "#fff" },
-		inactive_tab = { bg_color = "#061a25", fg_color = "#a1b2bc" },
-		inactive_tab_hover = { bg_color = "#061a25", fg_color = "#ffffff" },
+		active_tab = { bg_color = "#3d484d", fg_color = "#d3c6aa" },
+		inactive_tab = { bg_color = "#2d353b", fg_color = "#859289" },
+		inactive_tab_hover = { bg_color = "#343f44", fg_color = "#d3c6aa" },
+		new_tab = { bg_color = "#2d353b", fg_color = "#859289" },
+		new_tab_hover = { bg_color = "#343f44", fg_color = "#d3c6aa" },
 	},
 }
 
 config.window_frame = {
 	font = wezterm.font({ family = "Input Sans" }),
 	font_size = 12.0,
-	active_titlebar_bg = "#0a0f1f", -- Navy bg
-	inactive_titlebar_bg = "#0f1a2f",
-	active_titlebar_fg = "#ff6b35", -- Orange text
-	inactive_titlebar_fg = "#808080",
-	button_fg = "#ff6b35", -- Orange buttons
-	button_bg = "#0a0f1f",
-	button_hover_fg = "#ffffff",
-	button_hover_bg = "#1a2a3f",
+	-- active_titlebar_bg = "#0a0f1f", -- Navy bg
+	-- inactive_titlebar_bg = "#0f1a2f",
+	-- active_titlebar_fg = "#ff6b35", -- Orange text
+	-- inactive_titlebar_fg = "#808080",
+	-- button_fg = "#ff6b35", -- Orange buttons
+	-- button_bg = "#0a0f1f",
+	-- button_hover_fg = "#ffffff",
+	-- button_hover_bg = "#1a2a3f",
 }
 
 config.keys = {
+	{ key = "c", mods = "CMD", action = wezterm.action.CopyTo("Clipboard") },
 	{
 		key = "[",
 		mods = "SHIFT|CMD",
